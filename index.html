@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentNDrive | Luxury Car Rentals</title>
+  <meta name="description" content="Premium self-drive cars with digital key access, zero hidden fees and transparent pricing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="home.css">
+ 
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="RentNDrive home">
+  <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+  <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+  <span class="brand-text">
+    <strong>RentNDrive</strong>
+    <span>Luxury Car Rentals</span>
+  </span>
+</a>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-dropdown-toggle active" aria-haspopup="true">
+            <span>Home</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home 1 - Classic</a>
+            <a href="home2.html"><i class="fa-solid fa-crown"></i> Home 2 - Prestige</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="fleet.html">Our Fleet</a>
+        <a href="how-it-works.html">Why Us</a>
+        <a href="pricing.html">Rental Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>        
+        
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">RTL</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary login-btn">
+          <i class="fa-regular fa-user"></i><span>Login</span>
+        </a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="hero-home.jpg" alt="RentNDrive Luxury Fleet">
+      </div>
+
+      <div class="container">
+        <div class="hero-badge">
+          <i class="fa-solid fa-star"></i> 4.96 rating · 1,400+ verified trips
+        </div>
+
+        <h1>Experience Every Road in <em>Royal Comfort.</em></h1>
+        <p class="hero-sub">Curated luxury sedans, electric marvels and adventure SUVs. Digital key unlock, zero hidden fees and VIP service in 45+ cities.</p>
+
+        <form class="search" id="searchForm">
+          <div class="search-grid">
+            <div class="field">
+              <label for="pickup"><i class="fa-solid fa-location-dot"></i>Pick-up location</label>
+              <select id="pickup"></select>
+            </div>
+            <div class="field">
+              <label for="pDate"><i class="fa-regular fa-calendar"></i>Pick-up date</label>
+              <input type="date" id="pDate">
+            </div>
+            <div class="field">
+              <label for="rDate"><i class="fa-regular fa-calendar-check"></i>Drop-off date</label>
+              <input type="date" id="rDate">
+            </div>
+            <div class="field">
+              <label for="category"><i class="fa-solid fa-car"></i>Vehicle</label>
+              <select id="category">
+                <option value="all">All vehicles</option>
+                <option value="luxury">Luxury sedans</option>
+                <option value="suv">Adventure SUVs</option>
+                <option value="electric">Electric &amp; EV</option>
+                <option value="convertible">Convertibles</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </div>
+
+          <div class="search-foot">
+            <span><i class="fa-solid fa-shield-halved"></i> 24/7 roadside cover on every booking</span>
+            <span><i class="fa-solid fa-mobile-screen"></i> Contactless smart unlock</span>
+            <span><i class="fa-solid fa-circle-check"></i> Free cancellation up to 24h</span>
+          </div>
+        </form>
+
+        <div class="stats">
+          <div class="stat"><strong data-count="500" data-suffix="+">0</strong><span>Pristine fleet cars</span></div>
+          <div class="stat"><strong data-count="45" data-suffix="+">0</strong><span>Airport &amp; city hubs</span></div>
+          <div class="stat"><strong data-count="99.8" data-suffix="%" data-decimals="1">0</strong><span>Traveler satisfaction</span></div>
+          <div class="stat"><strong data-count="60" data-suffix="s">0</strong><span>Instant verification</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
+    <section class="categories">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Vehicle categories</span>
+          <h2>Engineered for Every Journey</h2>
+        </div>
+
+        <div class="cat-grid">
+          <div class="cat reveal" data-category="luxury">
+            <div class="cat-media">
+              <img src="cat-luxury.jpg" alt="Luxury Sedans">
+            </div>
+            <div class="cat-icon"><i class="fa-solid fa-crown"></i></div>
+            <h3>Luxury Sedans</h3><small>3 available</small>
+          </div>
+          <div class="cat reveal" data-category="suv">
+            <div class="cat-media">
+              <img src="cat-suv.jpg" alt="Adventure SUVs">
+            </div>
+            <div class="cat-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+            <h3>Adventure SUVs</h3><small>3 available</small>
+          </div>
+          <div class="cat reveal" data-category="electric">
+            <div class="cat-media">
+              <img src="cat-electric.jpg" alt="Electric & EV">
+            </div>
+            <div class="cat-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Electric &amp; EV</h3><small>3 available</small>
+          </div>
+          <div class="cat reveal" data-category="convertible">
+            <div class="cat-media">
+              <img src="cat-convertible.jpg" alt="Convertibles">
+            </div>
+            <div class="cat-icon"><i class="fa-solid fa-wind"></i></div>
+            <h3>Convertibles</h3><small>2 available</small>
+          </div>
+          <div class="cat reveal" data-category="compact">
+            <div class="cat-media">
+              <img src="cat-compact.jpg" alt="Premium Compact">
+            </div>
+            <div class="cat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3>Premium Compact</h3><small>2 available</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FLEET ================= -->
+    <section id="fleet">
+      <div class="container">
+        <div class="fleet-head reveal">
+          <div>
+            <span class="eyebrow">Handpicked selection</span>
+            <h2>Featured Travel Vehicles</h2>
+          </div>
+          <div class="chips" id="chips">
+            <button class="chip active" data-filter="all" type="button">All</button>
+            <button class="chip" data-filter="luxury" type="button">Luxury</button>
+            <button class="chip" data-filter="suv" type="button">SUVs</button>
+            <button class="chip" data-filter="electric" type="button">Electric</button>
+            <button class="chip" data-filter="convertible" type="button">Convertible</button>
+          </div>
+        </div>
+
+        <div class="fleet-grid" id="fleetGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section class="about-preview" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-media reveal">
+            <img src="about-preview.jpg" alt="RentNDrive Luxury Fleet and Mission">
+            <div class="about-badge-float">
+              <i class="fa-solid fa-crown"></i>
+              <div>
+                <strong>Over 10 Years</strong>
+                <span>Of Royal Service Excellence</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-content reveal">
+            <span class="eyebrow">About RentNDrive</span>
+            <h2>Redefining Car Rental with <em>Royal Freedom.</em></h2>
+            <p>Founded on the belief that travel should be seamless, elegant, and liberating, RentNDrive replaces rental counters and paperwork with 100% smart digital keys, pristine luxury cars, and 24/7 dedicated concierges.</p>
+            <div class="about-highlights">
+              <div class="about-highlight-item">
+                <i class="fa-solid fa-key"></i>
+                <span>Instant Mobile Unlock</span>
+              </div>
+              <div class="about-highlight-item">
+                <i class="fa-solid fa-shield-check"></i>
+                <span>Comprehensive Protection</span>
+              </div>
+              <div class="about-highlight-item">
+                <i class="fa-solid fa-plane-arrival"></i>
+                <span>45+ Premier Airport Hubs</span>
+              </div>
+              <div class="about-highlight-item">
+                <i class="fa-solid fa-gem"></i>
+                <span>Zero Hidden Fees Guarantee</span>
+              </div>
+            </div>
+            <a href="about.html" class="btn btn-primary">
+              <span>Read Our Full Story</span>
+              <i class="fa-solid fa-arrow-right flip"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The royal standard</span>
+          <h2>Built for Discerning Travelers</h2>
+          <p>No counter queues, no hidden airport surcharges, no paperwork mountains.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature reveal">
+            <div class="feature-icon"><i class="fa-solid fa-fingerprint"></i></div>
+            <h3>100% Digital Keyless Access</h3>
+            <p>Verify your ID in 60 seconds and unlock your car straight from your phone browser.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature-icon"><i class="fa-solid fa-receipt"></i></div>
+            <h3>Zero Hidden Fees, Ever</h3>
+            <p>What you see is what you pay. Daily rates, taxes, insurance and deposits are all shown upfront.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>24/7 Royal Concierge</h3>
+            <p>Round-the-clock roadside help, hotel delivery coordination and complimentary replacements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Verified traveler experiences</span>
+          <h2>Loved by Over 10,000 Renters</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review reveal">
+            <div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <q>Impeccable service from start to finish. The car was delivered to my hotel in immaculate condition.</q>
+            </div>
+            <div class="reviewer">
+              <div class="avatar">JV</div>
+              <div><strong>Julian Vance</strong><span>Venture Capitalist · San Francisco</span></div>
+            </div>
+          </article>
+          <article class="review reveal">
+            <div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <q>Perfect for long highway drives. Billing was crystal clear with zero surprise fees.</q>
+            </div>
+            <div class="reviewer">
+              <div class="avatar">SC</div>
+              <div><strong>Sophia Chen</strong><span>Creative Director · New York</span></div>
+            </div>
+          </article>
+          <article class="review reveal">
+            <div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <q>Instant approval and contactless pickup at the airport. The most customer-centric rental platform I've used.</q>
+            </div>
+            <div class="reviewer">
+              <div class="avatar">MS</div>
+              <div><strong>Marcus Sterling</strong><span>Architect · Austin</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section style="padding-top: 0;">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="badge"><i class="fa-solid fa-crown"></i> Exclusive Welcome Privilege</span>
+          <h2>Claim 15% Off Your First <em>Royal Journey.</em></h2>
+          <p>Join our distinguished circle of drivers. Create your free account in 60 seconds to unlock priority digital key access, complimentary airport dropoffs, and an instant 15% privilege code.</p>
+          <div class="cta-actions">
+            <a href="login.html" class="btn btn-white"><i class="fa-regular fa-user"></i> Create Free Account <i class="fa-solid fa-arrow-right flip"></i></a>
+            <a href="#fleet" class="btn btn-outline-light"><i class="fa-solid fa-car-side"></i> Explore the Fleet</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand">
+  <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+  <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+  <span class="brand-text"><strong style="color:var(--footer-brand)">RentNDrive</strong><span>Luxury Car Rentals</span></span>
+</a>
+          <p>Premium self-drive cars for every journey. Comfort, freedom and a better way to travel.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="about.html">About Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html">Our Fleet</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="how-it-works.html">Why Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="pricing.html">Rental Plans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a></li>
+           
+          </ul>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Luxury Sedans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Premium SUVs</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Sport's Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Electric Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Convertibles</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Supercar's</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>Your business address</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li><i class="fa-regular fa-envelope"></i><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+            <li><i class="fa-regular fa-clock"></i><span>Daily support</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> <strong>RentNDrive</strong>. All rights reserved.</p>
+        <nav>
+          <a href="#top">Privacy Policy</a>
+          <a href="pricing.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Cookies &amp; Privacy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="site.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

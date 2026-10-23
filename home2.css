@@ -1,0 +1,1108 @@
+/* ==========================================================================
+   Home 2 - Luxury & Prestige Edition Specific Styles
+   Inherits foundational tokens, fonts, themes from home.css
+   Color Combination: Royal Blue (#1d4ed8 / #1e3a8a) & Gold Accent (#fbbf24)
+   ========================================================================== */
+
+/* Stylish High-End Font Styling for Home 2 Main Content (excluding Header and Footer) */
+main {
+  font-family: "Plus Jakarta Sans", "Montserrat", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+main h1,
+main h2,
+main h3,
+main .p-hero-title,
+main .p-section-head h2,
+main .p-exp-card h3,
+main .p-car-info h3,
+main .p-service-card h3,
+main .p-vip-card h3,
+main .p-review-card h3,
+main .p-faq-q,
+main .p-cta-box h2 {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+  letter-spacing: -0.02em;
+}
+
+main .p-hero-badge,
+main .p-sec-tag,
+main .p-car-badge,
+main .p-metric span,
+main .p-exp-badge,
+main .p-vip-badge,
+main .p-price-block small,
+main .btn-gold,
+main .p-book-btn,
+main .p-pill {
+  font-family: "Montserrat", "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 0.06em;
+}
+
+main .p-hero-desc,
+main .p-section-head p,
+main .p-exp-card p,
+main .p-vip-card p,
+main .p-review-card blockquote,
+main .p-faq-a p,
+main .p-cta-box p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.7;
+}
+
+/* ---------- Premium Hero (Section 1: True Full Viewport Landing Page) ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+.p-hero {
+  position: relative;
+  height: calc(100vh - 80px);
+  height: calc(100svh - 80px);
+  min-height: calc(100vh - 80px);
+  min-height: calc(100svh - 80px);
+  max-height: calc(100vh - 80px);
+  max-height: calc(100svh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  padding: clamp(20px, 3.5vh, 44px) 0;
+  scroll-snap-align: start;
+}
+.p-fleet-section {
+  scroll-snap-align: start;
+}
+.p-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.p-hero-bg img,
+.p-hero-bg video,
+.p-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  position: absolute;
+  inset: 0;
+  display: block;
+  opacity: 0.95;
+  filter: saturate(1.15) contrast(1.08) brightness(0.96);
+}
+html[data-theme="dark"] .p-hero-bg video,
+html[data-theme="dark"] .p-hero-video {
+  opacity: 0.88;
+  filter: saturate(1.2) brightness(0.85) contrast(1.1);
+}
+.p-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 900px 580px at center 40%, rgba(15, 29, 56, 0.55) 0%, rgba(10, 20, 42, 0.75) 60%, rgba(5, 12, 28, 0.9) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(10, 25, 60, 0.45) 50%, rgba(248, 250, 252, 0.92) 100%);
+  pointer-events: none;
+}
+html[data-theme="dark"] .p-hero-bg::after {
+  background: radial-gradient(ellipse 720px 480px at center 44%,
+    rgba(7, 15, 31, 0.85) 0%,
+    rgba(7, 15, 31, 0.58) 55%,
+    rgba(7, 15, 31, 0.25) 80%,
+    transparent 100%);
+}
+.p-hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.p-crown-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(251, 191, 36, 0.8);
+  box-shadow: 0 10px 30px -6px rgba(251, 191, 36, 0.45), 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #854d0e;
+  margin-bottom: clamp(12px, 2vh, 20px);
+}
+html[data-theme="dark"] .p-crown-badge {
+  background: #0b1528;
+  color: var(--accent);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.5);
+}
+.p-crown-badge i {
+  color: var(--accent);
+  font-size: 14px;
+  animation: floatGold 3s ease-in-out infinite alternate;
+}
+@keyframes floatGold {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3px) scale(1.1); }
+}
+
+.p-hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 4.8vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  font-weight: 900;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: clamp(10px, 1.8vh, 16px);
+}
+html[data-theme="dark"] .p-hero h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65), 0 0 24px rgba(255, 255, 255, 0.18);
+}
+.p-hero h1 em {
+  font-style: italic;
+  color: #fbbf24;
+  background: linear-gradient(135deg, #fbbf24 0%, #fde68a 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 24px rgba(251, 191, 36, 0.4);
+}
+html[data-theme="dark"] .p-hero h1 em {
+  color: #fbbf24;
+  background: linear-gradient(135deg, #fbbf24 0%, #fde68a 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 24px rgba(251, 191, 36, 0.5);
+}
+.p-hero-sub {
+  max-width: 680px;
+  margin: 0 auto clamp(16px, 2.5vh, 26px);
+  font-size: clamp(15px, 1.8vw, 18px);
+  font-weight: 500;
+  color: #f1f5f9;
+  line-height: 1.6;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+}
+html[data-theme="dark"] .p-hero-sub {
+  color: #e2e8f0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 16px rgba(255, 255, 255, 0.15);
+}
+
+.p-hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: clamp(18px, 2.8vh, 28px);
+}
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 28px -8px rgba(251, 191, 36, 0.55);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-gold:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 36px -8px rgba(251, 191, 36, 0.7);
+  color: #020617;
+}
+
+/* Luxury Booking Bar */
+.p-booking-bar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(251, 191, 36, 0.5);
+  border-radius: 24px;
+  padding: 18px 22px;
+  box-shadow: 0 25px 60px -15px rgba(15, 29, 56, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+html[data-theme="dark"] .p-booking-bar {
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  box-shadow: var(--shadow);
+}
+.p-booking-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1.35fr 1.05fr 1.05fr auto;
+  gap: 12px;
+  align-items: flex-end;
+  width: 100%;
+}
+.p-book-field {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+[dir="rtl"] .p-book-field {
+  text-align: right;
+}
+.p-book-field label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.p-book-field label i {
+  color: var(--accent);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.p-book-field select,
+.p-book-field input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(226, 232, 240, 0.9);
+  background: #f8fafc;
+  color: #0f172a;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+html[data-theme="dark"] .p-book-field select,
+html[data-theme="dark"] .p-book-field input {
+  border: 1.5px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+}
+.p-book-field select:focus,
+.p-book-field input:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+html[data-theme="dark"] .p-book-field select:focus,
+html[data-theme="dark"] .p-book-field input:focus {
+  background: var(--surface-2);
+}
+.p-book-btn {
+  height: 46px;
+  padding: 0 22px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px -6px rgba(29, 78, 216, 0.6);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.p-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(29, 78, 216, 0.75);
+}
+
+/* Elegant Scroll Down Indicator */
+.p-hero-scroll-indicator {
+  margin-top: clamp(10px, 1.5vh, 18px);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+html[data-theme="dark"] .p-hero-scroll-indicator {
+  color: var(--accent);
+}
+.p-hero-scroll-indicator i {
+  font-size: 13px;
+  animation: bounceDown 1.8s infinite;
+}
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(6px); }
+  60% { transform: translateY(3px); }
+}
+.p-hero-scroll-indicator:hover {
+  transform: translateY(2px);
+  color: var(--accent);
+}
+
+/* Metrics Section (Clean Transition strip starting immediately when user scrolls) */
+.p-metrics-section {
+  scroll-snap-align: start;
+  padding-block: 48px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.p-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.p-metric {
+  text-align: center;
+}
+.p-metric strong {
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+html[data-theme="dark"] .p-metric strong {
+  color: var(--accent);
+}
+.p-metric span {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Section 2: Flagship Curated Fleet ---------- */
+.p-fleet-section {
+  padding-block: clamp(64px, 8vw, 108px);
+  background: var(--bg);
+  position: relative;
+}
+.p-fleet-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 44px;
+}
+.p-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.p-tab-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+.p-tab-btn.active {
+  background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 24px -6px rgba(29, 78, 216, 0.55);
+}
+.p-fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.p-fleet-card {
+  position: relative;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s, border-color 0.45s;
+  display: flex;
+  flex-direction: column;
+}
+.p-fleet-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 60px -20px rgba(15, 23, 42, 0.25);
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--primary));
+}
+.p-card-media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.p-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.p-fleet-card:hover .p-card-media img {
+  transform: scale(1.09);
+}
+.p-badge-tier {
+  position: absolute;
+  top: 16px;
+  inset-inline-start: 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--accent);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.p-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.p-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.p-card-brand {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.p-card-rating {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.p-card-body h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.p-card-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: var(--surface-2);
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.p-card-specs span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.p-card-specs i {
+  color: var(--primary);
+}
+.p-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.p-price-block small {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.p-price-block strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary);
+}
+html[data-theme="dark"] .p-price-block strong {
+  color: var(--accent);
+}
+.p-price-block span {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ---------- Section 3: Luxury Signature Experience ---------- */
+.p-experience-section {
+  padding-block: clamp(64px, 8vw, 108px);
+  background: var(--surface-2);
+  border-block: 1px solid var(--border);
+}
+.p-exp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+.p-exp-card {
+  position: relative;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 26px;
+  padding: 34px 26px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, border-color 0.4s, box-shadow 0.4s;
+  overflow: hidden;
+}
+.p-exp-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--btn-from), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.p-exp-card:hover {
+  transform: translateY(-8px);
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--primary));
+  box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.2);
+}
+.p-exp-card:hover::before {
+  transform: scaleX(1);
+}
+.p-exp-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  background: var(--accent-soft);
+  color: #b45309;
+  margin-bottom: 24px;
+  transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+}
+html[data-theme="dark"] .p-exp-icon {
+  color: var(--accent);
+}
+.p-exp-card:hover .p-exp-icon {
+  transform: scale(1.1) rotate(-6deg);
+  background: var(--accent);
+  color: #0f172a;
+}
+.p-exp-card h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.p-exp-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ---------- Section 4: Visual Interactive Showcase ---------- */
+.p-interactive-section {
+  padding-block: clamp(64px, 8vw, 108px);
+  background: var(--bg);
+}
+.p-showcase-split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+.p-showcase-visual {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--border);
+}
+.p-showcase-visual img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.p-showcase-visual:hover img {
+  transform: scale(1.05);
+}
+.p-floating-tag {
+  position: absolute;
+  bottom: 24px;
+  inset-inline-start: 24px;
+  padding: 16px 22px;
+  border-radius: 20px;
+  background: rgba(10, 20, 38, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(251, 191, 36, 0.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.p-floating-tag i {
+  font-size: 28px;
+  color: var(--accent);
+}
+.p-floating-tag strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+}
+.p-floating-tag span {
+  font-size: 11px;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.p-features-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.p-feature-row {
+  display: flex;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.p-feature-row:hover {
+  transform: translateX(6px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+[dir="rtl"] .p-feature-row:hover {
+  transform: translateX(-6px);
+}
+.p-row-num {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  display: grid;
+  place-items: center;
+}
+.p-feature-row h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.p-feature-row p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ---------- Section 5: VIP Membership Club ---------- */
+.p-vip-section {
+  padding-block: clamp(64px, 8vw, 108px);
+  background: var(--surface-2);
+  border-block: 1px solid var(--border);
+}
+.p-vip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.p-vip-card {
+  position: relative;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 28px;
+  padding: 38px 30px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.4s ease, border-color 0.4s, box-shadow 0.4s;
+}
+.p-vip-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+}
+.p-vip-card.featured {
+  border-color: var(--accent);
+  box-shadow: 0 24px 60px -18px rgba(251, 191, 36, 0.35);
+}
+.p-featured-pill {
+  position: absolute;
+  top: -14px;
+  inset-inline-end: 28px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #0f172a;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.4);
+}
+.p-vip-card h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.p-vip-rate {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-block: 16px 20px;
+  line-height: 1;
+}
+html[data-theme="dark"] .p-vip-rate {
+  color: var(--accent);
+}
+.p-vip-rate span {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.p-vip-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.p-vip-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+}
+.p-vip-list i {
+  color: var(--primary);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.p-vip-card.featured .p-vip-list i {
+  color: var(--accent);
+}
+
+/* ---------- Section 6: Worldwide Concierge Locations ---------- */
+.p-destinations-section {
+  padding-block: clamp(64px, 8vw, 108px);
+  background: var(--bg);
+}
+.p-destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.p-dest-card {
+  position: relative;
+  height: 320px;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1.5px solid var(--border);
+  transition: transform 0.4s ease, box-shadow 0.4s;
+}
+.p-dest-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px -15px rgba(15, 23, 42, 0.3);
+}
+.p-dest-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.p-dest-card:hover img {
+  transform: scale(1.1);
+}
+.p-dest-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 20, 38, 0.92) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #fff;
+}
+.p-dest-overlay h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.p-dest-overlay p {
+  font-size: 13px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.p-dest-overlay p i {
+  color: var(--accent);
+}
+
+/* ---------- Section 7: VIP Testimonials ---------- */
+.p-reviews-section {
+  padding-block: clamp(64px, 8vw, 108px);
+  background: var(--surface-2);
+  border-block: 1px solid var(--border);
+}
+.p-review-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 28px;
+  padding: 34px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+  transition: transform 0.35s ease, box-shadow 0.35s, border-color 0.35s;
+}
+.p-review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--primary));
+}
+.p-review-card .stars {
+  color: var(--accent);
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+}
+.p-review-card q {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  font-style: italic;
+  quotes: none;
+}
+.p-reviewer-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.p-reviewer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+.p-reviewer-row strong {
+  display: block;
+  font-size: 15px;
+  color: var(--text);
+}
+.p-reviewer-row span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- Section 8: Royal CTA Banner ---------- */
+.p-cta-section {
+  padding-block: clamp(64px, 8vw, 108px);
+  background: var(--bg);
+}
+.p-cta-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 36px;
+  padding: clamp(48px, 6vw, 84px);
+  background: linear-gradient(135deg, #091326 0%, #1e3a8a 55%, #1d4ed8 100%);
+  color: #fff;
+  box-shadow: 0 32px 70px -20px rgba(15, 23, 42, 0.4);
+  border: 1.5px solid rgba(251, 191, 36, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.p-cta-card::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.3), transparent 70%);
+  pointer-events: none;
+}
+.p-cta-card::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  left: -120px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.25), transparent 70%);
+  pointer-events: none;
+}
+.p-cta-card > * {
+  position: relative;
+  z-index: 1;
+}
+.p-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.18);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.p-cta-card h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(32px, 4.5vw, 54px);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  max-width: 780px;
+}
+.p-cta-card h2 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.p-cta-card p {
+  color: #cbd5e1;
+  font-size: clamp(16px, 1.8vw, 19px);
+  max-width: 640px;
+  margin-bottom: 36px;
+  line-height: 1.65;
+}
+.p-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 1040px) {
+  .p-booking-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .p-fleet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .p-exp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .p-showcase-split {
+    grid-template-columns: 1fr;
+  }
+  .p-vip-grid {
+    grid-template-columns: 1fr;
+  }
+  .p-destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .p-booking-grid {
+    grid-template-columns: 1fr;
+  }
+  .p-metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .p-fleet-grid {
+    grid-template-columns: 1fr;
+  }
+  .p-exp-grid {
+    grid-template-columns: 1fr;
+  }
+  .p-destinations-grid {
+    grid-template-columns: 1fr;
+  }
+}

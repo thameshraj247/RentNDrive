@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | RentNDrive Luxury Car Rentals</title>
+  <meta name="description" content="Learn about RentNDrive's story, our white-glove fleet philosophy, leadership, and our commitment to luxury self-drive travel.">
+
+  <!-- Apply saved theme + direction BEFORE first paint (prevents flash) -->
+  <script>
+    (function () {
+      try {
+        var r = document.documentElement;
+        var t = localStorage.getItem("rnd-theme") ||
+          (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        r.setAttribute("data-theme", t);
+        r.setAttribute("dir", localStorage.getItem("rnd-dir") || "ltr");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="home.css">
+ <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="RentNDrive home">
+        <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+        <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+        <span class="brand-text">
+          <strong>RentNDrive</strong>
+          <span>Luxury Car Rentals</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-dropdown-toggle" aria-haspopup="true">
+            <span>Home</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home 1 - Classic</a>
+            <a href="home2.html"><i class="fa-solid fa-crown"></i> Home 2 - Prestige</a>
+          </div>
+        </div>
+        <a href="about.html" class="active">About</a>
+        <a href="fleet.html">Our Fleet</a>
+        <a href="how-it-works.html">Why Us</a>
+        <a href="pricing.html">Rental Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>        
+        
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">RTL</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary login-btn">
+          <i class="fa-regular fa-user"></i><span>Login</span>
+        </a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO (Full Screen Landing Hero) ===================== -->
+  <section class="about-hero" id="top">
+    <div class="about-hero-bg" aria-hidden="true">
+      <img src="hero-about.jpg" alt="RentNDrive Brand & Heritage Since 2016">
+    </div>
+
+    <div class="container inner">
+      <div class="hero-badge">
+        <i class="fa-solid fa-crown"></i> The Standard of Luxury Self-Drive
+      </div>
+      <h1>Driven by Passion. Defined by <em>Excellence.</em></h1>
+      <p>We set out to eliminate the friction, queues, and hidden charges of traditional car hire — creating a frictionless, contactless luxury car rental experience across 45+ premier international hubs.</p>
+      <div class="about-hero-actions">
+        <a href="#story" class="btn btn-primary">Our Story <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="fleet.html" class="btn btn-ghost"><i class="fa-solid fa-car"></i> View Our Fleet</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ===================== SECOND SECTION: OUR STORY ===================== -->
+    <section class="story-section" id="story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-text reveal">
+            <span class="eyebrow">The Origin Story</span>
+            <h2>Crafting a Seamless Royal Journey Since 2016</h2>
+            <p>RentNDrive began with a simple frustration: why does renting a world-class luxury car still involve slow paperwork counters, opaque insurance waivers, and surprise checkout fees?</p>
+            <p>We envisioned a service where discerning executives and travelers could reserve a vehicle in seconds, walk up to it at the airport terminal, unlock it seamlessly via their smartphone, and drive off in pristine comfort.</p>
+            <p>Today, our handpicked fleet of flagship sedans, performance convertibles, and all-terrain SUVs serves tens of thousands of travelers with white-glove 24/7 concierge support.</p>
+            <div style="margin-top: 24px;">
+              <a href="pricing.html" class="btn btn-primary">Discover Flexible Plans <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+          <div class="story-media reveal">
+            <img src="about-story.jpg" alt="Range Rover and VIP Traveler">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CORE VALUES ===================== -->
+    <section class="values-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our Philosophy</span>
+          <h2>The Four Pillars of RentNDrive</h2>
+          <p>Every vehicle, policy, and concierge interaction is guided by our uncompromising standards.</p>
+        </div>
+
+        <div class="values-grid">
+          <article class="value-card reveal">
+            <div class="value-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>100% Digital Keyless Freedom</h3>
+            <p>No waiting at rental booths. With instant verification and Bluetooth smart unlocking, your car is ready when your flight touches down.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <div class="value-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3>Transparent Upfront Rates</h3>
+            <p>Zero hidden airport surcharges or deposit traps. What you see during estimation is exactly what appears on your itemized electronic invoice.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <div class="value-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3>Pristine Showroom Condition</h3>
+            <p>Every vehicle undergoes a rigorous 42-point inspection, multi-stage sanitization, and detailing before handing over the digital keys.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Comprehensive Coverage</h3>
+            <p>Drive with absolute confidence. Choose from tiered protection packages including zero-deductible coverage and 24/7 priority dispatch.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <div class="value-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Pioneering Sustainable Luxury</h3>
+            <p>Our fleet features the latest high-performance electric vehicles, including Tesla Plaid and Porsche Taycan with free supercharging access.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <div class="value-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>24/7 Royal VIP Concierge</h3>
+            <p>Round-the-clock roadside assistance, doorstep hotel delivery coordination, and personalized itinerary support across all 45+ cities.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FLEET STANDARDS ===================== -->
+    <section class="fleet-standards-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Unmatched Quality</span>
+          <h2>Curated Vehicles for Every Occasion</h2>
+          <p>From prestigious executive arrivals to winding coastal getaways, our lineup is designed to thrill.</p>
+        </div>
+
+        <div class="standards-grid">
+          <article class="standard-card reveal">
+            <div class="standard-img">
+              <img src="cat-luxury.jpg" alt="Executive Sedans">
+            </div>
+            <div class="standard-body">
+              <h4>Executive Sedans</h4>
+              <p>Mercedes-Benz S-Class &amp; BMW 7-Series delivering whisper-quiet ride comfort.</p>
+            </div>
+          </article>
+
+          <article class="standard-card reveal">
+            <div class="standard-img">
+              <img src="cat-suv.jpg" alt="Adventure SUVs">
+            </div>
+            <div class="standard-body">
+              <h4>Adventure SUVs</h4>
+              <p>Porsche Cayenne GTS &amp; Range Rover Autobiography with peerless 4x4 capability.</p>
+            </div>
+          </article>
+
+          <article class="standard-card reveal">
+            <div class="standard-img">
+              <img src="cat-electric.jpg" alt="Electric Performance">
+            </div>
+            <div class="standard-body">
+              <h4>Electric Performance</h4>
+              <p>Tesla Model S Plaid &amp; Porsche Taycan combining 1000+ HP with zero emissions.</p>
+            </div>
+          </article>
+
+          <article class="standard-card reveal">
+            <div class="standard-img">
+              <img src="cat-convertible.jpg" alt="Open-Air Convertibles">
+            </div>
+            <div class="standard-body">
+              <h4>Open-Air Roadsters</h4>
+              <p>Porsche 911 Carrera Cabriolet &amp; BMW M4 Competition for scenic coastal drives.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LEADERSHIP TEAM ===================== -->
+    <section class="team-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The Leadership</span>
+          <h2>The Minds Behind the Royal Standard</h2>
+          <p>Passionate automotive enthusiasts and technology leaders dedicated to perfecting your travel experience.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card reveal">
+            <div class="team-photo">
+              <img src="team-elena.jpg" alt="Elena Rostova">
+            </div>
+            <div class="team-info">
+              <h4>Elena Rostova</h4>
+              <span class="role">Chief Executive Officer</span>
+              <p>Former luxury hospitality director with 15+ years delivering white-glove customer journeys across Europe &amp; North America.</p>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-photo">
+              <img src="team-marcus.jpg" alt="Marcus Sterling">
+            </div>
+            <div class="team-info">
+              <h4>Marcus Sterling</h4>
+              <span class="role">Head of Fleet Operations</span>
+              <p>Master automotive engineer overseeing the vehicle procurement, inspection protocols, and performance tuning.</p>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-photo">
+              <img src="team-sarah.jpg" alt="Sarah Lin">
+            </div>
+            <div class="team-info">
+              <h4>Sarah Lin</h4>
+              <span class="role">Chief Technology Officer</span>
+              <p>Architect of our contactless digital key technology and real-time fleet telemetry network,and good customer support</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section style="padding-top: 0; background: var(--surface-2);">
+      <div class="container" style="padding-bottom: clamp(64px, 8vw, 96px);">
+        <div class="cta reveal">
+          <span class="badge"><i class="fa-solid fa-gem"></i> Heritage of Distinction</span>
+          <h2>Redefining How the World <em>Travels in Style.</em></h2>
+          <p>Every vehicle in our collection represents the pinnacle of craftsmanship, performance, and contactless convenience. Take the wheel and discover genuine hospitality on every mile.</p>
+          <div class="cta-actions">
+            <a href="fleet.html" class="btn btn-white"><i class="fa-solid fa-car-side"></i> Explore the Fleet <i class="fa-solid fa-arrow-right flip"></i></a>
+            <a href="contact.html" class="btn btn-outline-light"><i class="fa-solid fa-phone"></i> Talk to Concierge</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand">
+  <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+  <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+  <span class="brand-text"><strong style="color:var(--footer-brand)">RentNDrive</strong><span>Luxury Car Rentals</span></span>
+</a>
+          <p>Premium self-drive cars for every journey. Comfort, freedom and a better way to travel.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="about.html">About Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html">Our Fleet</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="how-it-works.html">Why Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="pricing.html">Rental Plans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a></li>
+           
+          </ul>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Luxury Sedans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Premium SUVs</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Sport's Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Electric Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Convertibles</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Supercar's</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>Your business address</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li><i class="fa-regular fa-envelope"></i><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+            <li><i class="fa-regular fa-clock"></i><span>Daily support</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> <strong>RentNDrive</strong>. All rights reserved.</p>
+        <nav>
+          <a href="#top">Privacy Policy</a>
+          <a href="pricing.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Cookies &amp; Privacy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="site.js"></script>
+</body>
+</html>
