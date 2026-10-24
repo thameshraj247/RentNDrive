@@ -1,0 +1,317 @@
+
+    /* ---------- About Page Specific Styles ---------- */
+    .about-hero {
+      position: relative;
+      min-height: calc(100vh - 80px);
+      min-height: calc(100svh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-block: clamp(48px, 8vw, 96px);
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .about-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      opacity: 1;
+      animation: kenburns 24s ease-in-out infinite alternate;
+    }
+    html[data-theme="dark"] .about-hero-bg img {
+      opacity: 0.95;
+      filter: saturate(1.15) brightness(0.95);
+    }
+    .about-hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 900px 580px at center 42%, rgba(15, 29, 56, 0.58) 0%, rgba(10, 20, 42, 0.76) 60%, rgba(5, 12, 28, 0.92) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(10, 25, 60, 0.45) 50%, rgba(248, 250, 252, 0.95) 100%);
+      pointer-events: none;
+    }
+    .about-hero .inner {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      margin-inline: auto;
+    }
+    .about-hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(34px, 5.5vw, 62px);
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      margin: 14px 0 16px;
+      color: #ffffff;
+      font-weight: 900;
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.72), 0 1px 4px rgba(0, 0, 0, 0.5);
+    }
+    html[data-theme="dark"] .about-hero h1 {
+      color: #ffffff;
+      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.85);
+    }
+    .about-hero h1 em {
+      font-style: italic;
+      color: #fbbf24; background: linear-gradient(135deg, #fbbf24 0%, #fde68a 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-shadow: 0 4px 24px rgba(251, 191, 36, 0.4);
+    }
+    html[data-theme="dark"] .about-hero h1 em {
+      color: #fbbf24; background: linear-gradient(135deg, #fbbf24 0%, #fde68a 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 4px 24px rgba(251, 191, 36, 0.5);
+    }
+    .about-hero p {
+      color: #f1f5f9;
+      font-size: clamp(16px, 2vw, 19px);
+      font-weight: 700;
+      line-height: 1.7;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+    }
+    html[data-theme="dark"] .about-hero p {
+      color: #e2e8f0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+    .about-hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    /* Story Section */
+    .story-section {
+      padding-block: clamp(64px, 8vw, 100px);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .story-text h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(28px, 3.8vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .story-text p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+    .story-media {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .story-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .story-media:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Pillars / Values Grid */
+    .values-section {
+      padding-block: clamp(64px, 8vw, 100px);
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 960px;
+      margin-inline: auto;
+      gap: 26px;
+    }
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform .35s ease, box-shadow .35s, border-color .35s;
+    }
+    .value-card:hover {
+      transform: translateY(-8px);
+      border-color: color-mix(in srgb, var(--primary) 45%, transparent);
+      box-shadow: 0 18px 45px -12px rgba(15, 23, 42, 0.2);
+    }
+    .value-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      background: var(--accent-soft);
+      color: var(--primary);
+      margin-bottom: 20px;
+      transition: transform .3s ease, background .3s ease;
+    }
+    .value-card:hover .value-icon {
+      transform: scale(1.1) rotate(-6deg);
+      background: var(--accent);
+      color: #111827;
+    }
+    .value-card h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+    .value-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* Fleet Standards / Showcase */
+    .fleet-standards-section {
+      padding-block: clamp(64px, 8vw, 100px);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .standards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+    .standard-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .35s ease, box-shadow .35s;
+    }
+    .standard-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+    .standard-img {
+      width: 100%;
+      height: 170px;
+      overflow: hidden;
+    }
+    .standard-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .standard-card:hover .standard-img img {
+      transform: scale(1.08);
+    }
+    .standard-body {
+      padding: 20px;
+    }
+    .standard-body h4 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    .standard-body p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* Leadership Team */
+    .team-section {
+      padding-block: clamp(64px, 8vw, 100px);
+      background: var(--surface-2);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 960px;
+      margin-inline: auto;
+      gap: 28px;
+    }
+    .team-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform .35s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+    }
+    .team-photo {
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .team-photo img[src*="elena"] {
+      object-position: center top;
+    }
+    .team-photo img[src*="marcus"] {
+      object-position: center top;
+    }
+    .team-photo img[src*="sarah"] {
+      object-position: center top;
+    }
+    .team-card:hover .team-photo img {
+      transform: scale(1.06);
+    }
+    .team-info {
+      padding: 24px 20px;
+    }
+    .team-info h4 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .team-info .role {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .team-info p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 990px) {
+      .story-grid { grid-template-columns: 1fr; gap: 36px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .standards-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+    }
+    @media (max-width: 580px) {
+      .standards-grid { grid-template-columns: 1fr; }
+    }
+  

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Login | RentNDrive Luxury Car Rentals</title>
+  <meta name="description" content="Sign in or register to access your RentNDrive customer dashboard, active rentals, and digital keys.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231d4ed8'><path d='M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z'/></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-page selection:bg-blue-900 selection:text-white">
+
+  <!-- Split Screen Auth Section (Zero Scroll Viewport Fit) -->
+  <main class="w-full flex items-center justify-center m-0 p-0">
+    <div class="max-w-5xl w-full mx-auto px-4 sm:px-6">
+      <div class="auth-card rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        
+        <!-- Left Branding Showcase (5 cols) -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-blue-900 to-blue-950 p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-blue-500/20 blur-2xl pointer-events-none"></div>
+
+          <div>
+            <h2 class="text-2xl font-extrabold leading-snug pt-2">Welcome to Seamless Travel Luxury.</h2>
+            <p class="text-xs text-blue-100 mt-3 leading-relaxed">
+              Log in to your Customer Portal to browse the live fleet, extend active trips, access digital keys, and download certified tax invoices.
+            </p>
+
+            <div class="mt-8 space-y-3">
+              <div class="flex items-center text-xs text-blue-100">
+                <i class="fa-solid fa-circle-check text-[#fbbf24] mr-2.5"></i>
+                <span>Real-time trip modification & extensions</span>
+              </div>
+              <div class="flex items-center text-xs text-blue-100">
+                <i class="fa-solid fa-circle-check text-[#fbbf24] mr-2.5"></i>
+                <span>Instant printable PDF invoices & billing</span>
+              </div>
+              <div class="flex items-center text-xs text-blue-100">
+                <i class="fa-solid fa-circle-check text-[#fbbf24] mr-2.5"></i>
+                <span>Digital key unlock straight from your phone</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1-Click Demo Login Box -->
+          <div class="mt-8 pt-6 border-t border-white/10">
+            <span class="block text-[11px] font-bold uppercase tracking-wider text-[#fbbf24] mb-2">
+              <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Quick Demo Access
+            </span>
+            <p class="text-[11px] text-blue-200 mb-3">Jump straight into the active customer dashboard with realistic preloaded data:</p>
+            <button id="demo-quick-login-btn" class="w-full py-2.5 px-4 rounded-xl bg-[#fbbf24] hover:bg-amber-300 text-slate-900 font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-md">
+              <i class="fa-solid fa-user-shield"></i>
+              <span>Login as Alex Morgan (Gold VIP)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Auth Forms (7 cols) -->
+        <div class="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-center bg-white login-form-panel">
+          <!-- Brand Logo and Name above Sign In / Create Account -->
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100 login-brand-header">
+            <a href="index.html" class="inline-flex items-center space-x-3 group" title="Return to RentNDrive Home">
+              <img src="titlelogo.png" alt="RentNDrive logo" class="h-9 w-auto theme-logo logo-light group-hover:scale-105 transition-transform">
+              <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="h-9 w-auto theme-logo logo-dark group-hover:scale-105 transition-transform">
+              <span class="brand-text">
+                <strong class="text-xl font-extrabold tracking-tight text-blue-900 dark:text-blue-400">RentNDrive</strong>
+                <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400">Luxury Car Rentals</span>
+              </span>
+            </a>
+
+            <!-- Light / Dark Mode Toggle Button -->
+            <button id="themeToggle" type="button" class="icon-btn theme-toggle-btn p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-amber-400 hover:scale-105 transition flex items-center justify-center w-10 h-10 shadow-sm" aria-label="Toggle theme" title="Switch theme">
+              <i class="fa-solid fa-moon icon-moon text-sm"></i>
+              <i class="fa-solid fa-sun icon-sun text-sm"></i>
+            </button>
+          </div>
+
+          <!-- Tab Switcher -->
+          <div class="flex border-b border-slate-200 mb-6">
+            <button id="auth-tab-signin" class="auth-tab-btn active py-3 px-5 text-sm font-bold">
+              Sign In
+            </button>
+            <button id="auth-tab-register" class="auth-tab-btn py-3 px-5 text-sm font-bold">
+              Create Account
+            </button>
+          </div>
+
+          <!-- SIGN IN FORM -->
+          <form id="auth-signin-form" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Username / Full Name</label>
+              <input type="text" id="signin-username" placeholder="e.g. Alex Morgan" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Email Address</label>
+              <input type="email" id="signin-email" placeholder="name@example.com" value="alex.morgan@royalrentals.com" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">Password</label>
+                <a href="#" class="text-[11px] text-blue-700 hover:underline">Forgot password?</a>
+              </div>
+              <input type="password" id="signin-password" value="demopass123" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+            </div>
+
+            <div class="flex items-center">
+              <input type="checkbox" id="signin-remember" checked class="h-4 w-4 text-blue-800 rounded border-slate-300">
+              <label for="signin-remember" class="ml-2 text-xs text-slate-600">Remember credentials on this browser</label>
+            </div>
+
+            <button type="submit" class="btn-royal-primary w-full py-3 rounded-xl font-bold text-xs shadow-md">
+              Sign In to Customer Portal
+            </button>
+
+            <!-- Don't have an account? -->
+            <div class="text-center pt-2">
+              <p class="text-xs text-slate-600 font-medium">
+                Don't you have account? 
+                <button type="button" id="switch-to-register" class="text-blue-700 hover:text-blue-800 font-bold hover:underline transition">Create one</button>
+              </p>
+            </div>
+
+            <!-- Divider (Straight Horizontal Line with Centered Text) -->
+            <div class="flex items-center my-3.5 w-full">
+              <div class="flex-grow border-t border-slate-200 login-divider-line"></div>
+              <span class="flex-shrink-0 px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider whitespace-nowrap">or continue with</span>
+              <div class="flex-grow border-t border-slate-200 login-divider-line"></div>
+            </div>
+
+            <!-- Social Logins (Google & Apple) -->
+            <div class="grid grid-cols-2 gap-3">
+              <button type="button" id="google-login-btn" class="social-auth-btn flex items-center justify-center space-x-2.5 py-2.5 px-4 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold shadow-sm transition">
+                <svg class="w-4 h-4" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                </svg>
+                <span>Google</span>
+              </button>
+
+              <button type="button" id="apple-login-btn" class="social-auth-btn flex items-center justify-center space-x-2.5 py-2.5 px-4 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold shadow-sm transition">
+                <i class="fa-brands fa-apple text-base text-slate-900"></i>
+                <span>Apple</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- REGISTER FORM -->
+          <form id="auth-register-form" class="space-y-4 hidden">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Full Legal Name</label>
+              <input type="text" id="reg-name" placeholder="Alexander Morgan" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Email Address</label>
+              <input type="email" id="reg-email" placeholder="alex@domain.com" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Phone Number</label>
+                <input type="tel" id="reg-phone" placeholder="+1 (555) 019-2834" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Driver's License #</label>
+                <input type="text" id="reg-license" placeholder="DL-98421039-CA" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Password</label>
+              <input type="password" id="reg-password" placeholder="••••••••" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+            </div>
+
+            <button type="submit" class="btn-royal-primary w-full py-3 rounded-xl font-bold text-xs shadow-md">
+              Create Account &amp; Claim VIP Bonus
+            </button>
+
+            <!-- Already have an account? -->
+            <div class="text-center pt-1">
+              <p class="text-xs text-slate-600 font-medium">
+                Already have an account? 
+                <button type="button" id="switch-to-signin" class="text-blue-700 hover:text-blue-800 font-bold hover:underline transition">Sign in</button>
+              </p>
+            </div>
+
+            <!-- Divider (Straight Horizontal Line with Centered Text) -->
+            <div class="flex items-center my-3 w-full">
+              <div class="flex-grow border-t border-slate-200 login-divider-line"></div>
+              <span class="flex-shrink-0 px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider whitespace-nowrap">or sign up with</span>
+              <div class="flex-grow border-t border-slate-200 login-divider-line"></div>
+            </div>
+
+            <!-- Social Logins (Google & Apple) for Register Form -->
+            <div class="grid grid-cols-2 gap-3">
+              <button type="button" id="google-register-btn" class="social-auth-btn flex items-center justify-center space-x-2.5 py-2.5 px-4 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold shadow-sm transition">
+                <svg class="w-4 h-4" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                </svg>
+                <span>Google</span>
+              </button>
+
+              <button type="button" id="apple-register-btn" class="social-auth-btn flex items-center justify-center space-x-2.5 py-2.5 px-4 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold shadow-sm transition">
+                <i class="fa-brands fa-apple text-base text-slate-900"></i>
+                <span>Apple</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast-notification-container" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none max-w-sm"></div>
+
+  <!-- Pure JavaScript Scripts -->
+  <script src="site.js"></script>
+  <script src="data.js"></script>
+  <script src="store.js"></script>
+  <script src="common.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

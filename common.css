@@ -1,0 +1,271 @@
+/* ==========================================================================
+   Royal Fleet Car Rental - Common Stylesheet (Shared Across All Pages)
+   Theme: Royal Blue (#1e3a8a / #1d4ed8) & Light Cream (#fdfbf7 / #faf6ec)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  /* Royal Blue Palette */
+  --royal-950: #0f172a;
+  --royal-900: #172554;
+  --royal-800: #1e3a8a;
+  --royal-700: #1d4ed8;
+  --royal-600: #2563eb;
+  --royal-500: #3b82f6;
+  --royal-400: #60a5fa;
+  --royal-100: #dbeafe;
+  --royal-50:  #eff6ff;
+
+  /* Light Cream Palette */
+  --cream-50:  #fdfbf7;
+  --cream-100: #faf6ec;
+  --cream-200: #f4ecdc;
+  --cream-300: #e8dbbf;
+  --cream-400: #d7c39e;
+  --cream-500: #c2aa7f;
+  --gold-accent: #d97706;
+  --gold-light: #fef3c7;
+
+  /* Surfaces & Text */
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-light: #94a3b8;
+  --bg-main: #fdfbf7;
+  --card-bg: #ffffff;
+  --border-cream: #eadecc;
+
+  --shadow-subtle: 0 4px 20px -2px rgba(23, 37, 84, 0.05);
+  --shadow-card: 0 10px 30px -4px rgba(23, 37, 84, 0.08), 0 4px 8px -2px rgba(23, 37, 84, 0.04);
+  --shadow-hover: 0 22px 45px -8px rgba(23, 37, 84, 0.22);
+  --shadow-royal: 0 12px 28px -5px rgba(29, 78, 216, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--cream-50);
+  color: var(--text-main);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Luxury Serif Accent */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-100);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--royal-600);
+}
+
+/* Gradients */
+.bg-royal-gradient {
+  background: linear-gradient(135deg, #172554 0%, #1e40af 55%, #1d4ed8 100%);
+}
+
+.bg-royal-card {
+  background: linear-gradient(145deg, #1e3a8a 0%, #172554 100%);
+}
+
+.bg-cream-hero {
+  background-color: var(--cream-50);
+}
+
+/* Sticky Navbar & Nav links */
+.nav-link {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 0;
+  height: 2.5px;
+  background: #1d4ed8;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #1d4ed8 !important;
+  font-weight: 700;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Logo Crown Rotate Hover */
+.logo-crown-box {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+a:hover .logo-crown-box {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+/* Buttons with Shimmer & Glow */
+.btn-royal-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(29, 78, 216, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-royal-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.32) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(28deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+
+.btn-royal-primary:hover {
+  background: linear-gradient(135deg, #172554 0%, #1e40af 100%);
+  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.48);
+  transform: translateY(-2px);
+}
+
+.btn-royal-primary:hover::after {
+  left: 140%;
+}
+
+.btn-royal-primary:active {
+  transform: translateY(0);
+}
+
+.btn-cream {
+  background: #faf6ec;
+  color: #1e3a8a;
+  border: 1.5px solid #e2d4bd;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cream:hover {
+  background: #f2e7d3;
+  color: #172554;
+  border-color: #cbbaa1;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.12);
+}
+
+.btn-ghost-royal {
+  color: #1e3a8a;
+  border: 1.5px solid #1e3a8a;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-ghost-royal:hover {
+  background: #1e3a8a;
+  color: #ffffff;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.25);
+}
+
+/* Badges */
+.badge-gold {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.badge-royal {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.badge-cream {
+  background: #faf6ec;
+  color: #78531d;
+  border: 1px solid #e8dbbf;
+}
+
+/* Modal Backdrops & Dialogs */
+.modal-backdrop {
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUpIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-delay-100 { animation-delay: 100ms; }
+.anim-delay-200 { animation-delay: 200ms; }
+.anim-delay-300 { animation-delay: 300ms; }
+.anim-delay-400 { animation-delay: 400ms; }

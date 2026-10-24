@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Plans & Pricing | RentNDrive Luxury Car Rentals</title>
+  <meta name="description" content="Transparent rental plans, protection packages and an interactive price calculator with zero hidden fees.">
+
+  <!-- Apply saved theme + direction BEFORE first paint (prevents flash) -->
+  <script>
+    (function () {
+      try {
+        var r = document.documentElement;
+        var t = localStorage.getItem("rnd-theme") ||
+          (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        r.setAttribute("data-theme", t);
+        r.setAttribute("dir", localStorage.getItem("rnd-dir") || "ltr");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="pricing.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="RentNDrive home">
+        <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+        <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+        <span class="brand-text">
+          <strong>RentNDrive</strong>
+          <span>Luxury Car Rentals</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-dropdown-toggle" aria-haspopup="true">
+            <span>Home</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home 1 - Classic</a>
+            <a href="home2.html"><i class="fa-solid fa-crown"></i> Home 2 - Prestige</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="fleet.html">Our Fleet</a>
+        <a href="how-it-works.html">Why Us</a>
+        <a href="pricing.html" class="active">Rental Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>        
+        
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">RTL</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary login-btn">
+          <i class="fa-regular fa-user"></i><span>Login</span>
+        </a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== PAGE HERO (Full Viewport Landing Hero) ===================== -->
+  <section class="pricing-hero" id="top">
+    <div class="pricing-hero-bg" aria-hidden="true">
+      <img src="hero-pricing.jpg" alt="Luxury car fleet">
+    </div>
+
+    <div class="container inner">
+      <div class="hero-badge">
+        <i class="fa-solid fa-shield-halved"></i> 100% Transparent · Zero Hidden Fees
+      </div>
+      <h1>Tailored Rental Plans for <em>Every Journey.</em></h1>
+      <p>From spontaneous day trips to monthly executive luxury flex, choose predictable all-inclusive pricing with tier savings and complimentary VIP perks.</p>
+      <div class="pricing-hero-actions">
+        <a href="#plans" class="btn btn-primary">Explore Rental Plans <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#calculator" class="btn btn-ghost"><i class="fa-solid fa-calculator"></i> Price Calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ===================== PLANS (Second Section on Scroll) ===================== -->
+    <section class="section" id="plans">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Flexible commitments</span>
+          <h2>Select Your Rental Plan</h2>
+          <p>Handcrafted terms designed for weekend escapes, roadtrips, and executive subscriptions.</p>
+        </div>
+
+        <div class="plans-grid">
+
+          <!-- Daily Explorer -->
+          <article class="plan-card reveal">
+            <div>
+              <div class="plan-media">
+                <img src="plan-daily.jpg" alt="Daily Explorer Luxury Sedan">
+              </div>
+              <div class="plan-top"><span class="plan-tag">Flexible</span><span class="plan-min">Min 1 Day</span></div>
+              <h3 class="plan-title">Daily Explorer</h3>
+              <p class="plan-sub">For spontaneous getaways, airport transfers & executive day meetings</p>
+              <div class="plan-rate">Standard Daily Rates</div>
+              <ul class="plan-features">
+                <li><i class="fa-solid fa-circle-check"></i><span>200 Free Miles Included per day</span></li>
+                <li><i class="fa-solid fa-circle-check"></i><span>Free Cancellation up to 24h prior</span></li>
+                <li><i class="fa-solid fa-circle-check"></i><span>Complimentary airport / valet pickup</span></li>
+                <li><i class="fa-solid fa-circle-check"></i><span>24/7 Concierge Hotline</span></li>
+              </ul>
+            </div>
+            <a href="fleet.html" class="btn btn-ghost btn-block">Select Daily Explorer</a>
+          </article>
+
+          <!-- Weekly Roadtripper -->
+          <article class="plan-card popular reveal">
+            <span class="plan-badge">Most Popular Choice</span>
+            <div>
+              <div class="plan-media">
+                <img src="plan-weekly.jpg" alt="Weekly Roadtripper SUV">
+              </div>
+              <div class="plan-top"><span class="plan-tag">Save 15%</span><span class="plan-min">Min 7 Days</span></div>
+              <h3 class="plan-title">Weekly Roadtripper</h3>
+              <p class="plan-sub">Unwind on coastal scenic drives & cross-state travel adventures</p>
+              <div class="plan-rate">15% OFF All Daily Vehicle Rates</div>
+              <ul class="plan-features">
+                <li><i class="fa-solid fa-circle-check"></i><span>1,500 Free Miles Included per week</span></li>
+                <li><i class="fa-solid fa-circle-check"></i><span>1 Free Additional Driver included ($70 value)</span></li>
+                <li><i class="fa-solid fa-circle-check"></i><span>Free Child Safety Seat on request</span></li>
+                <li><i class="fa-solid fa-circle-check"></i><span>Priority Vehicle Upgrade if available</span></li>
+              </ul>
+            </div>
+            <a href="fleet.html" class="btn btn-primary btn-block">Select Weekly Roadtripper</a>
+          </article>
+
+          <!-- Monthly Executive Flex -->
+          <article class="plan-card reveal">
+            <div>
+              <div class="plan-media">
+                <img src="plan-monthly.jpg" alt="Monthly Executive Flex EV">
+              </div>
+              <div class="plan-top"><span class="plan-tag">Save 30%</span><span class="plan-min">Min 30 Days</span></div>
+              <h3 class="plan-title">Monthly Executive Flex</h3>
+              <p class="plan-sub">Luxury car subscription without long-term bank lease commitments</p>
+              <div class="plan-rate">30% OFF All Daily Rates</div>
+              <ul class="plan-features">
+                <li><i class="fa-solid fa-circle-check"></i><span>Unlimited Mileage across contiguous states</span></li>
+                <li><i class="fa-solid fa-circle-check"></i><span>Complimentary Car Swap every 14 days</span></li>
+                <li><i class="fa-solid fa-circle-check"></i><span>Zero Security Deposit on Tier 1 status</span></li>
+                <li><i class="fa-solid fa-circle-check"></i><span>Dedicated VIP Account Concierge</span></li>
+              </ul>
+            </div>
+            <a href="fleet.html" class="btn btn-ghost btn-block">Select Monthly Executive Flex</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CALCULATOR ===================== -->
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="calculator reveal">
+          <div class="calc-head">
+            <div class="ico"><i class="fa-solid fa-calculator"></i></div>
+            <div>
+              <h3>Interactive Rental Price Estimator</h3>
+              <p>Customize your vehicle, trip duration, and coverage to see an itemized instant quote.</p>
+            </div>
+          </div>
+
+          <div class="calc-grid">
+            <!-- Controls -->
+            <div class="calc-controls">
+              <div>
+                <label class="field-label" for="calc-car-select">1. Select Vehicle</label>
+                <select id="calc-car-select" class="select"><!-- Populated by pricing.js --></select>
+              </div>
+
+              <div>
+                <div class="field-row">
+                  <label class="field-label" for="calc-days-range">2. Rental Duration</label>
+                  <span id="calc-days-label" class="days-pill">5 Days</span>
+                </div>
+                <input type="range" id="calc-days-range" min="1" max="30" value="5">
+                <div class="range-scale">
+                  <span>1 Day</span><span>7 Days (Save 15%)</span><span>14 Days</span><span>30 Days (Save 30%)</span>
+                </div>
+              </div>
+
+              <div>
+                <span class="field-label">3. Protection Package</span>
+                <label class="radio-card">
+                  <span class="left">
+                    <input type="radio" name="calc-insurance" value="basic" data-rate="0">
+                    <span><strong>Basic Protection</strong><small>$1,500 Deductible</small></span>
+                  </span>
+                  <span class="price free">Included</span>
+                </label>
+                <label class="radio-card">
+                  <span class="left">
+                    <input type="radio" name="calc-insurance" value="premium" data-rate="24" checked>
+                    <span><strong>Premium Shield</strong><small>$250 Deductible • Most Popular</small></span>
+                  </span>
+                  <span class="price">+$24/day</span>
+                </label>
+                <label class="radio-card">
+                  <span class="left">
+                    <input type="radio" name="calc-insurance" value="royal" data-rate="42">
+                    <span><strong>Royal Elite Peace-of-Mind</strong><small>$0 Deductible • Zero Liability</small></span>
+                  </span>
+                  <span class="price">+$42/day</span>
+                </label>
+              </div>
+
+              <div>
+                <span class="field-label">4. Optional Travel Add-ons</span>
+                <div class="addon-grid">
+                  <label class="addon"><input type="checkbox" name="calc-addon" value="gps" data-rate="7"><span><strong>Pre-loaded GPS</strong><small>+$7/day</small></span></label>
+                  <label class="addon"><input type="checkbox" name="calc-addon" value="child_seat" data-rate="12"><span><strong>Cybex Child Seat</strong><small>+$12/day</small></span></label>
+                  <label class="addon"><input type="checkbox" name="calc-addon" value="extra_driver" data-rate="10"><span><strong>Extra Driver</strong><small>+$10/day</small></span></label>
+                  <label class="addon"><input type="checkbox" name="calc-addon" value="wifi" data-rate="9"><span><strong>5G Wi-Fi Hotspot</strong><small>+$9/day</small></span></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live receipt -->
+            <div class="receipt">
+              <div>
+                <div class="receipt-head"><b>Live Itemized Estimate</b><span>USD Currency</span></div>
+
+                <div class="receipt-row"><span id="calc-car-name">Selected Car</span><span id="calc-base-subtotal" class="val">$0.00</span></div>
+                <div class="receipt-row discount hidden" id="calc-discount-row"><span>Duration Discount</span><span id="calc-discount-val" class="val">-$0.00</span></div>
+                <div class="receipt-row"><span>Protection Plan</span><span id="calc-insurance-subtotal" class="val">$0.00</span></div>
+                <div class="receipt-row"><span>Selected Add-ons</span><span id="calc-addons-subtotal" class="val">$0.00</span></div>
+                <div class="receipt-row"><span>Estimated State Taxes (8%)</span><span id="calc-tax-subtotal" class="val">$0.00</span></div>
+
+                <div class="receipt-total">
+                  <div><strong>Estimated Total</strong><small>Includes all taxes & standard fees</small></div>
+                  <div>
+                    <span id="calc-grand-total" class="amount">$0.00</span>
+                    <span id="calc-daily-average" class="avg">Avg. $0/day</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="receipt-foot">
+                <button type="button" id="calc-book-now-btn" class="btn btn-primary btn-block">
+                  <span>Reserve With These Specs</span>
+                  <i class="fa-solid fa-arrow-right flip"></i>
+                </button>
+                <span class="note">Refundable deposit authorized at pickup</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROTECTION PACKAGES ===================== -->
+    <section class="section" style="padding-bottom: clamp(64px, 8vw, 100px);">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Protection Packages</span>
+          <h2>Drive With Uncompromised Peace of Mind</h2>
+          <p>Transparent coverage levels tailored to every journey, with zero hidden deductibles.</p>
+        </div>
+
+        <div class="protect-grid">
+          <article class="protect-card reveal">
+            <div class="protect-top"><span>Standard</span><span>Free</span></div>
+            <h4>Basic Protection</h4>
+            <p class="ded">$1,500 Deductible</p>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i><span>Statutory Third-Party Liability</span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>Collision Damage Waiver ($1,500)</span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>Basic Breakdown Telephone Assist</span></li>
+            </ul>
+          </article>
+
+          <article class="protect-card popular reveal">
+            <div class="protect-top"><span>Most Popular</span><span>$24/day</span></div>
+            <h4>Premium Shield</h4>
+            <p class="ded">$250 Deductible</p>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i><span>Comprehensive Waiver ($250 excess)</span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>Tire, Glass & Windshield Included</span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>24/7 Priority Emergency Dispatch</span></li>
+            </ul>
+          </article>
+
+          <article class="protect-card reveal">
+            <div class="protect-top"><span>Zero Liability</span><span>$42/day</span></div>
+            <h4>Royal Elite Peace-of-Mind</h4>
+            <p class="ded">$0 Deductible</p>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i><span>100% Zero Deductible Liability</span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>Lost Key & Towing Included</span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>VIP Replacement Within 60 Min</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="pricing-cta-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="badge"><i class="fa-solid fa-shield-halved"></i> Bespoke VIP Packages</span>
+          <h2>Need a Tailored Plan for Your <em>Upcoming Journey?</em></h2>
+          <p>Whether you require extended corporate mobility, multi-city touring privileges, or curated private fleet access, our executive team crafts flexible terms tailored to your itinerary.</p>
+          <div class="cta-actions">
+            <a href="fleet.html" class="btn btn-white"><i class="fa-solid fa-car-side"></i> Browse All Cars <i class="fa-solid fa-arrow-right flip"></i></a>
+            <a href="contact.html" class="btn btn-outline-light"><i class="fa-solid fa-phone"></i> Consult Concierge</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand">
+  <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+  <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+  <span class="brand-text"><strong style="color:var(--footer-brand)">RentNDrive</strong><span>Luxury Car Rentals</span></span>
+</a>
+          <p>Premium self-drive cars for every journey. Comfort, freedom and a better way to travel.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="about.html">About Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html">Our Fleet</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="how-it-works.html">Why Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="pricing.html">Rental Plans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a></li>
+           
+          </ul>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Luxury Sedans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Premium SUVs</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Sport's Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Electric Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Convertibles</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Supercar's</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>Your business address</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li><i class="fa-regular fa-envelope"></i><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+            <li><i class="fa-regular fa-clock"></i><span>Daily support</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> <strong>RentNDrive</strong>. All rights reserved.</p>
+        <nav>
+          <a href="#top">Privacy Policy</a>
+          <a href="pricing.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Cookies &amp; Privacy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="site.js"></script>
+  <script src="pricing.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Off Route | RentNDrive Luxury Car Rentals</title>
+  <meta name="description" content="Looks like you've driven off the map. Navigate back to RentNDrive to explore our luxury car fleet.">
+
+  <!-- Apply saved theme + direction BEFORE first paint (prevents flash) -->
+  <script>
+    (function () {
+      try {
+        var r = document.documentElement;
+        var t = localStorage.getItem("rnd-theme") ||
+          (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        r.setAttribute("data-theme", t);
+        r.setAttribute("dir", localStorage.getItem("rnd-dir") || "ltr");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="404.css">
+</head>
+<body class="error-page-body">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header error-compact-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="RentNDrive home">
+        <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+        <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+        <span class="brand-text">
+          <strong>RentNDrive</strong>
+          <span>Luxury Car Rentals</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-dropdown-toggle" aria-haspopup="true">
+            <span>Home</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home 1 - Classic</a>
+            <a href="home2.html"><i class="fa-solid fa-crown"></i> Home 2 - Prestige</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="fleet.html">Our Fleet</a>
+        <a href="how-it-works.html">Why Us</a>
+        <a href="pricing.html">Rental Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">RTL</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary login-btn">
+          <i class="fa-regular fa-user"></i><span>Login</span>
+        </a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== ZERO-SCROLL 404 MAIN ===================== -->
+  <main class="error-main-viewport">
+    <div class="error-blob error-blob-1" aria-hidden="true"></div>
+    <div class="error-blob error-blob-2" aria-hidden="true"></div>
+
+    <div class="container error-container">
+      <!-- Speedometer 404 Visual -->
+      <div class="error-stage">
+        <div class="error-glitch-num" aria-label="404 Error Code">
+          <span class="num-digit">4</span>
+          <div class="error-speedo" title="Speedometer Radar">
+            <div class="speedo-dial"></div>
+            <div class="speedo-needle"></div>
+            <div class="speedo-hub"></div>
+            <span class="speedo-mph">000 MPH</span>
+          </div>
+          <span class="num-digit">4</span>
+        </div>
+      </div>
+
+      <!-- Animated Infinite Highway -->
+      <div class="error-road-wrap" aria-hidden="true">
+        <div class="error-road"></div>
+        <i class="fa-solid fa-car-side error-car"></i>
+      </div>
+
+      <!-- Error Messaging -->
+      <div class="error-badge">
+        <i class="fa-solid fa-triangle-exclamation"></i> Detour Alert · Route Not Found
+      </div>
+      <h1 class="error-title">You've Steered <em>Off the Map</em></h1>
+      <p class="error-desc">
+        The destination you are pursuing has taken an alternate turn. Let our GPS guide you back to the royal highway.
+      </p>
+
+      <!-- Main Actions -->
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary">
+          <i class="fa-solid fa-house"></i> Return Home
+        </a>
+        <a href="fleet.html" class="btn btn-outline">
+          <i class="fa-solid fa-car"></i> Browse Fleet
+        </a>
+        <button type="button" class="btn btn-outline" onclick="window.history.back()">
+          <i class="fa-solid fa-arrow-left"></i> Go Back
+        </button>
+      </div>
+
+      <!-- Helpful Shortcuts -->
+      <div class="error-shortcuts">
+        <a href="pricing.html" class="error-chip">
+          <i class="fa-solid fa-tag"></i>
+          <span>Rental Plans</span>
+        </a>
+        <a href="contact.html" class="error-chip">
+          <i class="fa-solid fa-headset"></i>
+          <span>24/7 Concierge</span>
+        </a>
+        <a href="dashboard.html" class="error-chip">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span>Admin Console</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Compact Micro Footer -->
+  <footer class="error-micro-footer">
+    <div class="container">
+      <span>© <span id="year"></span> <strong>RentNDrive</strong> · Royal Car Rentals</span>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="fleet.html">Fleet</a>
+        <a href="contact.html">Support</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

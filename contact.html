@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &amp; 24/7 Concierge | RentNDrive Luxury Car Rentals</title>
+  <meta name="description" content="Reach the RentNDrive VIP concierge, view airport and city hub locations, or send an instant booking inquiry.">
+
+  <!-- Apply saved theme + direction BEFORE first paint (prevents flash) -->
+  <script>
+    (function () {
+      try {
+        var r = document.documentElement;
+        var t = localStorage.getItem("rnd-theme") ||
+          (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        r.setAttribute("data-theme", t);
+        r.setAttribute("dir", localStorage.getItem("rnd-dir") || "ltr");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="RentNDrive home">
+        <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+        <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+        <span class="brand-text">
+          <strong>RentNDrive</strong>
+          <span>Luxury Car Rentals</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-dropdown-toggle" aria-haspopup="true">
+            <span>Home</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home 1 - Classic</a>
+            <a href="home2.html"><i class="fa-solid fa-crown"></i> Home 2 - Prestige</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="fleet.html">Our Fleet</a>
+        <a href="how-it-works.html">Why Us</a>
+        <a href="pricing.html">Rental Plans</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="dashboard.html">Dashboard</a>        
+        
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">RTL</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary login-btn">
+          <i class="fa-regular fa-user"></i><span>Login</span>
+        </a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO (Full Viewport Landing Hero) ===================== -->
+  <section class="contact-hero" id="top">
+    <div class="contact-hero-bg" aria-hidden="true">
+      <img src="hero-contact.jpg" alt="Customer Support and Luxury Rentals Concierge">
+    </div>
+
+    <div class="container inner">
+      <div class="hero-badge">
+        <i class="fa-solid fa-headset"></i> 24/7 Dedicated Concierge · VIP Response
+      </div>
+      <h1>We Are Here to Make Your Road <em>Unforgettable.</em></h1>
+      <p>Have a special request, airport dropoff query, or need immediate assistance? Our round-the-clock royal support team is ready to assist you in 45+ cities.</p>
+      <div class="contact-hero-actions">
+        <a href="#contact-details" class="btn btn-primary">Get in Touch <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="fleet.html" class="btn btn-ghost"><i class="fa-solid fa-car"></i> Explore Fleet</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ===================== SECOND SECTION (Starts on Scroll) ===================== -->
+    <section class="section" id="contact-details" style="padding-bottom: clamp(64px, 8vw, 100px);">
+      <div class="container">
+        
+        <div class="section-head reveal">
+          <span class="eyebrow">Connect with us</span>
+          <h2>Always at Your Service</h2>
+          <p>Choose the communication channel that suits you best or send our concierges an instant booking request.</p>
+        </div>
+
+        <!-- 3 Topic Cards with Images -->
+        <div class="contact-cards-grid">
+          <article class="contact-card reveal">
+            <div class="contact-card-media">
+              <img src="contact-roadside.jpg" alt="VIP Roadside Dispatch Hub">
+            </div>
+            <div class="contact-card-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <h3>24/7 Direct Hotline</h3>
+            <p>Immediate phone dispatch for active rentals, roadside assistance and booking adjustments.</p>
+            <a href="tel:+910000000000" class="card-value">+91 00000 00000</a>
+          </article>
+
+          <article class="contact-card reveal">
+            <div class="contact-card-media">
+              <img src="contact-concierge.jpg" alt="Luxury Executive Concierge Desk">
+            </div>
+            <div class="contact-card-icon"><i class="fa-regular fa-envelope"></i></div>
+            <h3>VIP Concierge Email</h3>
+            <p>Direct priority email support for corporate bookings, tailored quotes, and custom inquiries.</p>
+            <a href="mailto:info@yourdomain.com" class="card-value">info@yourdomain.com</a>
+          </article>
+
+          <article class="contact-card reveal">
+            <div class="contact-card-media">
+              <img src="contact-airport.jpg" alt="Airport Terminal Hub Pickup">
+            </div>
+            <div class="contact-card-icon"><i class="fa-solid fa-plane-departure"></i></div>
+            <h3>Airport & City Hubs</h3>
+            <p>Contactless smart digital lockers and terminal valet delivery at 45+ premier international hubs.</p>
+            <span class="card-value">Terminal VIP Lane 4</span>
+          </article>
+        </div>
+
+        <!-- Split Form & Location Details -->
+        <div class="contact-split">
+          <div class="contact-form-box reveal">
+            <h3>Send an Instant Inquiry</h3>
+            <p>Fill out the form below and an assigned concierge specialist will reply within 15 minutes.</p>
+            <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to our concierge.'); this.reset();">
+              <div class="contact-form-grid">
+                <div class="contact-field">
+                  <label for="cName">Full Name</label>
+                  <input type="text" id="cName" placeholder="Julian Vance" required>
+                </div>
+                <div class="contact-field">
+                  <label for="cEmail">Email Address</label>
+                  <input type="email" id="cEmail" placeholder="julian@example.com" required>
+                </div>
+                <div class="contact-field">
+                  <label for="cPhone">Phone Number</label>
+                  <input type="tel" id="cPhone" placeholder="+91 98765 43210">
+                </div>
+                <div class="contact-field">
+                  <label for="cInterest">Vehicle Category</label>
+                  <select id="cInterest">
+                    <option value="luxury">Luxury Sedans</option>
+                    <option value="suv">Adventure SUVs</option>
+                    <option value="electric">Electric &amp; EV</option>
+                    <option value="convertible">Convertibles</option>
+                    <option value="compact">Premium Compact</option>
+                  </select>
+                </div>
+                <div class="contact-field full">
+                  <label for="cMsg">Your Message or Booking Details</label>
+                  <textarea id="cMsg" placeholder="Tell us about your trip dates, preferred drop-off locations, or any VIP privileges requested..." required></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="margin-top: 10px; width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i> Send Concierge Inquiry
+              </button>
+            </form>
+          </div>
+
+          <div class="hubs-box reveal">
+            <h3>Key Flagship Hubs</h3>
+            <p>Visit or schedule private terminal delivery at any of our primary stations:</p>
+            <ul class="hub-list">
+              <li class="hub-item">
+                <i class="fa-solid fa-plane"></i>
+                <div>
+                  <strong>International Airport Hub (Terminal VIP)</strong>
+                  <span>Private valet zone, 24/7 keyless digital kiosk</span>
+                </div>
+              </li>
+              <li class="hub-item">
+                <i class="fa-solid fa-building-columns"></i>
+                <div>
+                  <strong>Financial District Station</strong>
+                  <span>Central city parking suite with fast DC fast chargers</span>
+                </div>
+              </li>
+              <li class="hub-item">
+                <i class="fa-solid fa-anchor"></i>
+                <div>
+                  <strong>Harbor Marina Hub</strong>
+                  <span>Waterfront collection point with complimentary wash &amp; detail</span>
+                </div>
+              </li>
+              <li class="hub-item">
+                <i class="fa-solid fa-hotel"></i>
+                <div>
+                  <strong>White-Glove Hotel Concierge</strong>
+                  <span>Direct doorstep delivery to all partner 5-star hotel suites</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="contact-cta-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="badge"><i class="fa-solid fa-sparkles"></i> 24/7 Dedicated Support</span>
+          <h2>Ready to Experience Genuine <em>Royal Service?</em></h2>
+          <p>Our concierge desks are active 24 hours a day across 45+ locations. Speak directly with a reservations specialist or reserve your vehicle online with immediate instant confirmation.</p>
+          <div class="cta-actions">
+            <a href="fleet.html" class="btn btn-white"><i class="fa-solid fa-car-side"></i> Explore All Cars <i class="fa-solid fa-arrow-right flip"></i></a>
+            <a href="pricing.html" class="btn btn-outline-light"><i class="fa-solid fa-receipt"></i> View Rental Plans</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand">
+  <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+  <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+  <span class="brand-text"><strong style="color:var(--footer-brand)">RentNDrive</strong><span>Luxury Car Rentals</span></span>
+</a>
+          <p>Premium self-drive cars for every journey. Comfort, freedom and a better way to travel.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="about.html">About Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html">Our Fleet</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="how-it-works.html">Why Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="pricing.html">Rental Plans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a></li>
+           
+          </ul>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Luxury Sedans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Premium SUVs</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Sport's Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Electric Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Convertibles</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Supercar's</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>Your business address</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li><i class="fa-regular fa-envelope"></i><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+            <li><i class="fa-regular fa-clock"></i><span>Daily support</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> <strong>RentNDrive</strong>. All rights reserved.</p>
+        <nav>
+          <a href="#top">Privacy Policy</a>
+          <a href="pricing.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Cookies &amp; Privacy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="site.js"></script>
+</body>
+</html>
