@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="titlelogo.png">
+  <title>The Fleet | RentNDrive Luxury Car Rentals</title>
+  <meta name="description" content="Browse our handpicked fleet of luxury sedans, adventure SUVs, electric vehicles and convertibles.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="fleet.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="RentNDrive home">
+        <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+        <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+        <span class="brand-text">
+          <strong>RentNDrive</strong>
+          <span>Luxury Car Rentals</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-dropdown-toggle" aria-haspopup="true">
+            <span>Home</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home 1 - Classic</a>
+            <a href="home2.html"><i class="fa-solid fa-crown"></i> Home 2 - Prestige</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="fleet.html" class="active">Our Fleet</a>
+        <a href="how-it-works.html">Why Us</a>
+        <a href="pricing.html">Rental Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>        
+        
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">RTL</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary login-btn">
+          <i class="fa-regular fa-user"></i><span>Login</span>
+        </a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= FLEET HERO (title + filters) ================= -->
+  <section class="fleet-hero" id="top">
+    <div class="fleet-hero-bg" aria-hidden="true">
+      <img src="hero-fleet.jpg" alt="RentNDrive Luxury Fleet Collection">
+    </div>
+    <div class="container fleet-hero-inner">
+
+      <div class="page-hero-text">
+        <div class="hero-badge"><i class="fa-solid fa-crown"></i> Curated Luxury &middot; Complete Catalog</div>
+        <h1>Royal Fleet by Vehicle Type</h1>
+        <p>Explore our premium selection. Filter by category, powertrain, transmission and daily rate to find your ideal ride.</p>
+      </div>
+
+      <div class="filter-toolbar">
+        <div class="fleet-cats no-scrollbar" role="tablist">
+          <button class="fleet-cat-btn active" data-cat="all" type="button"><i class="fa-solid fa-car"></i> All Vehicles (12)</button>
+          <button class="fleet-cat-btn" data-cat="luxury" type="button"><i class="fa-solid fa-crown"></i> Luxury Sedans (2)</button>
+          <button class="fleet-cat-btn" data-cat="suv" type="button"><i class="fa-solid fa-mountain-sun"></i> Adventure SUVs (3)</button>
+          <button class="fleet-cat-btn" data-cat="electric" type="button"><i class="fa-solid fa-bolt"></i> Electric &amp; EV (3)</button>
+          <button class="fleet-cat-btn" data-cat="convertible" type="button"><i class="fa-solid fa-wind"></i> Convertibles (2)</button>
+          <button class="fleet-cat-btn" data-cat="compact" type="button"><i class="fa-solid fa-gauge-high"></i> Premium Compact (2)</button>
+        </div>
+
+        <div class="filter-grid">
+          <div class="filter-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="fleetSearch" placeholder="Search make, model or amenity (e.g. Porsche, Burmester)...">
+          </div>
+
+          <select id="fleetTransmission" class="filter-select">
+            <option value="all">Transmission: All</option>
+            <option value="Automatic">Automatic / PDK</option>
+            <option value="Single-Speed">Single-Speed EV</option>
+          </select>
+
+          <select id="fleetFuel" class="filter-select">
+            <option value="all">Powertrain: All</option>
+            <option value="Electric">100% Electric</option>
+            <option value="Petrol">Twin-Turbo Petrol</option>
+          </select>
+
+          <select id="fleetSort" class="filter-select">
+            <option value="recommended">Sort: Recommended</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+
+        <div class="filter-footer">
+          <div class="price-filter">
+            <span>Max daily rate:</span>
+            <input type="range" id="fleetPrice" min="70" max="350" step="5" value="350">
+            <span id="fleetPriceLabel" class="price-badge">$350/day</span>
+          </div>
+
+          <button id="fleetReset" class="reset-btn" type="button">
+            <i class="fa-solid fa-rotate-left"></i> Reset all filters
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= VEHICLE RESULTS ================= -->
+  <main class="fleet-main">
+    <div class="container">
+
+      <div class="results-count">
+        Showing <strong id="resultCount">12</strong> <span id="resultWord">vehicles</span> ready for booking
+      </div>
+
+      <div class="fleet-cards" id="fleetGrid">
+
+        <!-- 1 -->
+        <article class="car-card" data-id="1" data-category="luxury" data-transmission="Automatic" data-fuel="Petrol" data-price="185" data-rating="4.96" data-reviews="48" data-name="Mercedes-Benz S-Class 580" data-brand="Mercedes-Benz" data-badge="Luxury Sedan" data-tag="Executive Choice" data-gearbox="Automatic" data-economy="24 MPG" data-seats="5" data-bags="3">
+          <div class="car-media">
+            <img src="fleet-mercedes-s580.jpg" alt="Mercedes-Benz S-Class 580" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-car-side"></i></div>
+            <div class="badge-row">
+              <span class="badge">Luxury Sedan</span>
+              <span class="badge tag">★ Executive Choice</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Mercedes-Benz</span><span class="rating"><i class="fa-solid fa-star"></i> 4.96 (48)</span></div>
+            <h3>Mercedes-Benz S-Class 580</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>Automatic</span>
+              <span><i class="fa-solid fa-gas-pump"></i>24 MPG</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>3 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$185<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=1">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=1">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="car-card" data-id="2" data-category="suv" data-transmission="Automatic" data-fuel="Petrol" data-price="195" data-rating="4.98" data-reviews="62" data-name="Porsche Cayenne GTS" data-brand="Porsche" data-badge="Adventure SUV" data-tag="Best Seller" data-gearbox="PDK" data-economy="19 MPG" data-seats="5" data-bags="4">
+          <div class="car-media">
+            <img src="fleet-porsche-cayenne.jpg" alt="Porsche Cayenne GTS" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-mountain-sun"></i></div>
+            <div class="badge-row">
+              <span class="badge">Adventure SUV</span>
+              <span class="badge tag">★ Best Seller</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Porsche</span><span class="rating"><i class="fa-solid fa-star"></i> 4.98 (62)</span></div>
+            <h3>Porsche Cayenne GTS</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>PDK</span>
+              <span><i class="fa-solid fa-gas-pump"></i>19 MPG</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>4 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$195<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=2">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=2">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="car-card" data-id="3" data-category="electric" data-transmission="Single-Speed" data-fuel="Electric" data-price="165" data-rating="4.94" data-reviews="89" data-name="Tesla Model S Plaid" data-brand="Tesla" data-badge="Electric &amp; Hybrid" data-tag="Zero Emission" data-gearbox="Single-Speed" data-economy="396 Miles Range" data-seats="5" data-bags="4">
+          <div class="car-media">
+            <img src="fleet-tesla-plaid.jpg" alt="Tesla Model S Plaid" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-bolt"></i></div>
+            <div class="badge-row">
+              <span class="badge">Electric &amp; Hybrid</span>
+              <span class="badge tag">★ Zero Emission</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Tesla</span><span class="rating"><i class="fa-solid fa-star"></i> 4.94 (89)</span></div>
+            <h3>Tesla Model S Plaid</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>Single-Speed</span>
+              <span><i class="fa-solid fa-gas-pump"></i>396 Miles Range</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>4 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$165<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=3">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=3">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="car-card" data-id="4" data-category="convertible" data-transmission="Automatic" data-fuel="Petrol" data-price="280" data-rating="4.99" data-reviews="34" data-name="Porsche 911 Carrera Cabriolet" data-brand="Porsche" data-badge="Convertible Exotics" data-tag="Iconic Roadster" data-gearbox="8-Speed" data-economy="21 MPG" data-seats="4" data-bags="2">
+          <div class="car-media">
+            <img src="fleet-porsche-911cab.jpg" alt="Porsche 911 Carrera Cabriolet" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-wind"></i></div>
+            <div class="badge-row">
+              <span class="badge">Convertible Exotics</span>
+              <span class="badge tag">★ Iconic Roadster</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Porsche</span><span class="rating"><i class="fa-solid fa-star"></i> 4.99 (34)</span></div>
+            <h3>Porsche 911 Carrera Cabriolet</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>4 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>8-Speed</span>
+              <span><i class="fa-solid fa-gas-pump"></i>21 MPG</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>2 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$280<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=4">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=4">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="car-card" data-id="5" data-category="luxury" data-transmission="Automatic" data-fuel="Petrol" data-price="175" data-rating="4.92" data-reviews="41" data-name="BMW 7-Series 740i M-Sport" data-brand="BMW" data-badge="Luxury Sedan" data-tag="" data-gearbox="Steptronic" data-economy="28 MPG" data-seats="5" data-bags="3">
+          <div class="car-media">
+            <img src="fleet-bmw-740i.jpg" alt="BMW 7-Series 740i M-Sport" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-car-side"></i></div>
+            <div class="badge-row">
+              <span class="badge">Luxury Sedan</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>BMW</span><span class="rating"><i class="fa-solid fa-star"></i> 4.92 (41)</span></div>
+            <h3>BMW 7-Series 740i M-Sport</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>Steptronic</span>
+              <span><i class="fa-solid fa-gas-pump"></i>28 MPG</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>3 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$175<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=5">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=5">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="car-card" data-id="6" data-category="suv" data-transmission="Automatic" data-fuel="Petrol" data-price="240" data-rating="4.97" data-reviews="53" data-name="Range Rover Autobiography" data-brand="Land Rover" data-badge="Adventure SUV" data-tag="Royal Flagship" data-gearbox="8-Speed" data-economy="18 MPG" data-seats="5" data-bags="5">
+          <div class="car-media">
+            <img src="fleet-rangerover.jpg" alt="Range Rover Autobiography" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-mountain-sun"></i></div>
+            <div class="badge-row">
+              <span class="badge">Adventure SUV</span>
+              <span class="badge tag">★ Royal Flagship</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Land Rover</span><span class="rating"><i class="fa-solid fa-star"></i> 4.97 (53)</span></div>
+            <h3>Range Rover Autobiography</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>8-Speed</span>
+              <span><i class="fa-solid fa-gas-pump"></i>18 MPG</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>5 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$240<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=6">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=6">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="car-card" data-id="7" data-category="electric" data-transmission="Single-Speed" data-fuel="Electric" data-price="205" data-rating="4.95" data-reviews="29" data-name="Porsche Taycan 4S Cross Turismo" data-brand="Porsche" data-badge="Electric &amp; Hybrid" data-tag="" data-gearbox="2-Speed" data-economy="285 Miles Range" data-seats="5" data-bags="3">
+          <div class="car-media">
+            <img src="fleet-taycan.jpg" alt="Porsche Taycan 4S Cross Turismo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-bolt"></i></div>
+            <div class="badge-row">
+              <span class="badge">Electric &amp; Hybrid</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Porsche</span><span class="rating"><i class="fa-solid fa-star"></i> 4.95 (29)</span></div>
+            <h3>Porsche Taycan 4S Cross Turismo</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>2-Speed</span>
+              <span><i class="fa-solid fa-gas-pump"></i>285 Miles Range</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>3 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$205<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=7">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=7">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="car-card" data-id="8" data-category="suv" data-transmission="Automatic" data-fuel="Petrol" data-price="215" data-rating="4.91" data-reviews="76" data-name="Cadillac Escalade Sport ESV" data-brand="Cadillac" data-badge="Adventure SUV" data-tag="7-Passenger VIP" data-gearbox="10-Speed" data-economy="16 MPG" data-seats="7" data-bags="6">
+          <div class="car-media">
+            <img src="fleet-escalade.jpg" alt="Cadillac Escalade Sport ESV" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-mountain-sun"></i></div>
+            <div class="badge-row">
+              <span class="badge">Adventure SUV</span>
+              <span class="badge tag">★ 7-Passenger VIP</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Cadillac</span><span class="rating"><i class="fa-solid fa-star"></i> 4.91 (76)</span></div>
+            <h3>Cadillac Escalade Sport ESV</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>7 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>10-Speed</span>
+              <span><i class="fa-solid fa-gas-pump"></i>16 MPG</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>6 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$215<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=8">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=8">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9 -->
+        <article class="car-card" data-id="9" data-category="convertible" data-transmission="Automatic" data-fuel="Petrol" data-price="235" data-rating="4.96" data-reviews="38" data-name="BMW M4 Competition Convertible" data-brand="BMW" data-badge="Convertible Exotics" data-tag="" data-gearbox="8-Speed" data-economy="22 MPG" data-seats="4" data-bags="2">
+          <div class="car-media">
+            <img src="fleet-bmw-m4.jpg" alt="BMW M4 Competition Convertible" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-wind"></i></div>
+            <div class="badge-row">
+              <span class="badge">Convertible Exotics</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>BMW</span><span class="rating"><i class="fa-solid fa-star"></i> 4.96 (38)</span></div>
+            <h3>BMW M4 Competition Convertible</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>4 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>8-Speed</span>
+              <span><i class="fa-solid fa-gas-pump"></i>22 MPG</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>2 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$235<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=9">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=9">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="car-card" data-id="10" data-category="compact" data-transmission="Automatic" data-fuel="Petrol" data-price="89" data-rating="4.88" data-reviews="112" data-name="Mercedes-Benz C300 AMG Line" data-brand="Mercedes-Benz" data-badge="Economy &amp; Compact" data-tag="Smart Travel" data-gearbox="9G-TRONIC" data-economy="35 MPG" data-seats="5" data-bags="2">
+          <div class="car-media">
+            <img src="fleet-mercedes-c300.jpg" alt="Mercedes-Benz C300 AMG Line" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-gauge-high"></i></div>
+            <div class="badge-row">
+              <span class="badge">Economy &amp; Compact</span>
+              <span class="badge tag">★ Smart Travel</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Mercedes-Benz</span><span class="rating"><i class="fa-solid fa-star"></i> 4.88 (112)</span></div>
+            <h3>Mercedes-Benz C300 AMG Line</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>9G-TRONIC</span>
+              <span><i class="fa-solid fa-gas-pump"></i>35 MPG</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>2 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$89<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=10">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=10">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11 -->
+        <article class="car-card" data-id="11" data-category="compact" data-transmission="Automatic" data-fuel="Petrol" data-price="82" data-rating="4.85" data-reviews="94" data-name="Audi A4 45 TFSI S-Line" data-brand="Audi" data-badge="Economy &amp; Compact" data-tag="" data-gearbox="7-Speed" data-economy="32 MPG" data-seats="5" data-bags="2">
+          <div class="car-media">
+            <img src="fleet-audi-a4.jpg" alt="Audi A4 45 TFSI S-Line" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-gauge-high"></i></div>
+            <div class="badge-row">
+              <span class="badge">Economy &amp; Compact</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Audi</span><span class="rating"><i class="fa-solid fa-star"></i> 4.85 (94)</span></div>
+            <h3>Audi A4 45 TFSI S-Line</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>7-Speed</span>
+              <span><i class="fa-solid fa-gas-pump"></i>32 MPG</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>2 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$82<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=11">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=11">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12 -->
+        <article class="car-card" data-id="12" data-category="electric" data-transmission="Single-Speed" data-fuel="Electric" data-price="170" data-rating="4.93" data-reviews="37" data-name="Mercedes-Benz EQS 450+ Sedan" data-brand="Mercedes-Benz" data-badge="Electric &amp; Hybrid" data-tag="" data-gearbox="Single-Speed" data-economy="410 Miles Range" data-seats="5" data-bags="3">
+          <div class="car-media">
+            <img src="fleet-mercedes-eqs.jpg" alt="Mercedes-Benz EQS 450+ Sedan" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <div class="placeholder-icon" style="display:none;"><i class="fa-solid fa-bolt"></i></div>
+            <div class="badge-row">
+              <span class="badge">Electric &amp; Hybrid</span>
+            </div>
+          </div>
+          <div class="car-body">
+            <div class="car-meta"><span>Mercedes-Benz</span><span class="rating"><i class="fa-solid fa-star"></i> 4.93 (37)</span></div>
+            <h3>Mercedes-Benz EQS 450+ Sedan</h3>
+            <div class="specs">
+              <span><i class="fa-solid fa-user-group"></i>5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i>Single-Speed</span>
+              <span><i class="fa-solid fa-gas-pump"></i>410 Miles Range</span>
+              <span><i class="fa-solid fa-suitcase-rolling"></i>3 Bags</span>
+            </div>
+          </div>
+          <div class="car-foot">
+            <div class="price"><small>Daily rate</small><strong>$170<span> /day</span></strong></div>
+            <div class="car-foot-actions">
+              <a class="btn btn-view-details" href="car-details.html?car=12">View Details</a>
+              <a class="btn btn-primary" href="login.html?car=12">Book Now <i class="fa-solid fa-arrow-right flip"></i></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="empty-state" id="fleetEmpty" hidden>
+        <div class="empty-icon"><i class="fa-solid fa-car-burst"></i></div>
+        <h3>No vehicles match your criteria</h3>
+        <p>Try adjusting your filters or price slider to see more options.</p>
+        <button class="btn btn-primary" id="fleetEmptyReset" type="button">
+          <i class="fa-solid fa-rotate-left"></i> Reset filters
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="fleet-section fleet-steps">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Simple process</span>
+        <h2>Book your ride in 3 easy steps</h2>
+        <p>From browsing to driving away, we keep everything quick and transparent.</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <span class="step-num">01</span>
+          <div class="step-icon"><i class="fa-solid fa-car-side"></i></div>
+          <h3>Choose your car</h3>
+          <p>Browse the fleet, filter by type, powertrain and budget, then pick the car that fits your trip.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-num">02</span>
+          <div class="step-icon"><i class="fa-regular fa-calendar-check"></i></div>
+          <h3>Select dates &amp; confirm</h3>
+          <p>Pick your pickup and return dates, verify your documents and confirm your booking online.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-num">03</span>
+          <div class="step-icon"><i class="fa-solid fa-key"></i></div>
+          <h3>Pick up &amp; drive</h3>
+          <p>Collect your keys, do a quick walk-around and enjoy the road with 24/7 support behind you.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EVERY RENTAL INCLUDES ================= -->
+  <section class="fleet-section fleet-included">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">No hidden surprises</span>
+        <h2>Every rental includes</h2>
+        <p>Premium service comes standard, whichever vehicle you choose.</p>
+      </div>
+
+      <div class="included-grid">
+        <div class="included-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div><h4>Full insurance cover</h4><p>Comprehensive protection on every trip.</p></div>
+        </div>
+        <div class="included-item">
+          <i class="fa-solid fa-headset"></i>
+          <div><h4>24/7 roadside support</h4><p>Help is always one call away.</p></div>
+        </div>
+        <div class="included-item">
+          <i class="fa-solid fa-spray-can-sparkles"></i>
+          <div><h4>Sanitised &amp; detailed</h4><p>Delivered spotless and ready to drive.</p></div>
+        </div>
+        <div class="included-item">
+          <i class="fa-solid fa-tag"></i>
+          <div><h4>Transparent pricing</h4><p>The rate you see is the rate you pay.</p></div>
+        </div>
+        <div class="included-item">
+          <i class="fa-solid fa-calendar-xmark"></i>
+          <div><h4>Free cancellation</h4><p>Flexible changes up to 48 hours before pickup.</p></div>
+        </div>
+        <div class="included-item">
+          <i class="fa-solid fa-gas-pump"></i>
+          <div><h4>Full tank / full charge</h4><p>Start every journey with zero worries.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="fleet-cta">
+    <div class="container">
+      <div class="fleet-cta-split reveal">
+        <div class="fleet-cta-left">
+          <div class="fleet-cta-media">
+            <img src="fleet-cta-car.jpg" alt="RentNDrive Exotic Supercar Runway Showcase">
+            <div class="fleet-cta-pill">
+              <i class="fa-solid fa-gauge-high"></i>
+              <span>Instant Keyless Delivery &middot; 0-60 in 2.8s</span>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-cta-right">
+          <span class="fleet-cta-badge"><i class="fa-solid fa-gauge-high"></i> High-Performance Lineup</span>
+          <h2>Drive the <em>Extraordinary.</em></h2>
+          <p>Bespoke luxury rentals with zero hidden fees and instant keyless access. Choose from our pristine lineup of high-performance exotics and luxury SUVs.</p>
+          <div class="fleet-cta-actions">
+            <a href="pricing.html" class="btn btn-primary"><i class="fa-solid fa-receipt"></i> View Rental Plans <i class="fa-solid fa-arrow-right flip"></i></a>
+            <a href="contact.html" class="btn-gold"><i class="fa-solid fa-phone"></i> Talk to Concierge</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand">
+  <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+  <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+  <span class="brand-text"><strong style="color:var(--footer-brand)">RentNDrive</strong><span>Luxury Car Rentals</span></span>
+</a>
+          <p>Premium self-drive cars for every journey. Comfort, freedom and a better way to travel.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="about.html">About Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html">Our Fleet</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="how-it-works.html">Why Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="pricing.html">Rental Plans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a></li>
+           
+          </ul>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Luxury Sedans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Premium SUVs</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Sport's Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Electric Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Convertibles</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Supercar's</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>Your business address</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li><i class="fa-regular fa-envelope"></i><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+            <li><i class="fa-regular fa-clock"></i><span>Daily support</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> <strong>RentNDrive</strong>. All rights reserved.</p>
+        <nav>
+          <a href="#top">Privacy Policy</a>
+          <a href="pricing.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Cookies &amp; Privacy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ================= QUICK VIEW MODAL ================= -->
+  <div class="qv-overlay" id="quickView" aria-hidden="true">
+    <div class="qv-card" role="dialog" aria-modal="true" aria-labelledby="qvName">
+      <button class="qv-close" id="qvClose" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <span class="eyebrow" id="qvBrand"></span>
+      <h3 id="qvName"></h3>
+      <ul class="qv-list">
+        <li><i class="fa-solid fa-user-group"></i><span id="qvSeats"></span></li>
+        <li><i class="fa-solid fa-gears"></i><span id="qvGearbox"></span></li>
+        <li><i class="fa-solid fa-gas-pump"></i><span id="qvEconomy"></span></li>
+        <li><i class="fa-solid fa-suitcase-rolling"></i><span id="qvBags"></span></li>
+        <li><i class="fa-solid fa-star"></i><span id="qvRating"></span></li>
+        <li><i class="fa-solid fa-bolt"></i><span id="qvFuel"></span></li>
+      </ul>
+      <div class="qv-foot">
+        <strong><span id="qvPrice"></span><span class="unit"> /day</span></strong>
+        <a class="btn btn-primary" id="qvBook" href="login.html">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="site.js"></script>
+  <script src="fleet.js"></script>
+</body>
+</html>
+

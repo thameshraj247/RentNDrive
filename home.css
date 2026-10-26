@@ -96,8 +96,35 @@
       background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
       color: var(--btn-text);
       box-shadow: 0 10px 26px -8px rgba(29, 78, 216, .55);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .btn-primary:hover { box-shadow: 0 16px 34px -8px rgba(29, 78, 216, .65); }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 36px -8px rgba(29, 78, 216, .75);
+    }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 26px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f59e0b, #fbbf24) !important;
+      color: #0f172a !important;
+      font-weight: 800;
+      font-size: 13px;
+      border: none !important;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 12px 28px -8px rgba(251, 191, 36, 0.55) !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .btn-gold:hover {
+      transform: translateY(-3px) scale(1.02) !important;
+      box-shadow: 0 16px 36px -8px rgba(251, 191, 36, 0.7) !important;
+      color: #020617 !important;
+    }
     .btn-ghost { background: var(--surface); border-color: var(--border); color: var(--text); }
     .btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
     .btn-white { background: #fff; color: #0f1d38; }
@@ -983,10 +1010,24 @@ section:not(.hero) {
     html[data-theme="dark"] .hiw-cta-box,
     html[data-theme="dark"] .p-cta-card {
       background:
-        linear-gradient(135deg, rgba(6, 14, 30, 0.84) 0%, rgba(12, 28, 64, 0.76) 50%, rgba(26, 68, 184, 0.70) 100%),
+        radial-gradient(ellipse 80% 60% at 88% 12%, rgba(251, 191, 36, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 50% at 12% 88%, rgba(29, 78, 216, 0.22) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(3, 7, 18, 0.90) 0%, rgba(8, 17, 36, 0.84) 50%, rgba(13, 30, 61, 0.80) 100%),
         url("cta-bg.png") center 48% / cover no-repeat;
-      border-color: rgba(251, 191, 36, 0.5);
-      box-shadow: 0 36px 80px -20px rgba(0, 0, 0, 0.85);
+      border-color: rgba(251, 191, 36, 0.6);
+      box-shadow:
+        0 36px 85px -20px rgba(0, 0, 0, 0.92),
+        0 0 0 1px rgba(251, 191, 36, 0.2) inset;
+    }
+    html[data-theme="dark"] .cta:hover,
+    html[data-theme="dark"] .cta-box:hover,
+    html[data-theme="dark"] .hiw-cta-box:hover,
+    html[data-theme="dark"] .p-cta-card:hover {
+      border-color: #fbbf24;
+      box-shadow:
+        0 44px 95px -16px rgba(0, 0, 0, 0.96),
+        0 0 36px rgba(251, 191, 36, 0.32),
+        0 0 0 1px rgba(251, 191, 36, 0.5) inset;
     }
     .cta::before,
     .cta-box::before,
@@ -1583,3 +1624,425 @@ section, header, footer, main { scroll-snap-align: none !important; }
     .btn-white:hover {
       box-shadow: 0 12px 28px -6px rgba(255, 255, 255, 0.4);
     }
+
+/* ==========================================================================
+   Hero Badge Consistency Across All Hero Banners
+   ========================================================================== */
+.hero-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 10px 24px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(251, 191, 36, 0.85) !important;
+  box-shadow: 0 10px 28px -6px rgba(251, 191, 36, 0.4), 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  color: #854d0e !important;
+  margin: 0 auto 20px auto !important;
+  text-transform: uppercase !important;
+}
+.hero-badge i {
+  color: #f59e0b !important;
+  font-size: 14px !important;
+}
+html[data-theme="dark"] .hero-badge {
+  background: rgba(11, 21, 40, 0.92) !important;
+  border-color: #fbbf24 !important;
+  color: #fbbf24 !important;
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.7), 0 0 16px rgba(251, 191, 36, 0.25) !important;
+}
+html[data-theme="dark"] .hero-badge i {
+  color: #fbbf24 !important;
+}
+
+/* ==========================================================================
+   Shared Alternating Split CTA Engine (All Pages)
+   ========================================================================== */
+.cta-split {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  background:
+    radial-gradient(ellipse 80% 60% at 90% 10%, rgba(251, 191, 36, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 10% 90%, rgba(37, 99, 235, 0.28) 0%, transparent 60%),
+    linear-gradient(135deg, #091326 0%, #112349 52%, #17336d 100%);
+  border: 1.5px solid rgba(251, 191, 36, 0.5);
+  border-radius: 36px;
+  padding: clamp(38px, 5.2vw, 68px);
+  box-shadow:
+    0 32px 70px -18px rgba(15, 23, 42, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Image on Left variant */
+.cta-split.image-left {
+  grid-template-columns: 0.88fr 1.12fr;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 10%, rgba(251, 191, 36, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 90% 90%, rgba(37, 99, 235, 0.28) 0%, transparent 60%),
+    linear-gradient(135deg, #091326 0%, #112349 52%, #17336d 100%);
+}
+
+.cta-split:hover {
+  transform: translateY(-4px);
+  border-color: rgba(251, 191, 36, 0.85);
+  box-shadow:
+    0 40px 90px -16px rgba(29, 78, 216, 0.55),
+    0 0 32px rgba(251, 191, 36, 0.24),
+    0 0 0 1px rgba(251, 191, 36, 0.4) inset;
+}
+
+.cta-split::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.26), transparent 70%);
+  pointer-events: none;
+}
+.cta-split::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.28), transparent 70%);
+  pointer-events: none;
+}
+
+.cta-split-content {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+[dir="rtl"] .cta-split-content {
+  text-align: right;
+}
+
+.cta-split-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid rgba(251, 191, 36, 0.85);
+  color: #854d0e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px -4px rgba(251, 191, 36, 0.45);
+}
+.cta-split-badge i {
+  color: #f59e0b;
+}
+
+.cta-split-content h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.18;
+  color: #ffffff;
+  margin-bottom: 14px;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.6);
+}
+
+.cta-split-content h2 em {
+  font-style: italic;
+  color: #fbbf24;
+  background: linear-gradient(135deg, #fbbf24 0%, #fef08a 45%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+}
+
+.cta-split-content p {
+  color: #e2e8f0;
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.65;
+  margin-bottom: 28px;
+  max-width: 580px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.cta-split-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.cta-split-media {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1.5px solid rgba(251, 191, 36, 0.5);
+  box-shadow:
+    0 24px 50px -10px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(251, 191, 36, 0.15);
+  background: #0f1b33;
+}
+
+.cta-split-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.cta-split:hover .cta-split-media img {
+  transform: scale(1.06);
+}
+
+.cta-split-pill {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(11, 21, 40, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(251, 191, 36, 0.65);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+.cta-split-pill i {
+  color: #fbbf24;
+}
+
+/* ==========================================================================
+   Dark Mode Adaptation for CTA Split (Deep Obsidian Velvet Luxury)
+   ========================================================================== */
+html[data-theme="dark"] .cta-split {
+  background:
+    radial-gradient(ellipse 80% 60% at 88% 12%, rgba(251, 191, 36, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 12% 88%, rgba(29, 78, 216, 0.22) 0%, transparent 60%),
+    linear-gradient(135deg, #030712 0%, #081124 50%, #0d1e3d 100%);
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow:
+    0 36px 85px -20px rgba(0, 0, 0, 0.92),
+    0 0 0 1px rgba(251, 191, 36, 0.2) inset;
+}
+html[data-theme="dark"] .cta-split.image-left {
+  background:
+    radial-gradient(ellipse 80% 60% at 12% 12%, rgba(251, 191, 36, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 88% 88%, rgba(29, 78, 216, 0.22) 0%, transparent 60%),
+    linear-gradient(135deg, #030712 0%, #081124 50%, #0d1e3d 100%);
+}
+html[data-theme="dark"] .cta-split:hover {
+  border-color: #fbbf24;
+  box-shadow:
+    0 44px 95px -16px rgba(0, 0, 0, 0.96),
+    0 0 36px rgba(251, 191, 36, 0.32),
+    0 0 0 1px rgba(251, 191, 36, 0.5) inset;
+}
+html[data-theme="dark"] .cta-split-badge {
+  background: rgba(11, 21, 40, 0.95);
+  color: #fbbf24;
+  border-color: #fbbf24;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7), 0 0 16px rgba(251, 191, 36, 0.3);
+}
+html[data-theme="dark"] .cta-split-media {
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow:
+    0 26px 55px -10px rgba(0, 0, 0, 0.85),
+    0 0 24px rgba(251, 191, 36, 0.22);
+}
+html[data-theme="dark"] .cta-split-pill {
+  background: rgba(3, 7, 18, 0.92);
+  border-color: rgba(251, 191, 36, 0.75);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7), 0 0 14px rgba(251, 191, 36, 0.2);
+}
+
+@media (max-width: 900px) {
+  .cta-split,
+  .cta-split.image-left {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 36px 24px;
+  }
+  .cta-split-content {
+    text-align: center;
+  }
+  .cta-split-actions {
+    justify-content: center;
+  }
+  .cta-split-media {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   Comprehensive Universal Mobile Responsiveness (Smartphones <= 640px & 420px)
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* Containers & Section Spacing */
+  .container {
+    padding-inline: 16px !important;
+  }
+  section {
+    padding-block: clamp(36px, 8vw, 56px) !important;
+  }
+
+  /* Universal Hero Actions & Buttons */
+  .about-hero-actions,
+  .contact-hero-actions,
+  .pricing-hero-actions,
+  .hiw-hero-actions,
+  .fleet-hero-actions,
+  .p-hero-actions,
+  .hero-actions,
+  .details-hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-inline: auto !important;
+    gap: 12px !important;
+  }
+  .about-hero-actions .btn,
+  .about-hero-actions .btn-gold,
+  .contact-hero-actions .btn,
+  .contact-hero-actions .btn-gold,
+  .pricing-hero-actions .btn,
+  .pricing-hero-actions .btn-gold,
+  .hiw-hero-actions .btn,
+  .hiw-hero-actions .btn-gold,
+  .fleet-hero-actions .btn,
+  .fleet-hero-actions .btn-gold,
+  .p-hero-actions .btn,
+  .p-hero-actions .btn-gold,
+  .hero-actions .btn,
+  .hero-actions .btn-gold,
+  .details-hero-actions .btn,
+  .details-hero-actions .btn-gold {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 13px 20px !important;
+  }
+
+  /* Universal CTA Actions & Buttons */
+  .cta-actions,
+  .cta-split-actions,
+  .about-cta-actions,
+  .fleet-cta-actions,
+  .hiw-cta-actions,
+  .p-cta-btns {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-inline: auto !important;
+    gap: 12px !important;
+  }
+  .cta-actions .btn,
+  .cta-actions .btn-gold,
+  .cta-split-actions .btn,
+  .cta-split-actions .btn-gold,
+  .about-cta-actions .btn,
+  .about-cta-actions .btn-gold,
+  .fleet-cta-actions .btn,
+  .fleet-cta-actions .btn-gold,
+  .hiw-cta-actions .btn,
+  .hiw-cta-actions .btn-gold,
+  .p-cta-btns .btn,
+  .p-cta-btns .btn-gold {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 13px 20px !important;
+  }
+
+  /* Split CTA Cards on Mobile */
+  .cta,
+  .cta-box,
+  .hiw-cta-box,
+  .p-cta-card,
+  .cta-split,
+  .cta-split.image-left,
+  .about-cta-split,
+  .fleet-cta-split {
+    padding: 32px 18px !important;
+    border-radius: 24px !important;
+  }
+  .cta-split-media,
+  .about-cta-media,
+  .fleet-cta-media {
+    border-radius: 20px !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+  .cta-split-pill,
+  .about-cta-pill,
+  .fleet-cta-pill {
+    bottom: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+  }
+
+  /* Hero Headings */
+  .hero-h1,
+  .hero-content h1,
+  .about-hero h1,
+  .contact-hero h1,
+  .pricing-hero h1,
+  .hiw-hero h1,
+  .fleet-hero h1,
+  .p-hero h1 {
+    font-size: clamp(28px, 7.5vw, 36px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em !important;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Extra compact for 360px - 400px devices */
+  .cta,
+  .cta-box,
+  .hiw-cta-box,
+  .p-cta-card,
+  .cta-split,
+  .cta-split.image-left,
+  .about-cta-split,
+  .fleet-cta-split {
+    padding: 26px 14px !important;
+    border-radius: 20px !important;
+  }
+  .cta-split-pill,
+  .about-cta-pill,
+  .fleet-cta-pill {
+    font-size: 10px !important;
+    padding: 5px 8px !important;
+    gap: 6px !important;
+  }
+}

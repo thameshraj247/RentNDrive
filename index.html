@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="titlelogo.png">
   <title>RentNDrive | Luxury Car Rentals</title>
   <meta name="description" content="Premium self-drive cars with digital key access, zero hidden fees and transparent pricing.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +12,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="home.css">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var theme = localStorage.getItem("rnd-theme");
+      var dir = localStorage.getItem("rnd-dir");
+      if (theme !== "dark" && theme !== "light") {
+        theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      root.setAttribute("data-theme", theme);
+      root.setAttribute("dir", dir === "rtl" ? "rtl" : "ltr");
+    })();
+  </script>
  
 </head>
 
@@ -313,8 +327,8 @@
       <div class="container">
         <div class="cta reveal">
           <span class="badge"><i class="fa-solid fa-crown"></i> Exclusive Welcome Privilege</span>
-          <h2>Claim 15% Off Your First <em>Royal Journey.</em></h2>
-          <p>Join our distinguished circle of drivers. Create your free account in 60 seconds to unlock priority digital key access, complimentary airport dropoffs, and an instant 15% privilege code.</p>
+          <h2>Claim 15% Off Your <em>First Trip.</em></h2>
+          <p>Create your free account in 60 seconds to unlock digital key access and an instant 15% discount. Enjoy priority airport delivery and exclusive benefits on every trip.</p>
           <div class="cta-actions">
             <a href="login.html" class="btn btn-white"><i class="fa-regular fa-user"></i> Create Free Account <i class="fa-solid fa-arrow-right flip"></i></a>
             <a href="#fleet" class="btn btn-outline-light"><i class="fa-solid fa-car-side"></i> Explore the Fleet</a>
@@ -399,3 +413,5 @@
   <script src="home.js"></script>
 </body>
 </html>
+
+

@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    RentNDrive - Shared Site Setup (Theme, Direction, Mobile Nav & Scroll Reveal)
    Applied consistently across all pages
    ========================================================================== */
@@ -17,6 +17,10 @@
     const t = theme === "dark" ? "dark" : "light";
     root.setAttribute("data-theme", t);
     root.style.colorScheme = t;
+    const favicon = document.querySelector('link[rel="icon"]');
+    if (favicon) {
+      favicon.href = t === "dark" ? "darkmodetitlelogo.png" : "titlelogo.png";
+    }
     const btn = document.getElementById("themeToggle");
     if (btn) {
       const label = t === "dark" ? "Switch to light mode" : "Switch to dark mode";
@@ -205,7 +209,7 @@
   window.rndGetAuthState = getAuthState;
   window.rndLogout = handleLogout;
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function initSiteControls() {
     syncHeaderAuth();
     // Theme and RTL buttons
     const themeBtn = document.getElementById("themeToggle");
@@ -310,9 +314,19 @@
     } else {
       document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
     }
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSiteControls);
+  } else {
+    initSiteControls();
+  }
 
   // Export helper functions to window
   window.rndApplyTheme = applyTheme;
   window.rndApplyDirection = applyDirection;
 })();
+
+
+
+

@@ -1,0 +1,575 @@
+﻿/* ==========================================================================
+   How It Works page styles only.
+   Tokens, header, footer, buttons, eyebrow and section-head come from home.css,
+   so light/dark mode and LTR/RTL apply automatically.
+   ========================================================================== */
+
+[hidden] { display: none !important; }
+
+/* ---------- Hero ---------- */
+.hiw-hero {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  min-height: calc(100svh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: clamp(72px, 9vw, 120px);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  overflow: hidden;
+}
+.hiw-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hiw-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  opacity: 1;
+  animation: kenburns 26s ease-in-out infinite alternate;
+}
+html[data-theme="dark"] .hiw-hero-bg img {
+  opacity: 0.92;
+  filter: saturate(1.15) contrast(1.08) brightness(0.92);
+}
+.hiw-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 900px 580px at center 42%, rgba(15, 29, 56, 0.42) 0%, rgba(10, 20, 42, 0.68) 60%, rgba(5, 12, 28, 0.88) 100%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(10, 25, 60, 0.35) 50%, rgba(248, 250, 252, 0.92) 100%);
+  pointer-events: none;
+}
+html[data-theme="dark"] .hiw-hero-bg::after {
+  display: block;
+  background:
+    radial-gradient(ellipse 900px 580px at center 42%, rgba(11, 21, 40, 0.55) 0%, rgba(7, 15, 31, 0.78) 60%, rgba(4, 8, 18, 0.94) 100%),
+    linear-gradient(180deg, rgba(7, 15, 31, 0.25) 0%, rgba(11, 21, 40, 0.45) 55%, rgba(7, 15, 31, 0.95) 100%);
+}
+html[data-theme="dark"] .hiw-cta-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.hiw-hero-text { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+.hiw-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.1;
+  margin: 8px 0 16px;
+  color: #ffffff;
+  font-weight: 900;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.72), 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+html[data-theme="dark"] .hiw-hero h1 {
+  color: #ffffff;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.85);
+}
+.hiw-hero h1 em {
+  font-style: italic;
+  color: #fbbf24; background: linear-gradient(135deg, #fbbf24 0%, #fde68a 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-shadow: 0 4px 24px rgba(251, 191, 36, 0.4);
+}
+html[data-theme="dark"] .hiw-hero h1 em {
+  color: #fbbf24; background: linear-gradient(135deg, #fbbf24 0%, #fde68a 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 4px 24px rgba(251, 191, 36, 0.5);
+}
+.hiw-hero p {
+  color: #f1f5f9;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.65;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+html[data-theme="dark"] .hiw-hero p {
+  color: #e2e8f0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+.hiw-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 14px;
+  transition: border-color .25s, color .25s;
+}
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+
+/* ---------- Sections ---------- */
+.hiw-section { padding-block: clamp(56px, 7vw, 96px); }
+
+/* Alternating Section Backgrounds (excluding header, footer, and CTA):
+   Section 1: Hero         -> var(--surface-2) [Secondary]
+   Section 2: Steps        -> var(--bg)        [Primary]
+   Section 3: Stats        -> var(--surface-2) [Secondary]
+   Section 4: Requirements -> var(--bg)        [Primary]
+   Section 5: Reviews      -> var(--surface-2) [Secondary]
+   Section 6: FAQ          -> var(--bg)        [Primary]
+   Section 7: CTA          -> (Excluded, remains CTA banner style)
+*/
+.hiw-hero { background: var(--surface-2); border-bottom: 1px solid var(--border); }
+.hiw-steps { background: var(--bg); border-bottom: 1px solid var(--border); }
+.hiw-stats { background: var(--surface-2); border-bottom: 1px solid var(--border); padding-block: clamp(40px, 5vw, 64px); }
+.hiw-requirements { background: var(--bg); border-bottom: 1px solid var(--border); }
+.hiw-reviews { background: var(--surface-2); border-bottom: 1px solid var(--border); }
+.hiw-faq { background: var(--bg); }
+
+/* ---------- Steps ---------- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.step-card {
+  position: relative;
+  padding: 32px 26px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  transition: transform .4s cubic-bezier(.16, 1, .3, 1), box-shadow .4s, border-color .4s;
+}
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: color-mix(in srgb, var(--primary) 45%, transparent);
+}
+.step-num {
+  position: absolute;
+  top: 20px;
+  inset-inline-end: 24px;
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--primary);
+  opacity: .12;
+}
+.step-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  background: var(--accent-soft);
+  color: var(--primary);
+}
+.step-media {
+  width: 100%;
+  height: 150px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: var(--surface-2);
+}
+.step-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+.step-media img[src*="hiw-step2"] {
+  object-position: center center;
+}
+.step-card:hover .step-media img {
+  transform: scale(1.08);
+}
+.step-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+.step-card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+/* ---------- Requirements ---------- */
+.hiw-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hiw-split-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height: 1.15;
+  margin: 8px 0 14px;
+}
+.hiw-split-text p { color: var(--muted); font-size: 16px; }
+
+.check-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: border-color .3s, transform .3s;
+}
+.check-list li:hover { transform: translateX(-4px); border-color: var(--primary); }
+[dir="rtl"] .check-list li:hover { transform: translateX(4px); }
+.check-list i {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 17px;
+  background: var(--accent-soft);
+  color: var(--primary);
+}
+.check-list strong { display: block; font-size: 15px; color: var(--text); }
+.check-list span { font-size: 13px; color: var(--muted); }
+
+/* ---------- FAQ ---------- */
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: border-color .3s, box-shadow .3s;
+}
+.faq-item:hover { border-color: color-mix(in srgb, var(--primary) 35%, transparent); }
+.faq-item.open {
+  border-color: color-mix(in srgb, var(--primary) 45%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.faq-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--text);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: start;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--primary);
+  transition: transform .3s cubic-bezier(.16, 1, .3, 1);
+}
+.faq-item.open .faq-icon { transform: rotate(180deg); }
+
+.faq-content { padding: 0 24px 22px; }
+.faq-content p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+
+/* ---------- CTA ---------- */
+.hiw-cta { padding-block: 0 clamp(56px, 7vw, 96px); background: var(--bg); }
+
+/* ---------- Direction helpers ---------- */
+[dir="rtl"] .flip { transform: scaleX(-1); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .hiw-split { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 560px) {
+  .hiw-hero { padding-block: 56px; }
+  .hiw-cta-box { text-align: center; justify-content: center; }
+  .hiw-cta-actions { width: 100%; justify-content: center; }
+  .hiw-cta-actions a { flex: 1 1 100%; justify-content: center; }
+}
+/* ==========================================================================
+   Full-screen hero + new sections (stats and reviews)
+   ========================================================================== */
+
+/* Hero fills the whole screen below the 80px header */
+.hiw-hero {
+  min-height: calc(100vh - 80px);
+  min-height: calc(100svh - 80px);
+  display: flex;
+  align-items: center;
+  padding-block: clamp(40px, 6vw, 72px);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  scroll-snap-align: start;
+}
+.hiw-hero .container { width: 100%; }
+
+/* Keep the page snapping to sections (hero first, then the next section) */
+html { scroll-snap-type: y proximity; }
+.hiw-section, .hiw-stats, .hiw-cta { scroll-snap-align: start; }
+
+/* ---------- Stats strip ---------- */
+.hiw-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.hiw-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 28px 16px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.hiw-stat:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.hiw-stat i {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 18px;
+  background: var(--accent-soft);
+  color: var(--primary);
+}
+.hiw-stat strong {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.1;
+  color: var(--primary);
+}
+.hiw-stat span { font-size: 13px; font-weight: 600; color: var(--muted); }
+
+/* ---------- Reviews ---------- */
+.hiw-review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.hiw-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.hiw-review:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.hiw-review .stars {
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--accent);
+}
+.hiw-review q {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  quotes: none;
+}
+.hiw-reviewer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.hiw-reviewer .avatar {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
+}
+.hiw-reviewer strong { display: block; font-size: 15px; color: var(--text); }
+.hiw-reviewer span { font-size: 12px; color: var(--muted); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .hiw-stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .hiw-review-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .hiw-review-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .hiw-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+  .hiw-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 560px) {
+  .hiw-hero { min-height: auto; padding-block: 56px; }
+  .hiw-stat-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hiw-step { padding: 24px 18px; }
+} 
+html[data-theme="dark"] {
+  --bg: #070f1f;
+  --surface: #0f1b33;
+  --surface-2: #132340;
+  --text: #e8f1ff;
+  --muted: #9db0cc;
+  --primary: #5b9beb;
+  --primary-strong: #8fc3ff;
+  --accent: #fbbf24;
+  --accent-soft: rgba(251, 191, 36, .12);
+  --border: #22385c;
+  --shadow: 0 24px 60px -24px rgba(0, 0, 0, .75);
+  --header-bg: rgba(10, 20, 38, .88);
+  --btn-from: #1d4ed8;
+  --btn-to: #3b82f6;
+  --btn-text: #ffffff;
+  --footer-bg: #0b1324;
+  --footer-text: #e2e8f0;
+  --footer-muted: #94a3b8;
+  --footer-brand: #60a5fa;
+}
+
+/* Show the correct theme icon */
+.icon-btn .icon-sun  { display: none; }
+.icon-btn .icon-moon { display: inline-block; }
+html[data-theme="dark"] .icon-btn .icon-sun  { display: inline-block; }
+html[data-theme="dark"] .icon-btn .icon-moon { display: none; }
+
+/* Show the correct logo */
+.theme-logo.logo-dark  { display: none; }
+html[data-theme="dark"] .theme-logo.logo-light { display: none; }
+html[data-theme="dark"] .theme-logo.logo-dark  { display: block; }
+
+
+/* ---------- Requirements Section Left Card Visual ---------- */
+.hiw-req-card {
+  margin-top: 28px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -12px rgba(15, 23, 42, 0.12);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.hiw-req-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px -14px rgba(29, 78, 216, 0.22);
+  border-color: rgba(251, 191, 36, 0.6);
+}
+.hiw-req-media {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.hiw-req-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hiw-req-card:hover .hiw-req-media img {
+  transform: scale(1.08);
+}
+.hiw-req-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.hiw-req-badge i {
+  color: var(--accent);
+  font-size: 13px;
+}
+.hiw-req-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.hiw-req-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--surface-2);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+.hiw-req-tag i {
+  color: var(--primary);
+  font-size: 11px;
+}
+html[data-theme="dark"] .hiw-req-card {
+  background: #0f1b33;
+}
+html[data-theme="dark"] .hiw-req-meta {
+  background: #0f1b33;
+}
+html[data-theme="dark"] .hiw-req-tag {
+  background: #132340;
+  color: #cbd5e1;
+}

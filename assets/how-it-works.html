@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="titlelogo.png">
+  <title>How It Works | RentNDrive Luxury Car Rentals</title>
+  <meta name="description" content="See how easy it is to book a luxury car with RentNDrive: choose your car, confirm your dates and drive away.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="how-it-works.css">
+  <script>
+  (function () {
+    var root = document.documentElement;
+    var theme = localStorage.getItem("rnd-theme");
+    var dir = localStorage.getItem("rnd-dir");
+    if (theme !== "dark" && theme !== "light") {
+      theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("dir", dir === "rtl" ? "rtl" : "ltr");
+  })();
+</script>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="RentNDrive home">
+        <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+        <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+        <span class="brand-text">
+          <strong>RentNDrive</strong>
+          <span>Luxury Car Rentals</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-dropdown-toggle" aria-haspopup="true">
+            <span>Home</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home 1 - Classic</a>
+            <a href="home2.html"><i class="fa-solid fa-crown"></i> Home 2 - Prestige</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="fleet.html">Our Fleet</a>
+        <a href="how-it-works.html" class="active">Why Us</a>
+        <a href="pricing.html">Rental Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>        
+        
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">RTL</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary login-btn">
+          <i class="fa-regular fa-user"></i><span>Login</span>
+        </a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO (full screen) ================= -->
+    <section class="hiw-hero" id="top">
+      <div class="hiw-hero-bg" aria-hidden="true">
+        <img src="hero-whyus.jpg" alt="Seamless Luxury Car Experience with RentNDrive">
+      </div>
+      <div class="container">
+        <div class="hiw-hero-text">
+          <div class="hero-badge">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Simple &amp; Intuitive Process
+          </div>
+          <h1>How RentNDrive <em>Works.</em></h1>
+          <p>From choosing your dream car to contactless unlock and driving away, booking takes minutes. Here is everything you need to know.</p>
+          <div class="hiw-hero-actions">
+            <a href="fleet.html" class="btn btn-primary">Browse the Fleet <i class="fa-solid fa-arrow-right flip"></i></a>
+            <a href="#steps" class="btn-gold"><i class="fa-solid fa-list-check"></i> View 3 Steps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STEPS ================= -->
+    <section class="hiw-section hiw-steps" id="steps">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Three easy steps</span>
+          <h2>Book your ride in minutes</h2>
+          <p>We keep everything quick, transparent and contactless.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card reveal">
+            <span class="step-num">01</span>
+            <div class="step-media">
+              <img src="hiw-step1.jpg" alt="Choose your car">
+            </div>
+            <div class="step-icon"><i class="fa-solid fa-car-side"></i></div>
+            <h3>Choose your car</h3>
+            <p>Browse the fleet, filter by type, powertrain and budget, then pick the car that suits your trip.</p>
+          </article>
+
+          <article class="step-card reveal">
+            <span class="step-num">02</span>
+            <div class="step-media">
+              <img src="hiw-step2.jpg" alt="Select dates & confirm">
+            </div>
+            <div class="step-icon"><i class="fa-regular fa-calendar-check"></i></div>
+            <h3>Select dates &amp; confirm</h3>
+            <p>Choose your pickup and return dates, verify your documents and confirm your booking online.</p>
+          </article>
+
+          <article class="step-card reveal">
+            <span class="step-num">03</span>
+            <div class="step-media">
+              <img src="hiw-step3.jpg" alt="Unlock & drive">
+            </div>
+            <div class="step-icon"><i class="fa-solid fa-key"></i></div>
+            <h3>Unlock &amp; drive</h3>
+            <p>Use the digital key on your phone, do a quick walk-around and enjoy the road with 24/7 support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: STATS ================= -->
+    <section class="hiw-stats" id="stats">
+      <div class="container">
+        <div class="hiw-stat-grid">
+          <div class="hiw-stat">
+            <i class="fa-solid fa-users"></i>
+            <strong data-count="1400" data-suffix="+" data-format="comma">0</strong>
+            <span>Verified trips completed</span>
+          </div>
+          <div class="hiw-stat">
+            <i class="fa-solid fa-location-dot"></i>
+            <strong data-count="45" data-suffix="+">0</strong>
+            <span>Airport &amp; city hubs</span>
+          </div>
+          <div class="hiw-stat">
+            <i class="fa-solid fa-star"></i>
+            <strong data-count="4.96" data-decimals="2">0.00</strong>
+            <span>Average customer rating</span>
+          </div>
+          <div class="hiw-stat">
+            <i class="fa-solid fa-clock"></i>
+            <strong data-count="60" data-suffix=" sec">0</strong>
+            <span>Average ID verification</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REQUIREMENTS ================= -->
+    <section class="hiw-section hiw-requirements">
+      <div class="container hiw-split">
+        <div class="hiw-split-text">
+          <span class="eyebrow">Before you arrive</span>
+          <h2>What you need to rent</h2>
+          <p>Have these ready and your pickup will take only a few minutes.</p>
+            <div class="hiw-req-card">
+              <div class="hiw-req-media">
+                <img src="hiw-requirements.jpg" alt="RentNDrive Contactless Digital Key Hand-off">
+                <div class="hiw-req-badge">
+                  <i class="fa-solid fa-key"></i>
+                  <span>Digital Key Ready &middot; 60s Verification</span>
+                </div>
+              </div>
+              <div class="hiw-req-meta">
+                <div class="hiw-req-tag"><i class="fa-solid fa-shield-check"></i> 100% Encrypted Biometric ID</div>
+                <div class="hiw-req-tag"><i class="fa-solid fa-bolt"></i> Paperless Departure</div>
+              </div>
+            </div>
+        </div>
+
+        <ul class="check-list">
+          <li><i class="fa-solid fa-id-card"></i><div><strong>A valid driving licence</strong><span>Held for at least two years.</span></div></li>
+          <li><i class="fa-solid fa-passport"></i><div><strong>Photo ID or passport</strong><span>Checked digitally in about 60 seconds.</span></div></li>
+          <li><i class="fa-solid fa-credit-card"></i><div><strong>A payment card</strong><span>Used for the rental and a refundable deposit hold.</span></div></li>
+          <li><i class="fa-solid fa-mobile-screen"></i><div><strong>A smartphone</strong><span>For the contactless digital key.</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= NEW SECTION 2: REVIEWS ================= -->
+    <section class="hiw-section hiw-reviews">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Verified traveler experiences</span>
+          <h2>What our customers say</h2>
+          <p>Real feedback from people who have booked with us.</p>
+        </div>
+
+        <div class="hiw-review-grid">
+          <article class="hiw-review">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <q>The booking took under five minutes and the car was waiting at the hotel, spotless.</q>
+            <div class="hiw-reviewer">
+              <div class="avatar">JV</div>
+              <div><strong>Julian Vance</strong><span>Venture Capitalist · San Francisco</span></div>
+            </div>
+          </article>
+
+          <article class="hiw-review">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <q>The digital key worked the first time. No queues, no paperwork, no surprise charges.</q>
+            <div class="hiw-reviewer">
+              <div class="avatar">SC</div>
+              <div><strong>Sophia Chen</strong><span>Creative Director · New York</span></div>
+            </div>
+          </article>
+
+          <article class="hiw-review">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <q>When I had a flat tyre, the roadside team had a replacement car to me within the hour.</q>
+            <div class="hiw-reviewer">
+              <div class="avatar">MS</div>
+              <div><strong>Marcus Sterling</strong><span>Architect · Austin</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="hiw-section hiw-faq" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Questions &amp; answers</span>
+          <h2>Frequently asked questions</h2>
+          <p>Can't find what you need? Contact our team any time.</p>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-1">
+              <span>Can I cancel or change my booking?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-content" id="faq-1" hidden>
+              <p>Yes. You can cancel for free up to 48 hours before pickup, and changes to dates are free up to 24 hours before pickup, subject to availability.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-2">
+              <span>Is insurance included in the rental?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-content" id="faq-2" hidden>
+              <p>Every rental includes comprehensive insurance cover. Optional add-ons such as extra driver cover are available at checkout.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-3">
+              <span>How does the digital key work?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-content" id="faq-3" hidden>
+              <p>After your ID is verified, your car's digital key appears in your phone browser. Tap to unlock and start the engine, with no keys to collect or return.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-4">
+              <span>Can I pick up at the airport or my hotel?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-content" id="faq-4" hidden>
+              <p>Yes. We operate from airport and city hubs across 45+ locations, and hotel delivery can be arranged when you book.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-5">
+              <span>What happens if I have a breakdown?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-content" id="faq-5" hidden>
+              <p>Call our 24/7 roadside line at any time. We will send help or arrange a replacement vehicle at no extra cost where the fault is not your responsibility.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-6">
+              <span>Are there any hidden fees?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-content" id="faq-6" hidden>
+              <p>No. The daily rate, taxes, insurance and deposit are shown before you pay, and the total you see at checkout is the total you pay.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="hiw-cta">
+      <div class="container">
+      <div class="cta-split reveal">
+        <div class="cta-split-content">
+          <span class="cta-split-badge"><i class="fa-solid fa-key"></i> Contactless Mobility</span>
+          <h2>Unlock Your Journey <em>in Seconds.</em></h2>
+          <p>Instant digital key delivery with zero queues, counters, or paperwork. Complete your contactless booking in minutes and hit the open road with total ease.</p>
+          <div class="cta-split-actions">
+            <a href="fleet.html" class="btn btn-primary"><i class="fa-solid fa-car-side"></i> Browse the Fleet <i class="fa-solid fa-arrow-right flip"></i></a>
+            <a href="contact.html" class="btn-gold"><i class="fa-solid fa-phone"></i> Speak with Concierge</a>
+          </div>
+        </div>
+        <div class="cta-split-media">
+          <img src="whyus-cta-car.jpg" alt="RentNDrive Electric Executive Luxury Pavilion">
+          <div class="cta-split-pill">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Contactless Digital Key &middot; 24/7 Access</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand">
+  <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+  <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+  <span class="brand-text"><strong style="color:var(--footer-brand)">RentNDrive</strong><span>Luxury Car Rentals</span></span>
+</a>
+          <p>Premium self-drive cars for every journey. Comfort, freedom and a better way to travel.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="about.html">About Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html">Our Fleet</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="how-it-works.html">Why Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="pricing.html">Rental Plans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a></li>
+           
+          </ul>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Luxury Sedans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Premium SUVs</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Sport's Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Electric Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Convertibles</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="#fleet">Supercar's</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>Your business address</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li><i class="fa-regular fa-envelope"></i><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+            <li><i class="fa-regular fa-clock"></i><span>Daily support</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> <strong>RentNDrive</strong>. All rights reserved.</p>
+        <nav>
+          <a href="#top">Privacy Policy</a>
+          <a href="pricing.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Cookies &amp; Privacy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="site.js"></script>
+  <script src="how-it-works.js"></script>
+</body>
+</html>
+
+

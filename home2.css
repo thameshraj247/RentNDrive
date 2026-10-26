@@ -4,54 +4,30 @@
    Color Combination: Royal Blue (#1d4ed8 / #1e3a8a) & Gold Accent (#fbbf24)
    ========================================================================== */
 
-/* Stylish High-End Font Styling for Home 2 Main Content (excluding Header and Footer) */
-main {
-  font-family: "Plus Jakarta Sans", "Montserrat", sans-serif;
-  letter-spacing: -0.01em;
+/* Unified Font Family for Home 2: Playfair Display across entire page except header */
+body.home-2-page main,
+body.home-2-page main *:not([class*="fa"]):not([class*="fa-"]):not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(i),
+body.home-2-page footer,
+body.home-2-page footer *:not([class*="fa"]):not([class*="fa-"]):not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(i) {
+  font-family: "Playfair Display", Georgia, serif !important;
 }
 
-main h1,
-main h2,
-main h3,
-main .p-hero-title,
-main .p-section-head h2,
-main .p-exp-card h3,
-main .p-car-info h3,
-main .p-service-card h3,
-main .p-vip-card h3,
-main .p-review-card h3,
-main .p-faq-q,
-main .p-cta-box h2 {
-  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
-  letter-spacing: -0.02em;
+/* Explicitly exempt all Font Awesome icons so they never inherit Playfair Display */
+body.home-2-page i,
+body.home-2-page [class*="fa-"],
+body.home-2-page .fa,
+body.home-2-page .fas,
+body.home-2-page .far,
+body.home-2-page .fab,
+body.home-2-page .fa-solid,
+body.home-2-page .fa-regular,
+body.home-2-page .fa-brands {
+  font-family: var(--fa-style-family, "Font Awesome 6 Free") !important;
 }
-
-main .p-hero-badge,
-main .p-sec-tag,
-main .p-car-badge,
-main .p-metric span,
-main .p-exp-badge,
-main .p-vip-badge,
-main .p-price-block small,
-main .btn-gold,
-main .p-book-btn,
-main .p-pill {
-  font-family: "Montserrat", "Plus Jakarta Sans", sans-serif;
-  letter-spacing: 0.06em;
-}
-
-main .p-hero-desc,
-main .p-section-head p,
-main .p-exp-card p,
-main .p-vip-card p,
-main .p-review-card blockquote,
-main .p-faq-a p,
-main .p-cta-box p {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  line-height: 1.7;
-}
-
-/* ---------- Premium Hero (Section 1: True Full Viewport Landing Page) ---------- */
+body.home-2-page .fa-brands,
+body.home-2-page [class*="fa-brands"] {
+  font-family: "Font Awesome 6 Brands" !important;
+}/* ---------- Premium Hero (Section 1: True Full Viewport Landing Page) ---------- */
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
@@ -584,7 +560,7 @@ html[data-theme="dark"] .p-price-block strong {
   color: var(--accent);
 }
 .p-price-block span {
-  font-family: "Inter", sans-serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-size: 12px;
   font-weight: 500;
   color: var(--muted);
@@ -834,7 +810,7 @@ html[data-theme="dark"] .p-vip-rate {
   color: var(--accent);
 }
 .p-vip-rate span {
-  font-family: "Inter", sans-serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-size: 14px;
   font-weight: 500;
   color: var(--muted);
@@ -991,14 +967,51 @@ html[data-theme="dark"] .p-vip-rate {
   overflow: hidden;
   border-radius: 36px;
   padding: clamp(48px, 6vw, 84px);
-  background: linear-gradient(135deg, #091326 0%, #1e3a8a 55%, #1d4ed8 100%);
+  background:
+    radial-gradient(ellipse 80% 60% at 88% 12%, rgba(251, 191, 36, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 12% 88%, rgba(37, 99, 235, 0.28) 0%, transparent 60%),
+    linear-gradient(135deg, #091326 0%, #1e3a8a 52%, #1d4ed8 100%);
   color: #fff;
-  box-shadow: 0 32px 70px -20px rgba(15, 23, 42, 0.4);
-  border: 1.5px solid rgba(251, 191, 36, 0.35);
+  box-shadow:
+    0 32px 70px -18px rgba(15, 23, 42, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  border: 1.5px solid rgba(251, 191, 36, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.p-cta-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(251, 191, 36, 0.85);
+  box-shadow:
+    0 40px 90px -16px rgba(29, 78, 216, 0.55),
+    0 0 32px rgba(251, 191, 36, 0.24),
+    0 0 0 1px rgba(251, 191, 36, 0.4) inset;
+}
+html[data-theme="dark"] .p-cta-card {
+  background:
+    radial-gradient(ellipse 80% 60% at 88% 12%, rgba(251, 191, 36, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 12% 88%, rgba(29, 78, 216, 0.22) 0%, transparent 60%),
+    linear-gradient(135deg, #030712 0%, #081124 50%, #0d1e3d 100%);
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow:
+    0 36px 85px -20px rgba(0, 0, 0, 0.92),
+    0 0 0 1px rgba(251, 191, 36, 0.2) inset;
+}
+html[data-theme="dark"] .p-cta-card:hover {
+  border-color: #fbbf24;
+  box-shadow:
+    0 44px 95px -16px rgba(0, 0, 0, 0.96),
+    0 0 36px rgba(251, 191, 36, 0.32),
+    0 0 0 1px rgba(251, 191, 36, 0.5) inset;
+}
+html[data-theme="dark"] .p-cta-badge {
+  background: rgba(11, 21, 40, 0.95);
+  color: #fbbf24;
+  border-color: #fbbf24;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7), 0 0 16px rgba(251, 191, 36, 0.3);
 }
 .p-cta-card::before {
   content: "";
@@ -1105,4 +1118,20 @@ html[data-theme="dark"] .p-vip-rate {
   .p-destinations-grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+@media (max-width: 640px) {
+  .p-hero { min-height: auto; padding-block: clamp(64px, 12vw, 96px); }
+  .p-hero-sub { font-size: 15px; }
+  .p-booking-bar { padding: 16px; border-radius: 20px; }
+  .p-metrics-strip { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .p-metric { padding: 14px 10px; }
+  .p-metric strong { font-size: 26px; }
+  .p-metric span { font-size: 11px; }
+  .p-fleet-card { border-radius: 20px; }
+  .p-exp-card { padding: 24px 18px; border-radius: 20px; }
+  .p-dest-card { border-radius: 20px; }
+  .p-vip-card { padding: 24px 18px; border-radius: 20px; }
+  .p-review-card { padding: 24px 18px; border-radius: 20px; }
 }

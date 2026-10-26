@@ -1,10 +1,35 @@
-// Royal Fleet Car Rental - Login & Register Controller
+﻿// Royal Fleet Car Rental - Login & Register Controller
 
 document.addEventListener("DOMContentLoaded", () => {
   initAuthTabs();
   initAuthForms();
   initDemoLogin();
+  initPasswordToggles();
 });
+
+function initPasswordToggles() {
+  document.querySelectorAll(".toggle-password-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-target");
+      const input = document.getElementById(targetId);
+      if (!input) return;
+
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+
+      const icon = btn.querySelector("i");
+      if (icon) {
+        if (isPassword) {
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+        } else {
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+        }
+      }
+    });
+  });
+}
 
 function initAuthTabs() {
   const signinTab = document.getElementById("auth-tab-signin");
@@ -225,3 +250,4 @@ function initDemoLogin() {
     });
   }
 }
+

@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    How It Works page styles only.
    Tokens, header, footer, buttons, eyebrow and section-head come from home.css,
    so light/dark mode and LTR/RTL apply automatically.
@@ -30,24 +30,28 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 36%;
+  object-position: center 48%;
   opacity: 1;
-  animation: kenburns 24s ease-in-out infinite alternate;
+  animation: kenburns 26s ease-in-out infinite alternate;
 }
 html[data-theme="dark"] .hiw-hero-bg img {
-  opacity: 1;
-  filter: saturate(1.1) brightness(0.95);
+  opacity: 0.92;
+  filter: saturate(1.15) contrast(1.08) brightness(0.92);
 }
 .hiw-hero-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 900px 580px at center 42%, rgba(15, 29, 56, 0.58) 0%, rgba(10, 20, 42, 0.76) 60%, rgba(5, 12, 28, 0.92) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(10, 25, 60, 0.45) 50%, rgba(248, 250, 252, 0.95) 100%);
+  background:
+    radial-gradient(ellipse 900px 580px at center 42%, rgba(15, 29, 56, 0.42) 0%, rgba(10, 20, 42, 0.68) 60%, rgba(5, 12, 28, 0.88) 100%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(10, 25, 60, 0.35) 50%, rgba(248, 250, 252, 0.92) 100%);
   pointer-events: none;
 }
 html[data-theme="dark"] .hiw-hero-bg::after {
-  display: none;
-  background: none;
+  display: block;
+  background:
+    radial-gradient(ellipse 900px 580px at center 42%, rgba(11, 21, 40, 0.55) 0%, rgba(7, 15, 31, 0.78) 60%, rgba(4, 8, 18, 0.94) 100%),
+    linear-gradient(180deg, rgba(7, 15, 31, 0.25) 0%, rgba(11, 21, 40, 0.45) 55%, rgba(7, 15, 31, 0.95) 100%);
 }
 html[data-theme="dark"] .hiw-cta-box {
   background: var(--surface);
@@ -180,7 +184,11 @@ html[data-theme="dark"] .hiw-hero p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.5s ease;
+}
+.step-media img[src*="hiw-step2"] {
+  object-position: center center;
 }
 .step-card:hover .step-media img {
   transform: scale(1.08);
@@ -474,3 +482,94 @@ html[data-theme="dark"] .icon-btn .icon-moon { display: none; }
 .theme-logo.logo-dark  { display: none; }
 html[data-theme="dark"] .theme-logo.logo-light { display: none; }
 html[data-theme="dark"] .theme-logo.logo-dark  { display: block; }
+
+
+/* ---------- Requirements Section Left Card Visual ---------- */
+.hiw-req-card {
+  margin-top: 28px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -12px rgba(15, 23, 42, 0.12);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.hiw-req-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px -14px rgba(29, 78, 216, 0.22);
+  border-color: rgba(251, 191, 36, 0.6);
+}
+.hiw-req-media {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.hiw-req-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hiw-req-card:hover .hiw-req-media img {
+  transform: scale(1.08);
+}
+.hiw-req-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.hiw-req-badge i {
+  color: var(--accent);
+  font-size: 13px;
+}
+.hiw-req-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.hiw-req-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--surface-2);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+.hiw-req-tag i {
+  color: var(--primary);
+  font-size: 11px;
+}
+html[data-theme="dark"] .hiw-req-card {
+  background: #0f1b33;
+}
+html[data-theme="dark"] .hiw-req-meta {
+  background: #0f1b33;
+}
+html[data-theme="dark"] .hiw-req-tag {
+  background: #132340;
+  color: #cbd5e1;
+}

@@ -27,8 +27,8 @@
   const HUBS = [
     { id: "H1", name: "Beverly Hills Flagship Lounge", city: "Beverly Hills, CA", capacity: 6, hours: "24 / 7" },
     { id: "H2", name: "Mumbai International Terminal", city: "Mumbai, India", capacity: 5, hours: "24 / 7" },
-    { id: "H3", name: "Bengaluru Central VIP Hub", city: "Bengaluru, India", capacity: 4, hours: "8 AM â€“ 11 PM" },
-    { id: "H4", name: "Chennai Downtown Showroom", city: "Chennai, India", capacity: 3, hours: "9 AM â€“ 9 PM" },
+    { id: "H3", name: "Bengaluru Central VIP Hub", city: "Bengaluru, India", capacity: 4, hours: "8 AM &ndash; 11 PM" },
+    { id: "H4", name: "Chennai Downtown Showroom", city: "Chennai, India", capacity: 3, hours: "9 AM &ndash; 9 PM" },
   ];
 
   const CARS_SEED = [
@@ -298,7 +298,7 @@
               <td><span class="chip">${esc(c.name)}</span></td>
               <td>${esc(r.customer)}</td>
               <td>${fmtDate(r.start)}</td>
-              <td>${fmtTime(r.start)} â€“ ${fmtTime(r.end)}</td>
+              <td>${fmtTime(r.start)} &ndash; ${fmtTime(r.end)}</td>
               <td>${pill(r.status)}</td>
             </tr>`;
           })
@@ -470,7 +470,7 @@
     $("#reviewList").innerHTML = REVIEWS.map(
       (r) => `<article class="adm-review">
         <div class="stars">${"<i class=\"fa-solid fa-star\"></i>".repeat(r.stars)}</div>
-        <p>â€œ${esc(r.text)}â€</p>
+        <p>&ldquo;${esc(r.text)}&rdquo;</p>
         <small><b>${esc(r.name)}</b> Â· ${esc(r.car)}</small>
       </article>`
     ).join("");
