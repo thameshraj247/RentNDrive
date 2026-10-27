@@ -1,10 +1,4 @@
-﻿/* =====================================================
-   RENTNDRIVE | ADMIN CONSOLE
-   dashboard.js
-
-   SAMPLE DATA lives in the "SAMPLE DATA" block below.
-   Replace it with values from your backend when ready.
-   ===================================================== */
+﻿
 (function () {
   "use strict";
 

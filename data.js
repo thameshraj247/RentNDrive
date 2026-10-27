@@ -1,4 +1,4 @@
-// Royal Fleet Car Rental - Mock Database & Initial Data
+﻿
 const INITIAL_DATA = {
   vehicles: [
     {

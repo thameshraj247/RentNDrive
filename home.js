@@ -1,5 +1,5 @@
-
-      /* ---------- Data (replace with your own fleet) ---------- */
+﻿
+      
       const LOCATIONS = [
         { id: "airport", name: "International Airport" },
         { id: "downtown", name: "Downtown Hub" },
@@ -21,7 +21,7 @@
       const $ = (sel, root = document) => root.querySelector(sel);
       const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
-      /* ---------- Search form ---------- */
+      
       $("#pickup").innerHTML = LOCATIONS.map(l => `<option value="${l.id}">${l.name}</option>`).join("");
 
       const today = new Date();
@@ -40,11 +40,11 @@
           pDate: $("#pDate").value,
           rDate: $("#rDate").value
         });
-        // Point this at your real fleet page
+        
         window.location.href = `fleet.html?${params}`;
       });
 
-      /* ---------- Fleet rendering & filtering ---------- */
+      
       function renderCars(filter = "all") {
         const list = CARS.filter(c => filter === "all" || c.cat === filter);
         $("#fleetGrid").innerHTML = list.map(car => `
@@ -91,7 +91,7 @@
 
       renderCars();
 
-      /* ---------- Animated counters ---------- */
+      
       function animateCount(el) {
         const target = parseFloat(el.dataset.count);
         const decimals = parseInt(el.dataset.decimals || "0", 10);
@@ -107,7 +107,7 @@
         requestAnimationFrame(step);
       }
 
-      /* ---------- Reveal on scroll & counters ---------- */
+      
       const io = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;

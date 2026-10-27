@@ -1,9 +1,6 @@
-/* ==========================================================================
-   RentNDrive 404 Error Page Styles
-   Adaptive Zero-Scroll Viewport Layout for Mobile, Tablet & Laptop/Desktop
-   ========================================================================== */
+﻿
 
-/* ---------- Base Layout Structure ---------- */
+
 html, body.error-page-body {
   height: 100%;
   margin: 0;
@@ -23,7 +20,7 @@ body.error-page-body {
   box-sizing: border-box;
 }
 
-/* Header */
+
 .site-header.error-compact-header {
   flex-shrink: 0;
   position: relative;
@@ -33,7 +30,7 @@ body.error-page-body {
   height: clamp(56px, 7.5vh, 74px);
 }
 
-/* Ambient glow blobs */
+
 .error-blob {
   position: absolute;
   width: min(380px, 45vw);
@@ -62,7 +59,7 @@ body.error-page-body {
   100% { transform: translateY(28px) scale(1.08); }
 }
 
-/* Center viewport stage */
+
 .error-main-viewport {
   flex: 1 1 auto;
   display: flex;
@@ -86,7 +83,7 @@ body.error-page-body {
   width: 100%;
 }
 
-/* Stage & Speedometer 404 Visual */
+
 .error-stage {
   position: relative;
   display: flex;
@@ -95,7 +92,7 @@ body.error-page-body {
   margin-bottom: clamp(6px, 1.2vh, 16px);
 }
 
-/* Big 404 Numbers */
+
 .error-glitch-num {
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(60px, 11vh, 125px);
@@ -131,7 +128,7 @@ html[data-theme="dark"] .error-glitch-num .num-digit {
   50% { transform: translateY(-4px); }
 }
 
-/* Central speedometer / radar portal replacing the "0" */
+
 .error-speedo {
   position: relative;
   width: clamp(60px, 11vh, 115px);
@@ -206,7 +203,7 @@ html[data-theme="dark"] .error-speedo {
   color: var(--accent);
 }
 
-/* Animated Road Strip */
+
 .error-road-wrap {
   position: relative;
   width: min(440px, 90vw);
@@ -275,7 +272,7 @@ html[data-theme="dark"] .error-car {
   100% { transform: translate(-50%, -46%) rotate(0.8deg); }
 }
 
-/* Badge & Headings */
+
 .error-badge {
   display: inline-flex;
   align-items: center;
@@ -324,7 +321,7 @@ html[data-theme="dark"] .error-badge {
   line-height: 1.5;
 }
 
-/* Main Action Buttons */
+
 .error-actions {
   display: flex;
   justify-content: center;
@@ -346,7 +343,7 @@ html[data-theme="dark"] .error-badge {
   transform: translateY(-2px);
 }
 
-/* Quick Navigation Chips */
+
 .error-shortcuts {
   display: flex;
   justify-content: center;
@@ -389,7 +386,7 @@ html[data-theme="dark"] .error-chip i {
   transform: scale(1.15);
 }
 
-/* Micro Footer */
+
 .error-micro-footer {
   flex-shrink: 0;
   border-top: 1px solid var(--border);
@@ -422,11 +419,9 @@ html[data-theme="dark"] .error-chip i {
 }
 
 
-/* ==========================================================================
-   MEDIA QUERIES FOR LAPTOP, TABLET & MOBILE DEVICES
-   ========================================================================== */
 
-/* 1. LAPTOP & DESKTOP (Screens >= 1024px) */
+
+
 @media (min-width: 1024px) {
   .error-container {
     padding-inline: 24px;
@@ -451,7 +446,7 @@ html[data-theme="dark"] .error-chip i {
   }
 }
 
-/* 2. TABLET / iPAD (Screens between 641px and 1023px) */
+
 @media (min-width: 641px) and (max-width: 1023px) {
   .site-header.error-compact-header .header-inner {
     height: 64px;
@@ -482,7 +477,7 @@ html[data-theme="dark"] .error-chip i {
   }
 }
 
-/* 3. MOBILE PHONES (Screens <= 640px) */
+
 @media (max-width: 640px) {
   .site-header.error-compact-header .header-inner {
     height: 56px;
@@ -554,13 +549,13 @@ html[data-theme="dark"] .error-chip i {
   }
 }
 
-/* 4. SHORT / LANDSCAPE MOBILE SCREENS (Height <= 680px) */
+
 @media (max-height: 680px) {
   .site-header.error-compact-header .header-inner {
     height: 48px;
   }
   .error-road-wrap {
-    display: none; /* Hide road so all crucial recovery controls fit with zero scrolling */
+    display: none; 
   }
   .error-badge {
     margin-bottom: 4px;
@@ -605,7 +600,7 @@ html[data-theme="dark"] .error-chip i {
   }
 }
 
-/* 5. ULTRA-COMPACT SMARTPHONES (Width <= 380px) */
+
 @media (max-width: 380px) {
   .error-glitch-num {
     font-size: 46px;

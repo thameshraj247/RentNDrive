@@ -1,5 +1,5 @@
-
-    /* ---------- About Page Specific Styles ---------- */
+﻿
+    
     .about-hero {
       position: relative;
       min-height: calc(100vh - 80px);
@@ -84,7 +84,7 @@
       margin-top: 32px;
     }
 
-    /* Story Section */
+    
     .story-section {
       padding-block: clamp(64px, 8vw, 100px);
       background: var(--surface);
@@ -124,7 +124,7 @@
       transform: scale(1.05);
     }
 
-    /* Pillars / Values Grid */
+    
     .values-section {
       padding-block: clamp(64px, 8vw, 100px);
       background: var(--surface-2);
@@ -180,7 +180,7 @@
       line-height: 1.65;
     }
 
-    /* Fleet Standards / Showcase */
+    
     .fleet-standards-section {
       padding-block: clamp(64px, 8vw, 100px);
       background: var(--surface);
@@ -203,7 +203,7 @@
       transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: 0 10px 24px -10px rgba(15, 23, 42, 0.12);
     }
-    /* Animated Glowing Gradient Border */
+    
     .standard-card::before {
       content: "";
       position: absolute;
@@ -232,7 +232,7 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    /* Inner container that covers the center, revealing the glowing border */
+    
     .standard-card > * {
       position: relative;
       z-index: 1;
@@ -274,7 +274,7 @@
     html[data-theme="dark"] .standard-body {
       background: #0f1b33;
     }
-    /* Hover Effects */
+    
     .standard-card:hover {
       transform: translateY(-8px) scale(1.02);
       box-shadow: 0 24px 48px -12px rgba(29, 78, 216, 0.28), 0 0 20px rgba(251, 191, 36, 0.25);
@@ -303,7 +303,7 @@
       line-height: 1.55;
     }
 
-    /* Leadership Team */
+    
     .team-section {
       padding-block: clamp(64px, 8vw, 100px);
       background: var(--surface-2);
@@ -326,7 +326,7 @@
       transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: 0 12px 28px -10px rgba(15, 23, 42, 0.14);
     }
-    /* Animated Gradient Border */
+    
     .team-card::before {
       content: "";
       position: absolute;
@@ -398,7 +398,7 @@
     html[data-theme="dark"] .team-info {
       background: #0f1b33;
     }
-    /* Team Card Hover Effects */
+    
     .team-card:hover {
       transform: translateY(-8px) scale(1.02);
       box-shadow: 0 24px 48px -12px rgba(29, 78, 216, 0.28), 0 0 20px rgba(251, 191, 36, 0.25);
@@ -449,9 +449,7 @@
 
 
 
-/* ==========================================================================
-   About Page Custom Split CTA Section (No Full BG Image, 2-Column Split)
-   ========================================================================== */
+
 .about-cta-split {
   position: relative;
   display: grid;
@@ -481,7 +479,7 @@
     0 0 0 1px rgba(251, 191, 36, 0.4) inset;
 }
 
-/* Ambient glow blobs */
+
 .about-cta-split::before {
   content: "";
   position: absolute;
@@ -572,7 +570,7 @@
   align-items: center;
 }
 
-/* Right Side Image Box */
+
 .about-cta-right {
   position: relative;
   z-index: 1;
@@ -626,7 +624,7 @@
   color: #fbbf24;
 }
 
-/* Dark Mode Adaptation */
+
 html[data-theme="dark"] .about-cta-split {
   background:
     radial-gradient(ellipse 80% 60% at 88% 12%, rgba(251, 191, 36, 0.14) 0%, transparent 60%),

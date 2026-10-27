@@ -1,4 +1,4 @@
-// RentNDrive - Pricing & Plans Interactive Estimator
+﻿
 
 document.addEventListener("DOMContentLoaded", () => {
   initPricingCalculator();
@@ -32,7 +32,7 @@ function initPricingCalculator() {
     if (el) el.textContent = value;
   };
 
-  // Populate vehicle options
+  
   carSelect.innerHTML = VEHICLES.map(
     (car) => `<option value="${car.id}">${car.name} — $${car.pricePerDay}/day (${car.category})</option>`
   ).join("");
@@ -41,7 +41,7 @@ function initPricingCalculator() {
     const vehicle = findVehicle(carSelect.value);
     const days = parseInt(daysRange.value, 10);
 
-    // Duration discount
+    
     let discountRate = 0;
     let discountText = "";
     if (days >= 30) {
@@ -55,25 +55,25 @@ function initPricingCalculator() {
       daysLabel.textContent = `${days} Day${days > 1 ? "s" : ""}${discountText}`;
     }
 
-    // Vehicle Base
+    
     const carRate = vehicle ? vehicle.pricePerDay : 185;
     const rawBase = carRate * days;
     const discountAmount = rawBase * discountRate;
     const discountedBase = rawBase - discountAmount;
 
-    // Protection Package
+    
     const checkedIns = document.querySelector('input[name="calc-insurance"]:checked');
     const insDailyRate = checkedIns ? parseFloat(checkedIns.getAttribute("data-rate")) : 0;
     const insSubtotal = insDailyRate * days;
 
-    // Optional Add-ons
+    
     let addonsSubtotal = 0;
     document.querySelectorAll('input[name="calc-addon"]:checked').forEach((cb) => {
       const rate = parseFloat(cb.getAttribute("data-rate"));
       addonsSubtotal += rate * days;
     });
 
-    // Totals calculation
+    
     const taxableAmount = discountedBase + insSubtotal + addonsSubtotal;
     const taxes = taxableAmount * 0.08;
     const grandTotal = taxableAmount + taxes;
@@ -98,7 +98,7 @@ function initPricingCalculator() {
     setText("calc-daily-average", `Avg. ${money(grandTotal / days)}/day`);
   };
 
-  // Event Listeners
+  
   carSelect.addEventListener("change", updateCalc);
   daysRange.addEventListener("input", updateCalc);
   document.querySelectorAll('input[name="calc-insurance"]').forEach((r) => r.addEventListener("change", updateCalc));
@@ -111,6 +111,6 @@ function initPricingCalculator() {
     });
   }
 
-  // Initial calculation run
+  
   updateCalc();
 }

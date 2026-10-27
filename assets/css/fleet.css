@@ -1,13 +1,9 @@
-/* ==========================================================================
-   Fleet page styles only.
-   Shared styles (tokens, light/dark, header, footer, buttons, section-head,
-   eyebrow, back-to-top, mobile menu) live in home.css.
-   ========================================================================== */
+﻿
 
-/* Utility: the hidden attribute must always win */
+
 [hidden] { display: none !important; }
 
-/* ---------- Hero ---------- */
+
 .fleet-hero {
   position: relative;
   min-height: calc(100vh - 80px);
@@ -79,7 +75,7 @@ html[data-theme="dark"] .page-hero-text p {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-/* ---------- Filter toolbar ---------- */
+
 .filter-toolbar {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -205,7 +201,7 @@ html[data-theme="dark"] .page-hero-text p {
 }
 .reset-btn:hover { color: var(--primary); }
 
-/* ---------- Results ---------- */
+
 .fleet-main { padding-block: clamp(48px, 6vw, 80px); background: var(--bg); }
 
 .results-count {
@@ -222,7 +218,7 @@ html[data-theme="dark"] .page-hero-text p {
   gap: 24px;
 }
 
-/* ---------- Vehicle card ---------- */
+
 .car-card {
   display: flex;
   flex-direction: column;
@@ -415,7 +411,7 @@ html[data-theme="dark"] .btn-view-details:hover {
   color: #93c5fd;
 }
 
-/* ---------- Empty state ---------- */
+
 .empty-state {
   max-width: 520px;
   margin: 40px auto;
@@ -444,7 +440,7 @@ html[data-theme="dark"] .btn-view-details:hover {
 }
 .empty-state p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
 
-/* ---------- How it works ---------- */
+
 .fleet-section { padding-block: clamp(56px, 7vw, 96px); }
 .fleet-steps { background: var(--surface-2); border-block: 1px solid var(--border); }
 .fleet-included { background: var(--bg); }
@@ -496,7 +492,7 @@ html[data-theme="dark"] .btn-view-details:hover {
 }
 .step-card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-/* ---------- Every rental includes ---------- */
+
 .included-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -527,7 +523,7 @@ html[data-theme="dark"] .btn-view-details:hover {
 .included-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
 .included-item p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-/* ---------- CTA ---------- */
+
 .fleet-cta { padding-block: 0 clamp(56px, 7vw, 96px); background: var(--bg); }
 .cta-box {
   display: flex;
@@ -552,10 +548,10 @@ html[data-theme="dark"] .btn-view-details:hover {
 .cta-text p { opacity: .9; font-size: 15px; }
 .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-/* ---------- Footer brand accent (matches index.html) ---------- */
+
 .footer-brand .brand-text strong { color: var(--footer-brand); }
 
-/* ---------- Quick view modal ---------- */
+
 .qv-overlay {
   position: fixed;
   inset: 0;
@@ -643,10 +639,10 @@ html[data-theme="dark"] .btn-view-details:hover {
 }
 .qv-close:hover { color: var(--primary); }
 
-/* ---------- Direction helpers (LTR / RTL) ---------- */
+
 [dir="rtl"] .flip { transform: scaleX(-1); }
 
-/* ---------- Responsive ---------- */
+
 @media (max-width: 1024px) {
   .filter-grid { grid-template-columns: 1fr 1fr; }
   .filter-search { grid-column: 1 / -1; }
@@ -679,12 +675,10 @@ html[data-theme="dark"] .btn-view-details:hover {
   .cta-actions a { flex: 1 1 100%; justify-content: center; }
 }
 
-/* ---------- Utilities ---------- */
+
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
-/* ==========================================================================
-   Fleet Page Custom Split CTA Section (Image Left, Content Right)
-   ========================================================================== */
+
 .fleet-cta-split {
   position: relative;
   display: grid;
@@ -714,7 +708,7 @@ html[data-theme="dark"] .btn-view-details:hover {
     0 0 0 1px rgba(251, 191, 36, 0.4) inset;
 }
 
-/* Ambient glow blobs */
+
 .fleet-cta-split::before {
   content: "";
   position: absolute;
@@ -738,7 +732,7 @@ html[data-theme="dark"] .btn-view-details:hover {
   pointer-events: none;
 }
 
-/* Left Image Box */
+
 .fleet-cta-left {
   position: relative;
   z-index: 1;
@@ -792,7 +786,7 @@ html[data-theme="dark"] .btn-view-details:hover {
   color: #fbbf24;
 }
 
-/* Right Content Box */
+
 .fleet-cta-right {
   position: relative;
   z-index: 1;
@@ -860,7 +854,7 @@ html[data-theme="dark"] .btn-view-details:hover {
   align-items: center;
 }
 
-/* Dark Mode */
+
 html[data-theme="dark"] .fleet-cta-split {
   background:
     radial-gradient(ellipse 80% 60% at 12% 12%, rgba(251, 191, 36, 0.14) 0%, transparent 60%),

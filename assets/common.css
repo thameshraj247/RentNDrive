@@ -1,4 +1,4 @@
-
+﻿
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
 
@@ -12,20 +12,20 @@
 
   --accent: var(--secondary);
 
-  /* Transparent / Alpha Variations (RGBA Format) */
+  
   --primary-soft: rgba(29, 78, 216, 0.12);
   --primary-hover: rgb(30, 64, 175);
   --secondary-soft: rgba(251, 191, 36, 0.16);
   --secondary-hover: rgb(245, 158, 11);
 
-  /* Neutral Surface & Text Baselines (RGB Format) */
+  
   --bg-main: rgb(253, 251, 247);
   --surface-main: rgb(255, 255, 255);
   --text-main: rgb(15, 23, 42);
   --text-muted: rgb(81, 96, 121);
   --border-subtle: rgb(231, 220, 199);
 
-  /* Shadows (RGBA Format) */
+  
   --shadow-subtle: 0 4px 20px -2px rgba(29, 78, 216, 0.06);
   --shadow-card: 0 10px 30px -4px rgba(29, 78, 216, 0.10);
   --shadow-hover: 0 20px 45px -8px rgba(29, 78, 216, 0.25);
@@ -34,15 +34,15 @@
   --font-heading: "Playfair Display", Georgia, serif;
 
 
-  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);       /* 12px - 13px */
-  --text-sm: clamp(0.8125rem, 0.775rem + 0.2vw, 0.875rem);     /* 13px - 14px */
-  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);    /* 15px - 17px */
-  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);       /* 18px - 20px */
-  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);          /* 20px - 24px */
-  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);       /* 24px - 30px */
-  --text-3xl: clamp(1.875rem, 1.65rem + 1.1vw, 2.375rem);      /* 30px - 38px */
-  --text-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);           /* 36px - 48px */
-  --text-5xl: clamp(2.75rem, 2.3rem + 2.25vw, 3.875rem);       /* 44px - 62px */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);       
+  --text-sm: clamp(0.8125rem, 0.775rem + 0.2vw, 0.875rem);     
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);    
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);       
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);          
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);       
+  --text-3xl: clamp(1.875rem, 1.65rem + 1.1vw, 2.375rem);      
+  --text-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);           
+  --text-5xl: clamp(2.75rem, 2.3rem + 2.25vw, 3.875rem);       
 
 
   --lh-tight: 1.15;
@@ -83,9 +83,7 @@ html[data-theme="dark"] {
   --shadow-gold: 0 10px 28px -4px rgba(251, 191, 36, 0.35);
 }
 
-/* ==========================================================================
-   Base Typography & Global Element Styling
-   ========================================================================== */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -109,7 +107,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings Typography */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--text-main);
@@ -149,7 +147,7 @@ strong, b {
   font-weight: var(--fw-bold);
 }
 
-/* Utility Font Families */
+
 .font-display,
 .font-heading,
 .font-serif {
@@ -161,7 +159,7 @@ strong, b {
   font-family: var(--font-body) !important;
 }
 
-/* Dual Color Utility Text Classes */
+
 .text-primary {
   color: var(--primary) !important;
 }
@@ -180,7 +178,7 @@ strong, b {
   color: rgb(15, 23, 42) !important;
 }
 
-/* Custom Scrollbars */
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -196,9 +194,7 @@ strong, b {
   background: var(--primary);
 }
 
-/* ==========================================================================
-   Interactive Components & Navigation Links
-   ========================================================================== */
+
 .nav-link {
   position: relative;
   transition: color 0.25s ease;
@@ -230,7 +226,7 @@ strong, b {
   width: 100%;
 }
 
-/* Primary Button (Royal Blue) */
+
 .btn-royal-primary {
   position: relative;
   overflow: hidden;
@@ -276,7 +272,7 @@ strong, b {
   transform: translateY(0);
 }
 
-/* Secondary Button (Warm Gold) */
+
 .btn-gold-secondary {
   background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-hover) 100%);
   color: rgb(15, 23, 42) !important;
@@ -295,7 +291,7 @@ strong, b {
   box-shadow: 0 14px 32px -4px rgba(251, 191, 36, 0.60);
 }
 
-/* Outlined Ghost Variants */
+
 .btn-ghost-royal {
   color: var(--primary) !important;
   border: 1.5px solid var(--primary);
@@ -314,7 +310,7 @@ strong, b {
   box-shadow: 0 4px 14px rgba(29, 78, 216, 0.28);
 }
 
-/* Dual-Color Badges */
+
 .badge-royal {
   background: var(--primary-soft);
   color: var(--primary);
@@ -345,7 +341,7 @@ html[data-theme="dark"] .badge-gold {
   color: var(--secondary);
 }
 
-/* Modal and Animations */
+
 .modal-backdrop {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -371,12 +367,9 @@ html[data-theme="dark"] .badge-gold {
 .anim-delay-300 { animation-delay: 300ms; }
 .anim-delay-400 { animation-delay: 400ms; }
 
-/* ==========================================================================
-   Luxury Opening Animations Suite (Distinct Multi-Animation Engine)
-   Applied automatically to all sections, heroes, and cards across all pages
-   ========================================================================== */
 
-/* 1. Page Entry Veil (Smooth Instant Opening Curtain) */
+
+
 body::before {
   content: "";
   position: fixed;
@@ -400,7 +393,7 @@ body::before {
   }
 }
 
-/* 2. Top Header Cascade Reveal */
+
 .site-header,
 .adm-topbar,
 .login-header {
@@ -418,7 +411,7 @@ body::before {
   }
 }
 
-/* 3. Base Animation States */
+
 .reveal,
 [data-anim] {
   opacity: 0;
@@ -428,7 +421,7 @@ body::before {
               filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Style A: Soft Floating Rise Up */
+
 .anim-rise,
 [data-anim="rise"] {
   transform: translateY(40px);
@@ -439,7 +432,7 @@ body::before {
   transform: translateY(0);
 }
 
-/* Style B: Cinematic Zoom / Scale In */
+
 .anim-zoom,
 [data-anim="zoom"] {
   transform: scale(0.92) translateY(24px);
@@ -452,7 +445,7 @@ body::before {
   filter: blur(0);
 }
 
-/* Style C: Smooth Slide In from Left */
+
 .anim-slide-left,
 [data-anim="slide-left"] {
   transform: translateX(-48px);
@@ -463,7 +456,7 @@ body::before {
   transform: translateX(0);
 }
 
-/* Style D: Smooth Slide In from Right */
+
 .anim-slide-right,
 [data-anim="slide-right"] {
   transform: translateX(48px);
@@ -474,7 +467,7 @@ body::before {
   transform: translateX(0);
 }
 
-/* Style E: Perspective 3D Flip Rise */
+
 .anim-flip-up,
 [data-anim="flip-up"] {
   transform: perspective(1000px) rotateX(16deg) translateY(36px);
@@ -485,7 +478,7 @@ body::before {
   transform: perspective(1000px) rotateX(0deg) translateY(0);
 }
 
-/* Style F: Shimmer Fade In with Soft Glow */
+
 .anim-shimmer,
 [data-anim="shimmer"] {
   filter: blur(8px);
@@ -498,7 +491,7 @@ body::before {
   transform: scale(1);
 }
 
-/* Default .reveal fallback */
+
 .reveal {
   transform: translateY(32px);
 }
@@ -507,7 +500,7 @@ body::before {
   transform: translateY(0);
 }
 
-/* 4. Automatic Section-by-Section Distinct Animation Styles */
+
 main > section:nth-of-type(1),
 body > section:nth-of-type(1),
 .hero, .about-hero, .fleet-hero, .hiw-hero, .pricing-hero, .contact-hero, .p-hero, .details-page-banner, .error-main-viewport, .login-split-card {
@@ -528,7 +521,7 @@ body > section:nth-of-type(1),
   }
 }
 
-/* Staggered Child Element Timing Utilities */
+
 .stagger-in > * {
   opacity: 0;
   transform: translateY(24px);
@@ -546,7 +539,7 @@ body > section:nth-of-type(1),
 .stagger-in.in > *:nth-child(5) { transition-delay: 0.41s; }
 .stagger-in.in > *:nth-child(6) { transition-delay: 0.50s; }
 
-/* Reduced Motion Graceful Degradation */
+
 @media (prefers-reduced-motion: reduce) {
   body::before { display: none !important; }
   .site-header, .adm-topbar, .login-header,

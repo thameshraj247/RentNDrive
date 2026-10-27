@@ -1,9 +1,6 @@
-/* =====================================================
-   RENTNDRIVE | ADMIN CONSOLE
-   Light / dark via html[data-theme], LTR / RTL via html[dir]
-   ===================================================== */
+﻿
 
-/* ---------- Tokens ---------- */
+
 :root {
   --bg: #f3f6fb;
   --card: #ffffff;
@@ -11,20 +8,20 @@
   --text: #0f172a;
   --muted: #516079;
   --border: #e2e8f0;
-  --primary: #1d4ed8;            /* Core Primary: Royal Blue */
+  --primary: #1d4ed8;            
   --primary2: #2563eb;
-  --secondary: #fbbf24;          /* Core Secondary: Warm Gold */
+  --secondary: #fbbf24;          
   --secondary-hover: #f59e0b;
   --secondary-soft: rgba(251, 191, 36, 0.16);
   --accent: var(--secondary);
   --soft: #eff6ff;
   --shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
-  --bar-a: #3b82f6;              /* Original vibrant blue bar gradient */
-  --bar-b: #1d4ed8;              /* Original deep royal blue bar gradient */
-  --c1: #1d4ed8;                 /* Original Donut Blue segment 1 */
-  --c2: #2563eb;                 /* Original Donut Blue segment 2 */
-  --c3: #38bdf8;                 /* Original Donut Sky Blue segment 3 */
-  --c4: #94a3b8;                 /* Original Donut Slate segment 4 */
+  --bar-a: #3b82f6;              
+  --bar-b: #1d4ed8;              
+  --c1: #1d4ed8;                 
+  --c2: #2563eb;                 
+  --c3: #38bdf8;                 
+  --c4: #94a3b8;                 
   --green: #059669;
   --amber: #d97706;
   --red: #b91c1c;
@@ -49,9 +46,9 @@ html[data-theme="dark"],
   --accent: var(--secondary);
   --soft: rgba(91, 155, 235, 0.16);
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --bar-a: #5b9beb;              /* Original Dark Mode Blue bar gradient */
+  --bar-a: #5b9beb;              
   --bar-b: #1d4ed8;
-  --c1: #5b9beb;                 /* Original Dark Mode Donut blue segments */
+  --c1: #5b9beb;                 
   --c2: #93c5fd;
   --c3: #38bdf8;
   --c4: #64748b;
@@ -71,7 +68,7 @@ html[data-theme="dark"],
 }
 
 
-/* ---------- Base ---------- */
+
 *,
 *::before,
 *::after {
@@ -113,14 +110,14 @@ table {
   outline-offset: 2px;
 }
 
-/* ---------- Shell ---------- */
+
 .adm-shell {
   display: grid;
   grid-template-columns: 260px 1fr;
   min-height: 100vh;
 }
 
-/* ---------- Sidebar ---------- */
+
 .adm-sidebar {
   position: sticky;
   top: 0;
@@ -241,7 +238,7 @@ html[data-theme="dark"] .adm-brand small,
   background: var(--soft);
 }
 
-/* ---------- Main ---------- */
+
 .adm-main {
   min-width: 0;
   padding: 26px clamp(18px, 3vw, 36px) 48px;
@@ -320,7 +317,7 @@ html:not([data-theme="dark"]) .icon-sun,
   display: none;
 }
 
-/* ---------- Panels ---------- */
+
 .adm-panel {
   display: none;
   flex-direction: column;
@@ -341,7 +338,7 @@ html:not([data-theme="dark"]) .icon-sun,
   }
 }
 
-/* ---------- Cards ---------- */
+
 .adm-card {
   min-width: 0;
   padding: 24px;
@@ -382,7 +379,7 @@ html:not([data-theme="dark"]) .icon-sun,
   gap: 22px;
 }
 
-/* ---------- Stat cards ---------- */
+
 .adm-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -442,7 +439,7 @@ html:not([data-theme="dark"]) .icon-sun,
   color: var(--red);
 }
 
-/* ---------- Charts ---------- */
+
 .adm-chart {
   width: 100%;
 }
@@ -634,7 +631,7 @@ html[data-theme="dark"] .donut-floating-tip {
   color: var(--muted);
 }
 
-/* ---------- Tables ---------- */
+
 .adm-table-wrap {
   overflow-x: auto;
 }
@@ -696,7 +693,7 @@ html[data-theme="dark"] .donut-floating-tip {
   font-size: 14px;
 }
 
-/* ---------- Pills ---------- */
+
 .adm-pill {
   display: inline-block;
   padding: 5px 12px;
@@ -737,7 +734,7 @@ html[data-theme="dark"] .donut-floating-tip {
   color: var(--red);
 }
 
-/* ---------- Buttons ---------- */
+
 .adm-btn {
   display: inline-flex;
   align-items: center;
@@ -772,7 +769,7 @@ html[data-theme="dark"] .donut-floating-tip {
   font-size: 12px;
 }
 
-/* ---------- Fleet ---------- */
+
 .adm-car-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -840,7 +837,7 @@ html[data-theme="dark"] .donut-floating-tip {
   margin-top: 4px;
 }
 
-/* ---------- Live rentals ---------- */
+
 .adm-live-list {
   display: grid;
   gap: 14px;
@@ -883,7 +880,7 @@ html[data-theme="dark"] .donut-floating-tip {
   margin-inline-end: 6px;
 }
 
-/* ---------- Hubs ---------- */
+
 .adm-hub-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -940,7 +937,7 @@ html[data-theme="dark"] .donut-floating-tip {
   font-size: 13px;
 }
 
-/* ---------- Plans ---------- */
+
 .adm-plan-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -985,7 +982,7 @@ html[data-theme="dark"] .donut-floating-tip {
   margin-inline-end: 10px;
 }
 
-/* ---------- Reviews ---------- */
+
 .adm-review-list {
   display: grid;
   gap: 14px;
@@ -1013,7 +1010,7 @@ html[data-theme="dark"] .donut-floating-tip {
   color: var(--muted);
 }
 
-/* ---------- Support ---------- */
+
 .adm-contact-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1051,7 +1048,7 @@ html[data-theme="dark"] .donut-floating-tip {
   font-size: 14px;
 }
 
-/* ---------- Toasts ---------- */
+
 .adm-toast-host {
   position: fixed;
   bottom: 24px;
@@ -1084,12 +1081,12 @@ html[data-theme="dark"] .donut-floating-tip {
   color: var(--muted);
 }
 
-/* ---------- Backdrop (mobile sidebar) ---------- */
+
 .adm-backdrop {
   display: none;
 }
 
-/* ---------- Account menu (avatar + dropdown) ---------- */
+
 .adm-user {
   position: relative;
 }
@@ -1198,7 +1195,7 @@ button.adm-avatar:hover {
   background: var(--border);
 }
 
-/* ---------- Profile / settings popup ---------- */
+
 .adm-modal {
   position: fixed;
   inset: 0;
@@ -1295,7 +1292,7 @@ button.adm-avatar:hover {
   display: none;
 }
 
-/* ---------- Responsive ---------- */
+
 @media (max-width: 1280px) {
   .adm-stats {
     grid-template-columns: repeat(2, 1fr);
@@ -1382,7 +1379,7 @@ button.adm-avatar:hover {
   }
 }
 
-/* ---------- Reduced motion ---------- */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -1,4 +1,4 @@
-﻿// Royal Fleet Car Rental - Login & Register Controller
+﻿
 
 document.addEventListener("DOMContentLoaded", () => {
   initAuthTabs();
@@ -84,7 +84,7 @@ function initAuthForms() {
         if (typeof store !== "undefined" && typeof store.login === "function") {
           store.login(email, pass, username);
         } else {
-          // Direct fallback to localStorage in case store object is unavailable
+          
           const displayName = username || (email ? email.split("@")[0] : "Valued Customer");
           const stateData = {
             isLoggedIn: true,
@@ -119,7 +119,7 @@ function initAuthForms() {
     });
   }
 
-  // Social Login Mock Handlers (Google & Apple)
+  
   const googleBtn = document.getElementById("google-login-btn");
   if (googleBtn) {
     googleBtn.addEventListener("click", () => {
@@ -207,7 +207,7 @@ function initAuthForms() {
     });
   }
 
-  // Social Signup Handlers (Google & Apple) on Register Form
+  
   const googleRegBtn = document.getElementById("google-register-btn");
   if (googleRegBtn) {
     googleRegBtn.addEventListener("click", () => {

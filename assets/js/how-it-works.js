@@ -1,7 +1,4 @@
-/* ==========================================================================
-   How It Works page behaviour: FAQ accordion.
-   Functions only. Content and open/closed defaults come from the HTML.
-   ========================================================================== */
+﻿
 (function () {
   "use strict";
 
@@ -41,7 +38,7 @@
     });
   }
 
-  /* ---------- Animated Stats Counter ---------- */
+  
   function animateCounter(el) {
     const target = parseFloat(el.dataset.count);
     const decimals = parseInt(el.dataset.decimals || "0", 10);
@@ -61,7 +58,7 @@
     function step(currentTime) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Smooth ease-out cubic curve
+      
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const current = target * easeOut;
 
@@ -94,7 +91,7 @@
 
       observer.observe(statSection);
     } else {
-      // Fallback if IntersectionObserver is unsupported
+      
       countElements.forEach(el => animateCounter(el));
     }
   }

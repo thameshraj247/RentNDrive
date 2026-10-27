@@ -1,7 +1,4 @@
-/* ==========================================================================
-   RentNDrive - Shared Site Setup (Theme, Direction, Mobile Nav & Scroll Reveal)
-   Applied consistently across all pages
-   ========================================================================== */
+﻿
 
 (function () {
   "use strict";
@@ -12,7 +9,7 @@
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
 
-  /* ---------- Theme Handling ---------- */
+  
   function applyTheme(theme) {
     const t = theme === "dark" ? "dark" : "light";
     root.setAttribute("data-theme", t);
@@ -42,11 +39,11 @@
     store.set("rnd-dir", d);
   }
 
-  // Restore saved state immediately
+  
   applyTheme(store.get("rnd-theme", "light"));
   applyDirection(store.get("rnd-dir", "ltr"));
 
-  /* ---------- Auth & Header Profile Setup ---------- */
+  
   function getAuthState() {
     try {
       const raw = localStorage.getItem("royalfleet_state_v1");
@@ -88,7 +85,7 @@
     if (!actionsContainers.length) return;
 
     actionsContainers.forEach(actions => {
-      // Check if wrapper already exists
+      
       let wrapper = actions.querySelector(".profile-dropdown-wrapper");
       let loginBtn = actions.querySelector(".login-btn:not(.header-profile-btn)");
 
@@ -99,14 +96,14 @@
         const initial = (fullName.trim()[0] || "U").toUpperCase();
 
         if (!wrapper) {
-          // If a standard login btn is present, remove or convert it
+          
           const existingBtn = actions.querySelector(".login-btn");
           if (existingBtn) existingBtn.remove();
 
           wrapper = document.createElement("div");
           wrapper.className = "profile-dropdown-wrapper";
           
-          // Insert before menuToggle if present, or append
+          
           const menuToggle = actions.querySelector("#menuToggle");
           if (menuToggle) {
             actions.insertBefore(wrapper, menuToggle);
@@ -166,7 +163,7 @@
           });
         }
       } else {
-        // Logged out: remove dropdown wrapper if exists, ensure plain login button exists
+        
         if (wrapper) wrapper.remove();
 
         let currentBtn = actions.querySelector(".login-btn");
@@ -192,7 +189,7 @@
     });
   }
 
-  // Close profile dropdown when clicking outside
+  
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".profile-dropdown-wrapper")) {
       document.querySelectorAll(".profile-dropdown-menu.show").forEach(menu => {
@@ -203,7 +200,7 @@
     }
   });
 
-  // Run immediately and export for reuse
+  
   syncHeaderAuth();
   window.rndSyncHeaderAuth = syncHeaderAuth;
   window.rndGetAuthState = getAuthState;
@@ -211,7 +208,7 @@
 
   function initSiteControls() {
     syncHeaderAuth();
-    // Theme and RTL buttons
+    
     const themeBtn = document.getElementById("themeToggle");
     if (themeBtn) {
       themeBtn.addEventListener("click", () => {
@@ -226,7 +223,7 @@
       });
     }
 
-    // Header scroll effect & mobile navigation
+    
     const header = document.getElementById("siteHeader");
     const nav = document.getElementById("mainNav");
     const menuBtn = document.getElementById("menuToggle");
@@ -246,12 +243,12 @@
 
       menuBtn.addEventListener("click", toggleMenu);
 
-      // Support mobile touchstart without delay
+      
       menuBtn.addEventListener("touchstart", (e) => {
         toggleMenu(e);
       }, { passive: false });
 
-      // Mobile dropdown toggles
+      
       nav.querySelectorAll(".nav-dropdown-toggle").forEach(toggle => {
         toggle.addEventListener("click", (e) => {
           if (window.innerWidth <= 900) {
@@ -262,7 +259,7 @@
         });
       });
 
-      // Close mobile menu when clicking outside
+      
       document.addEventListener("click", (e) => {
         if (!e.target.closest("#mainNav") && !e.target.closest("#menuToggle")) {
           if (nav.classList.contains("open")) {
@@ -295,33 +292,33 @@
       backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
     }
 
-    // Dynamic copyright year
+    
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // ========================================================================
-    // Dynamic Multi-Style Opening Animations Suite
-    // Assigns distinct opening animation choreographies across different sections
-    // ========================================================================
+    
+    
+    
+    
     const animStyles = ["anim-rise", "anim-zoom", "anim-slide-left", "anim-flip-up", "anim-slide-right", "anim-shimmer"];
     
-    // Auto-detect and register sections, cards, and grids that lack manual animation tags
+    
     const targetSections = document.querySelectorAll("main > section, body > section, .adm-panel, .adm-card, .adm-stat");
     targetSections.forEach((sec, idx) => {
-      // Pick a distinct opening animation for each section based on its index
+      
       const chosenAnim = animStyles[idx % animStyles.length];
       if (!sec.classList.contains("hero") && !sec.classList.contains("about-hero") && !sec.classList.contains("p-hero") && !sec.classList.contains("fleet-hero") && !sec.classList.contains("contact-hero") && !sec.classList.contains("pricing-hero") && !sec.classList.contains("hiw-hero") && !sec.classList.contains("details-page-banner")) {
         sec.classList.add("reveal", chosenAnim);
       }
       
-      // Auto-stagger direct child grids/cards inside each section
+      
       const innerGrids = sec.querySelectorAll(".grid, .cat-grid, .fleet-cards, .story-grid, .values-grid, .standards-grid, .team-grid, .plans-grid, .protect-grid, .contact-cards-grid, .details-steps-grid, .p-booking-grid, .p-metrics-strip, .p-fleet-grid, .p-exp-grid, .p-vip-grid");
       innerGrids.forEach(g => {
         g.classList.add("stagger-in", "reveal");
       });
     });
 
-    // Scroll reveal observer
+    
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -344,7 +341,7 @@
     initSiteControls();
   }
 
-  // Export helper functions to window
+  
   window.rndApplyTheme = applyTheme;
   window.rndApplyDirection = applyDirection;
 })();

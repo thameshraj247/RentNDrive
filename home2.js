@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Home 2 - Luxury & Prestige Edition Specific Interactive Behaviour
-   Filters, booking simulator, counter animations, interactive tabs
-   ========================================================================== */
+﻿
 (function () {
   "use strict";
 
@@ -9,7 +6,7 @@
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
   document.addEventListener("DOMContentLoaded", () => {
-    // 1. Fleet Category Filter Tabs
+    
     const filterTabs = $$(".p-tab-btn");
     const fleetCards = $$(".p-fleet-card");
 
@@ -38,7 +35,7 @@
       });
     });
 
-    // 2. VIP Pricing Toggle (Monthly vs Annual / Daily)
+    
     const vipForm = $("#vipBookingForm");
     if (vipForm) {
       vipForm.addEventListener("submit", e => {
@@ -49,7 +46,7 @@
       });
     }
 
-    // 3. Smooth Counter Animations for Metrics
+    
     const metrics = $$(".p-metric strong[data-count]");
     if ("IntersectionObserver" in window) {
       const metricObserver = new IntersectionObserver((entries, observer) => {
@@ -89,7 +86,7 @@
       });
     }
 
-    // 4. Interactive Feature Stack Hover Effects
+    
     $$(".p-feature-row").forEach(row => {
       row.addEventListener("mouseenter", () => {
         const visualImg = $("#showcaseVisualImg");
@@ -104,13 +101,13 @@
       });
     });
 
-    // 5. Ensure background video autoplays smoothly even on low-power mode
+    
     const heroVid = $(".p-hero-video");
     if (heroVid) {
       const playPromise = heroVid.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
-          // Fallback if browser requires touch/click gesture
+          
           document.body.addEventListener("click", () => heroVid.play(), { once: true });
           document.body.addEventListener("touchstart", () => heroVid.play(), { once: true });
         });

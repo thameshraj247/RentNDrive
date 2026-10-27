@@ -1,8 +1,6 @@
-/* ==========================================================================
-   Royal Fleet Car Rental - Login & Register Stylesheet
-   ========================================================================== */
+﻿
 
-/* Desktop: Zero Scroll Viewport Fit */
+
 @media (min-width: 1024px) {
   html, body {
     height: 100%;
@@ -30,7 +28,7 @@
   }
 }
 
-/* Mobile & Tablet: Centered Layout with Natural Scrolling */
+
 @media (max-width: 1023px) {
   html, body {
     height: auto !important;
@@ -74,12 +72,12 @@
     width: 100% !important;
   }
 
-  /* Make sure the form inputs, submit button, and social buttons don't get truncated */
+  
   .auth-card .lg\:col-span-5 {
     padding: 20px 16px !important;
   }
 
-  /* Compact branding on mobile so user sees the login form right away */
+  
   .auth-card .lg\:col-span-5 p,
   .auth-card .lg\:col-span-5 .space-y-3 {
     display: none !important;
@@ -155,7 +153,7 @@ html[data-theme="dark"] .login-divider-line {
 }
 
 
-/* Brand header above Sign In & Create Account */
+
 .login-brand-header {
   border-bottom: 1px solid var(--border, #e2e8f0);
 }

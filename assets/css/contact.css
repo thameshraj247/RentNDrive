@@ -1,5 +1,5 @@
-
-    /* Contact Page Specific Styles */
+﻿
+    
     .contact-hero {
       position: relative;
       min-height: calc(100vh - 80px);
@@ -84,7 +84,7 @@
       margin-top: 32px;
     }
 
-    /* Cards Grid */
+    
     .contact-cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -160,7 +160,7 @@
       margin-top: auto;
     }
 
-    /* Split Section: Form + Hubs */
+    
     .contact-split {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;

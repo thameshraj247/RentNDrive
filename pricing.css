@@ -1,9 +1,6 @@
-/* ==========================================================================
-   RentNDrive - Pricing & Plans Page Specific Styles
-   Inherits global tokens, header, footer, animations, and themes from home.css
-   ========================================================================== */
+﻿
 
-/* ---------- Page Hero (Full Height Landing Hero) ---------- */
+
 .pricing-hero {
   position: relative;
   min-height: calc(100vh - 80px);
@@ -97,7 +94,7 @@ html[data-theme="dark"] .pricing-hero p {
   margin-top: 32px;
 }
 
-/* ---------- Plan Cards ---------- */
+
 .plans-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -210,7 +207,7 @@ html[data-theme="dark"] .pricing-hero p {
   flex-shrink: 0;
 }
 
-/* Card image addition for rental plans */
+
 .plan-media {
   width: 100%;
   height: 160px;
@@ -231,7 +228,7 @@ html[data-theme="dark"] .pricing-hero p {
   transform: scale(1.08);
 }
 
-/* ---------- Calculator ---------- */
+
 .calculator {
   max-width: 980px;
   margin-inline: auto;
@@ -437,7 +434,7 @@ input[type="range"] {
   color: var(--muted);
 }
 
-/* ---------- Receipt ---------- */
+
 .receipt {
   background: #0f1d38;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -561,7 +558,7 @@ input[type="range"] {
   width: 100%;
 }
 
-/* ---------- Protection Packages ---------- */
+
 .protect-grid {
   max-width: 1040px;
   margin-inline: auto;
@@ -643,7 +640,7 @@ input[type="range"] {
   margin-top: 3px;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 1040px) {
   .plans-grid {
     grid-template-columns: repeat(2, 1fr);

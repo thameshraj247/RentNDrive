@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Fleet page behaviour: filters, sorting, quick-view modal.
-   Functions only. All vehicle content comes from the HTML (data-* attributes).
-   ========================================================================== */
+﻿
 (function () {
   "use strict";
 
@@ -19,7 +16,7 @@
   const $ = (sel, scope = document) => scope.querySelector(sel);
   const $$ = (sel, scope = document) => Array.from(scope.querySelectorAll(sel));
 
-  /* ---------- Element lookups ---------- */
+  
   function getElements() {
     return {
       grid: $("#fleetGrid"),
@@ -39,7 +36,7 @@
 
   const el = getElements();
 
-  /* ---------- Helpers ---------- */
+  
   function getCards() {
     return $$(".car-card", el.grid);
   }
@@ -59,7 +56,7 @@
     return true;
   }
 
-  /* ---------- Rendering ---------- */
+  
   function applyFilters() {
     let visible = 0;
     getCards().forEach(card => {
@@ -103,7 +100,7 @@
     applyFilters();
   }
 
-  /* ---------- State changes ---------- */
+  
   function setCategory(cat) {
     state.category = cat;
     setActiveTab();
@@ -131,7 +128,7 @@
     refresh();
   }
 
-  /* ---------- Quick view ---------- */
+  
   function setText(id, value) {
     const node = document.getElementById(id);
     if (node) node.textContent = value;
@@ -164,7 +161,7 @@
     el.quickView.setAttribute("aria-hidden", "true");
   }
 
-  /* ---------- Event binding ---------- */
+  
   function bindControls() {
     if (el.search) {
       el.search.addEventListener("input", () => {
@@ -237,7 +234,7 @@
     if (cat) state.category = cat;
   }
 
-  /* ---------- Init ---------- */
+  
   function init() {
     if (!el.grid) return;
     applyUrlCategory();

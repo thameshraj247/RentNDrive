@@ -1,9 +1,6 @@
-/* ==========================================================================
-   Car Details Page Styles
-   RentNDrive Luxury Car Rentals
-   ========================================================================== */
+﻿
 
-/* ---------- Page Banner Header ---------- */
+
 .details-page-banner {
   position: relative;
   min-height: 320px;
@@ -113,7 +110,7 @@ html[data-theme="dark"] .details-banner-badge {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
-/* ---------- Car Details Hero Showcase ---------- */
+
 .car-details-hero {
   padding: 40px 0 32px;
   background: var(--surface-2);
@@ -151,7 +148,7 @@ html[data-theme="dark"] .details-banner-badge {
   align-items: stretch;
 }
 
-/* Gallery Showcase */
+
 .car-gallery-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -205,7 +202,7 @@ html[data-theme="dark"] .details-banner-badge {
   right: 18px;
 }
 
-/* Gallery Footer: Vehicle Name Bar & Thumbnails */
+
 .car-gallery-footer {
   display: flex;
   align-items: center;
@@ -299,7 +296,7 @@ html[data-theme="dark"] .details-banner-badge {
   object-fit: cover;
 }
 
-/* Overview Card */
+
 .car-overview-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -382,7 +379,7 @@ html[data-theme="dark"] .car-rating-pill {
   line-height: 1.65;
 }
 
-/* Specs Icon Grid */
+
 .car-specs-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -423,7 +420,7 @@ html[data-theme="dark"] .car-rating-pill {
   color: var(--text);
 }
 
-/* Action Buttons */
+
 .car-action-buttons {
   display: flex;
   gap: 12px;
@@ -440,7 +437,7 @@ html[data-theme="dark"] .car-rating-pill {
   font-size: 14px;
 }
 
-/* ---------- Main Content Grid ---------- */
+
 .car-details-section {
   padding: 56px 0 72px;
   background: var(--bg);
@@ -502,7 +499,7 @@ html[data-theme="dark"] .car-rating-pill {
   font-size: 18px;
 }
 
-/* Features List */
+
 .features-list {
   list-style: none;
   display: grid;
@@ -526,7 +523,7 @@ html[data-theme="dark"] .car-rating-pill {
   flex-shrink: 0;
 }
 
-/* Specs Table */
+
 .specs-table {
   width: 100%;
   border-collapse: collapse;
@@ -557,7 +554,7 @@ html[data-theme="dark"] .car-rating-pill {
   text-align: right;
 }
 
-/* Sidebar Perks Card */
+
 .rental-perks-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -606,7 +603,7 @@ html[data-theme="dark"] .rental-perk-icon {
   line-height: 1.5;
 }
 
-/* Sidebar VIP Concierge Card */
+
 .details-concierge-card {
   margin-top: 24px;
   background: linear-gradient(135deg, rgba(30, 58, 138, 0.04), rgba(251, 191, 36, 0.08));
@@ -698,7 +695,7 @@ html[data-theme="dark"] .details-concierge-card {
   color: var(--primary);
 }
 
-/* ---------- NEW SECTION 1: How Rental Works Step Flow ---------- */
+
 .details-steps-section {
   padding: 64px 0;
   background: var(--surface-2);
@@ -788,7 +785,7 @@ html[data-theme="dark"] .details-concierge-card {
   line-height: 1.55;
 }
 
-/* ---------- NEW SECTION 2: Rental Protection & Add-ons ---------- */
+
 .details-addons-section {
   padding: 68px 0;
   background: var(--bg);
@@ -903,7 +900,7 @@ html[data-theme="dark"] .addon-icon {
   font-size: 14px;
 }
 
-/* ---------- NEW SECTION 3: FAQ Accordion ---------- */
+
 .details-faq-section {
   padding: 64px 0 80px;
   background: var(--surface-2);
@@ -964,7 +961,7 @@ html[data-theme="dark"] .addon-icon {
   display: block;
 }
 
-/* ---------- Responsive ---------- */
+
 @media (max-width: 1024px) {
   .details-steps-grid {
     grid-template-columns: repeat(2, 1fr);

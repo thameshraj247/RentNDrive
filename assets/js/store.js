@@ -1,4 +1,4 @@
-// Royal Fleet Car Rental - Application State Store (with LocalStorage persistence)
+﻿
 
 class AppStore {
   constructor() {
@@ -25,7 +25,7 @@ class AppStore {
   resetToDefaults() {
     this.state = {
       currentUser: JSON.parse(JSON.stringify(INITIAL_DATA.demoUser)),
-      isLoggedIn: true, // Default to demo user logged in for immediate dashboard exploration, can toggle
+      isLoggedIn: true, 
       vehicles: JSON.parse(JSON.stringify(INITIAL_DATA.vehicles)),
       categories: JSON.parse(JSON.stringify(INITIAL_DATA.categories)),
       locations: JSON.parse(JSON.stringify(INITIAL_DATA.locations)),
@@ -71,20 +71,20 @@ class AppStore {
     });
   }
 
-  // Auth Methods
+  
   login(email, password, customName) {
     const displayName = customName && customName.trim()
       ? customName.trim()
       : (email ? email.split("@")[0].replace(".", " ").replace(/\b\w/g, l => l.toUpperCase()) : "Valued Customer");
 
-    // If matching existing user
+    
     if (this.state.currentUser && this.state.currentUser.email && this.state.currentUser.email.toLowerCase() === email.toLowerCase()) {
       if (customName && customName.trim()) {
         this.state.currentUser.name = customName.trim();
       }
       this.state.isLoggedIn = true;
     } else {
-      // Login or auto-generate profile
+      
       this.state.currentUser = {
         id: "user-" + Date.now().toString(36),
         name: displayName,
@@ -132,7 +132,7 @@ class AppStore {
       phone: userData.phone || "+1 (555) 123-4567",
       avatar: "car-1216.jpg",
       tier: "Silver Explorer",
-      points: 1000, // Welcome bonus
+      points: 1000, 
       licenseNumber: userData.licenseNumber || "DL-" + Math.floor(10000000 + Math.random() * 90000000) + "-US",
       licenseExpiry: "10/2029",
       activeRentalsCount: 0,
@@ -158,7 +158,7 @@ class AppStore {
     return { success: true, user: newUser };
   }
 
-  // Booking Methods
+  
   createBooking(bookingPayload) {
     const user = this.state.currentUser;
     if (!user) throw new Error("User must be logged in to book");
@@ -200,7 +200,7 @@ class AppStore {
       createdAt: new Date().toISOString()
     };
 
-    // Build matching Invoice
+    
     const invoiceItems = [
       {
         description: `${vehicle.name} (${bookingPayload.days} day${bookingPayload.days > 1 ? 's' : ''} @ $${vehicle.pricePerDay}/day)`,
@@ -257,7 +257,7 @@ class AppStore {
     const booking = user.bookings.find(b => b.id === bookingId);
     if (booking && booking.status !== "Completed" && booking.status !== "Cancelled") {
       booking.status = "Cancelled";
-      // Find invoice and update
+      
       const invoice = user.invoices.find(inv => inv.id === booking.invoiceId);
       if (invoice) {
         invoice.status = "Refunded (100% Free)";
@@ -284,14 +284,14 @@ class AppStore {
     booking.baseTotal += addedAmount;
     booking.totalAmount = parseFloat((booking.totalAmount + addedAmount).toFixed(2));
 
-    // Update user stats
+    
     user.totalSpent = (parseFloat(user.totalSpent) + addedAmount).toFixed(2);
 
     this.saveState();
     return booking;
   }
 
-  // Payment Methods
+  
   addPaymentMethod(cardData) {
     const user = this.state.currentUser;
     if (!user) return false;
@@ -330,7 +330,7 @@ class AppStore {
     return true;
   }
 
-  // Profile update
+  
   updateProfile(profileData) {
     const user = this.state.currentUser;
     if (!user) return false;
@@ -339,7 +339,7 @@ class AppStore {
     return user;
   }
 
-  // Getters
+  
   getVehicles(filter = {}) {
     let list = [...this.state.vehicles];
 
@@ -402,5 +402,5 @@ class AppStore {
   }
 }
 
-// Global store instance
+
 const store = new AppStore();

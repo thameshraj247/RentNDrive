@@ -1,11 +1,11 @@
-// Royal Fleet Car Rental - Shared UI Controller (Common across all pages)
+﻿
 
 document.addEventListener("DOMContentLoaded", () => {
   initCommonNav();
   initMobileMenu();
 });
 
-// Update Navbar based on store state
+
 function initCommonNav() {
   const navAuthContainer = document.getElementById("nav-auth-container");
   if (!navAuthContainer) return;
@@ -55,7 +55,7 @@ function initCommonNav() {
   }
 }
 
-// Mobile Drawer Toggle
+
 function initMobileMenu() {
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -66,7 +66,7 @@ function initMobileMenu() {
   }
 }
 
-// Global Toast Notification
+
 function showToast(message, type = "info") {
   let toastContainer = document.getElementById("toast-notification-container");
   if (!toastContainer) {
@@ -97,7 +97,7 @@ function showToast(message, type = "info") {
   }, 3500);
 }
 
-// Pure Native HTML5 Canvas Confetti (Zero external libraries)
+
 function triggerNativeConfetti() {
   const canvas = document.createElement("canvas");
   canvas.style.position = "fixed";
@@ -162,7 +162,7 @@ function triggerNativeConfetti() {
   requestAnimationFrame(animate);
 }
 
-// Universal Booking Modal (Callable from any page)
+
 function openUniversalBookingModal(carId) {
   const car = store.getVehicleById(carId);
   if (!car) return;
@@ -397,7 +397,7 @@ function openUniversalBookingModal(carId) {
   });
 }
 
-// Universal Car Specs Modal (Callable from any page)
+
 function openCarSpecsModal(carId) {
   const car = store.getVehicleById(carId);
   if (!car) return;

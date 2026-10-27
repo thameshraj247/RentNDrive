@@ -1,12 +1,9 @@
-/* ==========================================================================
-   Car Details Page JavaScript Controller
-   RentNDrive Luxury Car Rentals
-   ========================================================================== */
+﻿
 
 (function () {
   "use strict";
 
-  // Complete car dataset fallback ensuring every vehicle displays full rich details
+  
   const VEHICLES = [
     {
       id: 1,
@@ -466,7 +463,7 @@
     }
   ];
 
-  // Helper selector
+  
   const $ = (sel) => document.querySelector(sel);
 
   function getCarFromUrl() {
@@ -478,12 +475,12 @@
   function renderCarDetails() {
     const car = getCarFromUrl();
 
-    // Page titles
+    
     document.title = `${car.name} | RentNDrive Luxury Car Rentals`;
     const breadcrumbName = $("#breadcrumbCarName");
     if (breadcrumbName) breadcrumbName.textContent = car.name;
 
-    // Brand and Titles
+    
     const brandEl = $("#carBrand");
     if (brandEl) brandEl.textContent = car.brand;
     const titleEl = $("#carTitle");
@@ -495,11 +492,11 @@
     const ratingEl = $("#carRating");
     if (ratingEl) ratingEl.textContent = `${car.rating} (${car.reviews} verified reviews)`;
 
-    // Price
+    
     const priceEl = $("#carPrice");
     if (priceEl) priceEl.textContent = `$${car.price}`;
 
-    // Tag
+    
     const tagEl = $("#carTag");
     if (tagEl) {
       if (car.tag) {
@@ -510,7 +507,7 @@
       }
     }
 
-    // Quick Specs Grid
+    
     const specSeats = $("#specSeats");
     if (specSeats) specSeats.textContent = `${car.seats} Adult Seats`;
     const specTrans = $("#specTransmission");
@@ -520,7 +517,7 @@
     const specBags = $("#specBags");
     if (specBags) specBags.textContent = `${car.bags} Luggage Bags`;
 
-    // Specs Table
+    
     const tableEngine = $("#tableEngine");
     if (tableEngine) tableEngine.textContent = car.engine || "High-Output Performance Engine";
     const tableHp = $("#tableHorsepower");
@@ -534,7 +531,7 @@
     const tableMileage = $("#tableMileage");
     if (tableMileage) tableMileage.textContent = car.economy || "Unlimited Highway";
 
-    // Feature list
+    
     const featuresList = $("#featuresList");
     if (featuresList && Array.isArray(car.features)) {
       featuresList.innerHTML = car.features.map(f => `
@@ -542,7 +539,7 @@
       `).join("");
     }
 
-    // Gallery images
+    
     const mainImg = $("#mainCarImg");
     if (mainImg) {
       mainImg.src = car.img;
@@ -557,7 +554,7 @@
         </div>
       `).join("");
 
-      // Thumbnail click listener
+      
       thumbRow.querySelectorAll(".car-thumb").forEach(thumb => {
         thumb.addEventListener("click", () => {
           thumbRow.querySelectorAll(".car-thumb").forEach(t => t.classList.remove("active"));
@@ -567,22 +564,22 @@
       });
     }
 
-    // Book button link
+    
     const bookBtn = $("#carBookBtn");
     if (bookBtn) {
       bookBtn.href = `login.html?car=${car.id}`;
     }
 
-    // Dynamic Banner Updates
+    
     const bannerTitle = $("#bannerCarTitle");
     if (bannerTitle) bannerTitle.textContent = car.name;
     const bannerBg = $("#bannerBgImg");
     if (bannerBg) {
-      // Use hero banner background or car image
+      
       bannerBg.src = (car.gallery && car.gallery[1]) ? car.gallery[1] : (car.img || "hero-fleet.jpg");
     }
 
-    // Interactive FAQ Accordions
+    
     document.querySelectorAll(".details-faq-q").forEach(q => {
       q.addEventListener("click", () => {
         const item = q.closest(".details-faq-item");
