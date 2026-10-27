@@ -11,18 +11,22 @@
   --text: #0f172a;
   --muted: #516079;
   --border: #e2e8f0;
-  --primary: #1d4ed8;
+  --primary: #1d4ed8;            /* Core Primary: Royal Blue */
   --primary2: #2563eb;
+  --secondary: #fbbf24;          /* Core Secondary: Warm Gold */
+  --secondary-hover: #f59e0b;
+  --secondary-soft: rgba(251, 191, 36, 0.16);
+  --accent: var(--secondary);
   --soft: #eff6ff;
   --shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
-  --bar-a: #3b82f6;
-  --bar-b: #1d4ed8;
-  --c1: #1d4ed8;
-  --c2: #2563eb;
-  --c3: #38bdf8;
-  --c4: #94a3b8;
+  --bar-a: #3b82f6;              /* Original vibrant blue bar gradient */
+  --bar-b: #1d4ed8;              /* Original deep royal blue bar gradient */
+  --c1: #1d4ed8;                 /* Original Donut Blue segment 1 */
+  --c2: #2563eb;                 /* Original Donut Blue segment 2 */
+  --c3: #38bdf8;                 /* Original Donut Sky Blue segment 3 */
+  --c4: #94a3b8;                 /* Original Donut Slate segment 4 */
   --green: #059669;
-  --amber: #b45309;
+  --amber: #d97706;
   --red: #b91c1c;
   --blue: #1d4ed8;
   --danger: #f43f5e;
@@ -39,14 +43,26 @@ html[data-theme="dark"],
   --border: #22385c;
   --primary: #5b9beb;
   --primary2: #3b82f6;
+  --secondary: #fbbf24;
+  --secondary-hover: #f59e0b;
+  --secondary-soft: rgba(251, 191, 36, 0.20);
+  --accent: var(--secondary);
   --soft: rgba(91, 155, 235, 0.16);
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --bar-a: #5b9beb;
+  --bar-a: #5b9beb;              /* Original Dark Mode Blue bar gradient */
   --bar-b: #1d4ed8;
-  --c1: #5b9beb;
+  --c1: #5b9beb;                 /* Original Dark Mode Donut blue segments */
   --c2: #93c5fd;
   --c3: #38bdf8;
   --c4: #64748b;
+  --green: #34d399;
+  --amber: #fbbf24;
+  --red: #f87171;
+  --blue: #7fb2f0;
+  --danger: #fb7185;
+}
+  --c3: #38bdf8;
+  --c4: #f59e0b;
   --green: #34d399;
   --amber: #fbbf24;
   --red: #f87171;

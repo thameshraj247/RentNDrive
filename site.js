@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    RentNDrive - Shared Site Setup (Theme, Direction, Mobile Nav & Scroll Reveal)
    Applied consistently across all pages
    ========================================================================== */
@@ -299,6 +299,28 @@
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    // ========================================================================
+    // Dynamic Multi-Style Opening Animations Suite
+    // Assigns distinct opening animation choreographies across different sections
+    // ========================================================================
+    const animStyles = ["anim-rise", "anim-zoom", "anim-slide-left", "anim-flip-up", "anim-slide-right", "anim-shimmer"];
+    
+    // Auto-detect and register sections, cards, and grids that lack manual animation tags
+    const targetSections = document.querySelectorAll("main > section, body > section, .adm-panel, .adm-card, .adm-stat");
+    targetSections.forEach((sec, idx) => {
+      // Pick a distinct opening animation for each section based on its index
+      const chosenAnim = animStyles[idx % animStyles.length];
+      if (!sec.classList.contains("hero") && !sec.classList.contains("about-hero") && !sec.classList.contains("p-hero") && !sec.classList.contains("fleet-hero") && !sec.classList.contains("contact-hero") && !sec.classList.contains("pricing-hero") && !sec.classList.contains("hiw-hero") && !sec.classList.contains("details-page-banner")) {
+        sec.classList.add("reveal", chosenAnim);
+      }
+      
+      // Auto-stagger direct child grids/cards inside each section
+      const innerGrids = sec.querySelectorAll(".grid, .cat-grid, .fleet-cards, .story-grid, .values-grid, .standards-grid, .team-grid, .plans-grid, .protect-grid, .contact-cards-grid, .details-steps-grid, .p-booking-grid, .p-metrics-strip, .p-fleet-grid, .p-exp-grid, .p-vip-grid");
+      innerGrids.forEach(g => {
+        g.classList.add("stagger-in", "reveal");
+      });
+    });
+
     // Scroll reveal observer
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver((entries) => {
@@ -308,11 +330,11 @@
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
 
-      document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+      document.querySelectorAll(".reveal, [data-anim]").forEach(el => io.observe(el));
     } else {
-      document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+      document.querySelectorAll(".reveal, [data-anim]").forEach(el => el.classList.add("in"));
     }
   }
 

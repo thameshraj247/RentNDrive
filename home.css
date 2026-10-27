@@ -1234,7 +1234,14 @@ section:not(.hero) {
       margin-top: auto;
       transition: background-color .3s ease, color .3s ease, border-color .3s ease;
     }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; }
+    footer .container {
+      max-width: 1400px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+    }
     .footer-brand p { color: var(--footer-muted) !important; margin-top: 16px; max-width: 320px; font-size: 14px; }
     footer h4 { font-family: "Playfair Display", serif; color: var(--footer-brand) !important; font-size: 17px; margin-bottom: 20px; font-weight: 700; }
     footer ul { list-style: none; display: grid; gap: 12px; }
