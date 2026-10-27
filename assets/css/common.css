@@ -1,66 +1,197 @@
 /* ==========================================================================
    Royal Fleet Car Rental - Common Stylesheet (Shared Across All Pages)
-   Theme: Royal Blue (#1e3a8a / #1d4ed8) & Light Cream (#fdfbf7 / #faf6ec)
+   Unified Dual-Color System (Strict RGB Format):
+     --primary   : rgb(29, 78, 216)   /* Royal Blue */
+     --secondary : rgb(251, 191, 36)  /* Warm Gold */
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
 
 :root {
-  /* Royal Blue Palette */
-  --royal-950: #0f172a;
-  --royal-900: #172554;
-  --royal-800: #1e3a8a;
-  --royal-700: #1d4ed8;
-  --royal-600: #2563eb;
-  --royal-500: #3b82f6;
-  --royal-400: #60a5fa;
-  --royal-100: #dbeafe;
-  --royal-50:  #eff6ff;
+  /* ==========================================================================
+     1. Unified 2-Color Palette (Strict RGB Format)
+     ========================================================================== */
+  --primary: rgb(29, 78, 216);                     /* Core Primary: Royal Blue */
+  --primary-rgb: 29, 78, 216;
+  --secondary: rgb(251, 191, 36);                  /* Core Secondary: Warm Gold */
+  --secondary-rgb: 251, 191, 36;
 
-  /* Light Cream Palette */
-  --cream-50:  #fdfbf7;
-  --cream-100: #faf6ec;
-  --cream-200: #f4ecdc;
-  --cream-300: #e8dbbf;
-  --cream-400: #d7c39e;
-  --cream-500: #c2aa7f;
-  --gold-accent: #d97706;
-  --gold-light: #fef3c7;
+  /* Harmonized Secondary Accent Alias */
+  --accent: var(--secondary);
 
-  /* Surfaces & Text */
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --text-light: #94a3b8;
-  --bg-main: #fdfbf7;
-  --card-bg: #ffffff;
-  --border-cream: #eadecc;
+  /* Transparent / Alpha Variations (RGBA Format) */
+  --primary-soft: rgba(29, 78, 216, 0.12);
+  --primary-hover: rgb(30, 64, 175);
+  --secondary-soft: rgba(251, 191, 36, 0.16);
+  --secondary-hover: rgb(245, 158, 11);
 
-  --shadow-subtle: 0 4px 20px -2px rgba(23, 37, 84, 0.05);
-  --shadow-card: 0 10px 30px -4px rgba(23, 37, 84, 0.08), 0 4px 8px -2px rgba(23, 37, 84, 0.04);
-  --shadow-hover: 0 22px 45px -8px rgba(23, 37, 84, 0.22);
-  --shadow-royal: 0 12px 28px -5px rgba(29, 78, 216, 0.4);
+  /* Neutral Surface & Text Baselines (RGB Format) */
+  --bg-main: rgb(253, 251, 247);
+  --surface-main: rgb(255, 255, 255);
+  --text-main: rgb(15, 23, 42);
+  --text-muted: rgb(81, 96, 121);
+  --border-subtle: rgb(231, 220, 199);
+
+  /* Shadows (RGBA Format) */
+  --shadow-subtle: 0 4px 20px -2px rgba(29, 78, 216, 0.06);
+  --shadow-card: 0 10px 30px -4px rgba(29, 78, 216, 0.10);
+  --shadow-hover: 0 20px 45px -8px rgba(29, 78, 216, 0.25);
+  --shadow-gold: 0 10px 28px -4px rgba(251, 191, 36, 0.45);
+
+  /* ==========================================================================
+     2. Universal Typography Tokens
+     ========================================================================== */
+  --font-body: "Inter", "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+
+  /* Modular Font Size Scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);       /* 12px - 13px */
+  --text-sm: clamp(0.8125rem, 0.775rem + 0.2vw, 0.875rem);     /* 13px - 14px */
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);    /* 15px - 17px */
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);       /* 18px - 20px */
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);          /* 20px - 24px */
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);       /* 24px - 30px */
+  --text-3xl: clamp(1.875rem, 1.65rem + 1.1vw, 2.375rem);      /* 30px - 38px */
+  --text-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);           /* 36px - 48px */
+  --text-5xl: clamp(2.75rem, 2.3rem + 2.25vw, 3.875rem);       /* 44px - 62px */
+
+  /* Line Heights */
+  --lh-tight: 1.15;
+  --lh-snug: 1.28;
+  --lh-normal: 1.55;
+  --lh-relaxed: 1.68;
+
+  /* Font Weights */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
 }
 
-* {
+/* ==========================================================================
+   Dark Mode Adaptation (Strict RGB & RGBA Format)
+   ========================================================================== */
+html[data-theme="dark"] {
+  --primary: rgb(59, 130, 246);                     /* Luminous Royal Blue */
+  --primary-rgb: 59, 130, 246;
+  --secondary: rgb(251, 191, 36);                   /* High-contrast Gold */
+  --secondary-rgb: 251, 191, 36;
+  --accent: var(--secondary);
+
+  --primary-soft: rgba(59, 130, 246, 0.16);
+  --primary-hover: rgb(29, 78, 216);
+  --secondary-soft: rgba(251, 191, 36, 0.20);
+  --secondary-hover: rgb(245, 158, 11);
+
+  --bg-main: rgb(7, 15, 31);
+  --surface-main: rgb(15, 27, 51);
+  --text-main: rgb(232, 241, 255);
+  --text-muted: rgb(157, 176, 204);
+  --border-subtle: rgb(34, 56, 92);
+
+  --shadow-subtle: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 10px 30px -4px rgba(0, 0, 0, 0.65);
+  --shadow-hover: 0 20px 45px -8px rgba(0, 0, 0, 0.85);
+  --shadow-gold: 0 10px 28px -4px rgba(251, 191, 36, 0.35);
+}
+
+/* ==========================================================================
+   Base Typography & Global Element Styling
+   ========================================================================== */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: var(--cream-50);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-relaxed);
   color: var(--text-main);
-  overflow-x: hidden;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--bg-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Luxury Serif Accent */
-.font-display {
-  font-family: 'Playfair Display', Georgia, serif;
+/* Headings Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: -0.015em;
+}
+
+h1 { font-size: var(--text-4xl); margin-bottom: 1rem; }
+h2 { font-size: var(--text-3xl); margin-bottom: 0.875rem; }
+h3 { font-size: var(--text-2xl); margin-bottom: 0.75rem; }
+h4 { font-size: var(--text-xl); margin-bottom: 0.625rem; }
+h5 { font-size: var(--text-lg); margin-bottom: 0.5rem; }
+h6 { font-size: var(--text-base); margin-bottom: 0.5rem; }
+
+h1 em, h2 em, h3 em, h4 em {
+  font-style: italic;
+  color: var(--secondary);
+}
+
+p {
+  line-height: var(--lh-relaxed);
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+small {
+  font-size: var(--text-xs);
+  line-height: var(--lh-normal);
+}
+
+strong, b {
+  font-weight: var(--fw-bold);
+}
+
+/* Utility Font Families */
+.font-display,
+.font-heading,
+.font-serif {
+  font-family: var(--font-heading) !important;
+}
+
+.font-body,
+.font-sans {
+  font-family: var(--font-body) !important;
+}
+
+/* Dual Color Utility Text Classes */
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+  color: rgb(15, 23, 42) !important;
 }
 
 /* Custom Scrollbars */
@@ -69,30 +200,19 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--cream-100);
+  background: var(--bg-main);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--primary-soft);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--royal-600);
+  background: var(--primary);
 }
 
-/* Gradients */
-.bg-royal-gradient {
-  background: linear-gradient(135deg, #172554 0%, #1e40af 55%, #1d4ed8 100%);
-}
-
-.bg-royal-card {
-  background: linear-gradient(145deg, #1e3a8a 0%, #172554 100%);
-}
-
-.bg-cream-hero {
-  background-color: var(--cream-50);
-}
-
-/* Sticky Navbar & Nav links */
+/* ==========================================================================
+   Interactive Components & Navigation Links
+   ========================================================================== */
 .nav-link {
   position: relative;
   transition: color 0.25s ease;
@@ -105,7 +225,7 @@ body {
   left: 50%;
   width: 0;
   height: 2.5px;
-  background: #1d4ed8;
+  background: var(--primary);
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   transform: translateX(-50%);
@@ -116,35 +236,27 @@ body {
 }
 
 .nav-link.active {
-  color: #1d4ed8 !important;
-  font-weight: 700;
+  color: var(--primary) !important;
+  font-weight: var(--fw-bold);
 }
 
 .nav-link.active::after {
   width: 100%;
 }
 
-/* Logo Crown Rotate Hover */
-.logo-crown-box {
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-a:hover .logo-crown-box {
-  transform: rotate(-8deg) scale(1.08);
-}
-
-/* Buttons with Shimmer & Glow */
+/* Primary Button (Royal Blue) */
 .btn-royal-primary {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  color: rgb(255, 255, 255) !important;
   box-shadow: 0 4px 16px rgba(29, 78, 216, 0.35);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: none;
 }
 
 .btn-royal-primary::after {
@@ -166,8 +278,7 @@ a:hover .logo-crown-box {
 }
 
 .btn-royal-primary:hover {
-  background: linear-gradient(135deg, #172554 0%, #1e40af 100%);
-  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.48);
+  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.50);
   transform: translateY(-2px);
 }
 
@@ -179,28 +290,30 @@ a:hover .logo-crown-box {
   transform: translateY(0);
 }
 
-.btn-cream {
-  background: #faf6ec;
-  color: #1e3a8a;
-  border: 1.5px solid #e2d4bd;
-  transition: all 0.25s ease;
+/* Secondary Button (Warm Gold) */
+.btn-gold-secondary {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-hover) 100%);
+  color: rgb(15, 23, 42) !important;
+  font-weight: var(--fw-bold);
+  box-shadow: var(--shadow-gold);
+  border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.25s ease;
 }
 
-.btn-cream:hover {
-  background: #f2e7d3;
-  color: #172554;
-  border-color: #cbbaa1;
-  transform: translateY(-1.5px);
-  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.12);
+.btn-gold-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -4px rgba(251, 191, 36, 0.60);
 }
 
+/* Outlined Ghost Variants */
 .btn-ghost-royal {
-  color: #1e3a8a;
-  border: 1.5px solid #1e3a8a;
+  color: var(--primary) !important;
+  border: 1.5px solid var(--primary);
+  background: transparent;
   transition: all 0.25s ease;
   cursor: pointer;
   display: inline-flex;
@@ -209,51 +322,53 @@ a:hover .logo-crown-box {
 }
 
 .btn-ghost-royal:hover {
-  background: #1e3a8a;
-  color: #ffffff;
+  background: var(--primary);
+  color: rgb(255, 255, 255) !important;
   transform: translateY(-1.5px);
-  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.25);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.28);
 }
 
-/* Badges */
-.badge-gold {
-  background: #fffbeb;
-  color: #b45309;
-  border: 1px solid #fde68a;
-}
-
+/* Dual-Color Badges */
 .badge-royal {
-  background: #eff6ff;
-  color: #1d4ed8;
-  border: 1px solid #bfdbfe;
+  background: var(--primary-soft);
+  color: var(--primary);
+  border: 1px solid rgba(29, 78, 216, 0.30);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  font-weight: var(--fw-bold);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.badge-cream {
-  background: #faf6ec;
-  color: #78531d;
-  border: 1px solid #e8dbbf;
+.badge-gold {
+  background: var(--secondary-soft);
+  color: rgb(180, 83, 9);
+  border: 1px solid rgba(251, 191, 36, 0.40);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  font-weight: var(--fw-bold);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-/* Modal Backdrops & Dialogs */
+html[data-theme="dark"] .badge-gold {
+  color: var(--secondary);
+}
+
+/* Modal and Animations */
 .modal-backdrop {
-  background: rgba(15, 23, 42, 0.72);
   backdrop-filter: blur(8px);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.4s ease forwards;
+  -webkit-backdrop-filter: blur(8px);
 }
 
 @keyframes fadeUpIn {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;

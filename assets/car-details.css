@@ -1,0 +1,1013 @@
+/* ==========================================================================
+   Car Details Page Styles
+   RentNDrive Luxury Car Rentals
+   ========================================================================== */
+
+/* ---------- Page Banner Header ---------- */
+.details-page-banner {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 72px 20px 56px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: #0f1d38;
+}
+
+.details-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.details-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  opacity: 0.95;
+  filter: brightness(0.85) contrast(1.1) saturate(1.15);
+  transform: scale(1.02);
+  transition: transform 12s ease;
+  display: block;
+}
+
+.details-page-banner:hover .details-banner-bg img {
+  transform: scale(1.06);
+}
+
+.details-banner-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 29, 56, 0.45) 0%, rgba(10, 20, 42, 0.6) 50%, rgba(5, 12, 28, 0.85) 100%),
+    radial-gradient(ellipse 900px 500px at center, transparent 30%, rgba(5, 12, 28, 0.65) 100%);
+  pointer-events: none;
+}
+
+.details-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.details-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(251, 191, 36, 0.8);
+  box-shadow: 0 8px 24px -6px rgba(251, 191, 36, 0.4);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #854d0e;
+  margin-bottom: 16px;
+}
+
+html[data-theme="dark"] .details-banner-badge {
+  background: #0b1528;
+  color: var(--accent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.details-banner-badge i {
+  color: var(--accent);
+}
+
+.details-banner-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 4.2vw, 52px);
+  color: #ffffff;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.72);
+}
+
+.details-banner-title em {
+  font-style: italic;
+  color: #fbbf24;
+  background: linear-gradient(135deg, #fbbf24 0%, #fde68a 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 24px rgba(251, 191, 36, 0.5);
+}
+
+.details-banner-desc {
+  font-size: clamp(14px, 1.6vw, 17px);
+  color: #f1f5f9;
+  line-height: 1.6;
+  max-width: 640px;
+  margin-inline: auto;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Car Details Hero Showcase ---------- */
+.car-details-hero {
+  padding: 40px 0 32px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.car-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.car-breadcrumbs a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.car-breadcrumbs a:hover {
+  color: var(--primary);
+}
+
+.car-breadcrumbs i {
+  font-size: 10px;
+}
+
+.car-details-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* Gallery Showcase */
+.car-gallery-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.car-main-image-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 440px;
+  height: 100%;
+  background: linear-gradient(135deg, var(--surface-2), var(--border));
+  overflow: hidden;
+}
+
+.car-main-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+}
+
+.car-main-image-wrap:hover img {
+  transform: scale(1.04);
+}
+
+.car-gallery-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 6px 14px;
+  background: var(--accent);
+  color: #111827;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .2);
+  z-index: 2;
+}
+
+[dir="rtl"] .car-gallery-badge {
+  left: auto;
+  right: 18px;
+}
+
+/* Gallery Footer: Vehicle Name Bar & Thumbnails */
+.car-gallery-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.car-gallery-name-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.car-gallery-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.car-gallery-car-name {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.car-thumb-row {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  background: transparent;
+  border-top: none;
+  overflow-x: auto;
+  margin-left: auto;
+}
+
+[dir="rtl"] .car-thumb-row {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .car-main-image-wrap {
+    min-height: 280px;
+  }
+  .car-gallery-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  .car-thumb-row {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.car-thumb {
+  width: 86px;
+  height: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+  opacity: .75;
+  transition: all .25s;
+}
+
+.car-thumb:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.car-thumb.active {
+  opacity: 1;
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px -3px var(--primary);
+}
+
+.car-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overview Card */
+.car-overview-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 36px 32px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.car-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.car-brand-name {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--primary);
+}
+
+.car-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.16);
+  color: #b45309;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+html[data-theme="dark"] .car-rating-pill {
+  color: var(--accent);
+}
+
+.car-rating-pill i {
+  color: var(--accent);
+}
+
+.car-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(26px, 3.2vw, 34px);
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.car-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.car-price-box .amount {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.car-price-box .term {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.car-description {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* Specs Icon Grid */
+.car-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.car-spec-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.car-spec-item i {
+  font-size: 20px;
+  color: var(--primary);
+  width: 24px;
+  text-align: center;
+}
+
+.spec-label {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700;
+}
+
+.spec-value {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Action Buttons */
+.car-action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.car-action-buttons .btn {
+  flex: 1;
+  min-width: 140px;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+/* ---------- Main Content Grid ---------- */
+.car-details-section {
+  padding: 56px 0 72px;
+  background: var(--bg);
+}
+
+.car-details-content-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.car-details-content-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-details-content-grid > div:first-child .car-info-block:last-child {
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-details-content-grid > div:first-child .car-info-block:last-child .specs-table {
+  flex: 1 1 auto;
+}
+
+.car-details-content-grid > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-details-content-grid > div:last-child .rental-perks-card {
+  flex: 1 1 auto;
+}
+
+.car-info-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+
+.car-info-block h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+  color: var(--text);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.car-info-block h3 i {
+  color: var(--primary);
+  font-size: 18px;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 20px;
+}
+
+.features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.features-list li i {
+  color: #10b981;
+  font-size: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Specs Table */
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specs-table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.specs-table tr:last-child {
+  border-bottom: none;
+}
+
+.specs-table td {
+  padding: 14px 10px;
+  font-size: 13.5px;
+}
+
+.spec-title {
+  color: var(--muted);
+  font-weight: 600;
+  width: 48%;
+}
+
+.spec-data {
+  color: var(--text);
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Sidebar Perks Card */
+.rental-perks-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.rental-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.rental-perk-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(30, 58, 138, 0.08);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+html[data-theme="dark"] .rental-perk-icon {
+  background: rgba(255, 255, 255, 0.08);
+  color: #93c5fd;
+}
+
+.rental-perk h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: var(--text);
+}
+
+.rental-perk p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Sidebar VIP Concierge Card */
+.details-concierge-card {
+  margin-top: 24px;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.04), rgba(251, 191, 36, 0.08));
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px 26px;
+  box-shadow: var(--shadow);
+}
+
+html[data-theme="dark"] .details-concierge-card {
+  background: linear-gradient(135deg, rgba(15, 27, 51, 0.8), rgba(19, 35, 64, 0.9));
+  border-color: var(--border);
+}
+
+.concierge-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #111827;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.details-concierge-card h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.details-concierge-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.concierge-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-concierge-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.btn-concierge-call:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(29, 78, 216, 0.5);
+}
+
+.btn-concierge-chat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-concierge-chat:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ---------- NEW SECTION 1: How Rental Works Step Flow ---------- */
+.details-steps-section {
+  padding: 64px 0;
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.details-sec-head {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 44px;
+}
+
+.details-sec-head .eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.details-sec-head h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(26px, 3.4vw, 36px);
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.details-sec-head p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.details-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.details-step-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 22px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+  transition: transform .3s ease;
+}
+
+.details-step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-num-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  margin: 0 auto 16px;
+}
+
+.details-step-card .step-icon {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.details-step-card h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.details-step-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ---------- NEW SECTION 2: Rental Protection & Add-ons ---------- */
+.details-addons-section {
+  padding: 68px 0;
+  background: var(--bg);
+}
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.addon-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 30px 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .3s ease, border-color .3s;
+}
+
+.addon-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.addon-card.featured {
+  border: 2px solid var(--accent);
+  position: relative;
+}
+
+.addon-badge-top {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: var(--accent);
+  color: #0f172a;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .addon-badge-top {
+  left: auto;
+  right: 24px;
+}
+
+.addon-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.addon-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(29, 78, 216, 0.1);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+html[data-theme="dark"] .addon-icon {
+  background: rgba(255, 255, 255, 0.08);
+  color: #93c5fd;
+}
+
+.addon-header h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  color: var(--text);
+}
+
+.addon-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.addon-card p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.addon-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.addon-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addon-list li i {
+  color: #10b981;
+  font-size: 14px;
+}
+
+/* ---------- NEW SECTION 3: FAQ Accordion ---------- */
+.details-faq-section {
+  padding: 64px 0 80px;
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+}
+
+.details-faq-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+.details-faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: border-color .2s;
+}
+
+.details-faq-item.active {
+  border-color: var(--primary);
+}
+
+.details-faq-q {
+  padding: 20px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.details-faq-q i {
+  color: var(--primary);
+  font-size: 14px;
+  transition: transform .3s ease;
+}
+
+.details-faq-item.active .details-faq-q i {
+  transform: rotate(180deg);
+}
+
+.details-faq-a {
+  padding: 0 24px 22px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  display: none;
+}
+
+.details-faq-item.active .details-faq-a {
+  display: block;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .details-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .addons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .car-details-grid {
+    grid-template-columns: 1fr;
+  }
+  .car-details-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .features-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .addons-grid {
+    grid-template-columns: 1fr;
+  }
+  .details-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .details-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .details-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .car-specs-grid {
+    grid-template-columns: 1fr;
+  }
+  .car-details-hero {
+    padding-block: 40px 30px;
+  }
+}

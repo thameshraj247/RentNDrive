@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="titlelogo.png">
+  <title>Vehicle Details | RentNDrive Luxury Car Rentals</title>
+  <meta name="description" content="View full vehicle specifications, high-definition photo gallery, pricing, and certified luxury rental features.">
+
+  <!-- Apply saved theme + direction BEFORE first paint -->
+  <script>
+    (function () {
+      try {
+        var r = document.documentElement;
+        var t = localStorage.getItem("rnd-theme") ||
+          (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        r.setAttribute("data-theme", t);
+        r.setAttribute("dir", localStorage.getItem("rnd-dir") || "ltr");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="fleet.css">
+  <link rel="stylesheet" href="car-details.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="RentNDrive home">
+        <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+        <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+        <span class="brand-text">
+          <strong>RentNDrive</strong>
+          <span>Luxury Car Rentals</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-dropdown-toggle" aria-haspopup="true">
+            <span>Home</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home 1 - Classic</a>
+            <a href="home2.html"><i class="fa-solid fa-crown"></i> Home 2 - Prestige</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="fleet.html" class="active">Our Fleet</a>
+        <a href="how-it-works.html">Why Us</a>
+        <a href="pricing.html">Rental Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>        
+        
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">RTL</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary login-btn">
+          <i class="fa-regular fa-user"></i><span>Login</span>
+        </a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== 1. LUXURY PAGE BANNER ===================== -->
+  <section class="details-page-banner">
+    <div class="details-banner-bg" aria-hidden="true">
+      <img id="bannerBgImg" src="hero-fleet.jpg" alt="Luxury Fleet Banner">
+    </div>
+    <div class="container details-banner-content">
+      <div class="details-banner-badge">
+        <i class="fa-solid fa-crown"></i> Certified Premier Fleet
+      </div>
+      <h1 class="details-banner-title">
+        <span id="bannerCarTitle">Vehicle Specifications</span> &amp; <em>Experience</em>
+      </h1>
+      <p class="details-banner-desc">
+        Engineered for perfection, immaculate detailing, digital mobile key unlock, and white-glove concierge delivery anywhere in the city.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 2. HERO SHOWCASE ===================== -->
+  <section class="car-details-hero">
+    <div class="container">
+      <div class="car-breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="fleet.html">Our Fleet</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span id="breadcrumbCarName">Mercedes-Benz S-Class 580</span>
+      </div>
+
+      <div class="car-details-grid">
+        <!-- Left: Image Gallery Showcase -->
+        <div class="car-gallery-card">
+          <div class="car-main-image-wrap">
+            <span class="car-gallery-badge" id="carTag">★ Executive Choice</span>
+            <img id="mainCarImg" src="fleet-mercedes-s580.jpg" alt="Vehicle Photo">
+          </div>
+          <div class="car-gallery-footer">
+            <div class="car-gallery-name-block">
+              <span class="car-gallery-label">Featured Model</span>
+              <h3 class="car-gallery-car-name" id="galleryCarName">Mercedes-Benz S-Class 580</h3>
+            </div>
+          <div class="car-thumb-row" id="thumbRow">
+            <!-- Thumbnails inserted dynamically -->
+          </div>
+          </div>
+        </div>
+
+        <!-- Right: Vehicle Overview Card -->
+        <div class="car-overview-card">
+          <div class="car-brand-row">
+            <span class="car-brand-name" id="carBrand">Mercedes-Benz</span>
+            <div class="car-rating-pill">
+              <i class="fa-solid fa-star"></i>
+              <span id="carRating">4.96 (48 reviews)</span>
+            </div>
+          </div>
+
+          <h2 class="car-title" id="carTitle">Mercedes-Benz S-Class 580</h2>
+
+          <div class="car-price-box">
+            <span class="amount" id="carPrice">$185</span>
+            <span class="term">/ day • Taxes &amp; Basic Insurance Included</span>
+          </div>
+
+          <p class="car-description" id="carDesc">
+            The benchmark of automotive luxury. Whisper-quiet cabin, unmatched ride comfort, and effortless power make every journey first-class.
+          </p>
+
+          <!-- Key Specs Icons Grid -->
+          <div class="car-specs-grid">
+            <div class="car-spec-item">
+              <i class="fa-solid fa-user-group"></i>
+              <div>
+                <span class="spec-label">Capacity</span>
+                <span class="spec-value" id="specSeats">5 Adult Seats</span>
+              </div>
+            </div>
+            <div class="car-spec-item">
+              <i class="fa-solid fa-gears"></i>
+              <div>
+                <span class="spec-label">Transmission</span>
+                <span class="spec-value" id="specTransmission">Automatic</span>
+              </div>
+            </div>
+            <div class="car-spec-item">
+              <i class="fa-solid fa-gas-pump"></i>
+              <div>
+                <span class="spec-label">Fuel / Economy</span>
+                <span class="spec-value" id="specFuel">Mild Hybrid</span>
+              </div>
+            </div>
+            <div class="car-spec-item">
+              <i class="fa-solid fa-suitcase-rolling"></i>
+              <div>
+                <span class="spec-label">Luggage Space</span>
+                <span class="spec-value" id="specBags">3 Large Bags</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="car-action-buttons">
+            <a href="login.html" class="btn btn-primary" id="carBookBtn">
+              <i class="fa-solid fa-key"></i> Book This Car
+            </a>
+            <a href="fleet.html" class="btn btn-view-details">
+              <i class="fa-solid fa-arrow-left"></i> Back to Fleet
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. COMPLETE SPECIFICATIONS & PERKS ===================== -->
+  <section class="car-details-section">
+    <div class="container">
+      <div class="car-details-content-grid">
+        <!-- Main Column: Technical Specs & Equipment -->
+        <div>
+          <!-- Key Features -->
+          <div class="car-info-block">
+            <h3><i class="fa-solid fa-star"></i> Included Luxury Features</h3>
+            <ul class="features-list" id="featuresList">
+              <!-- Populated dynamically -->
+            </ul>
+          </div>
+
+          <!-- Detailed Technical Specs Table -->
+          <div class="car-info-block">
+            <h3><i class="fa-solid fa-sliders"></i> Technical Performance &amp; Specs</h3>
+            <table class="specs-table">
+              <tbody>
+                <tr>
+                  <td class="spec-title">Engine Type</td>
+                  <td class="spec-data" id="tableEngine">4.0L V8 Biturbo with EQ Boost</td>
+                </tr>
+                <tr>
+                  <td class="spec-title">Horsepower Output</td>
+                  <td class="spec-data" id="tableHorsepower">496 HP</td>
+                </tr>
+                <tr>
+                  <td class="spec-title">Acceleration (0-60 mph)</td>
+                  <td class="spec-data" id="tableAcceleration">4.4 seconds</td>
+                </tr>
+                <tr>
+                  <td class="spec-title">Top Track Speed</td>
+                  <td class="spec-data" id="tableTopSpeed">155 mph (governed)</td>
+                </tr>
+                <tr>
+                  <td class="spec-title">Fuel Efficiency / Range</td>
+                  <td class="spec-data" id="tableMileage">24 MPG Combined</td>
+                </tr>
+                <tr>
+                  <td class="spec-title">Security Deposit Hold</td>
+                  <td class="spec-data" id="tableDeposit">$500 (Refundable upon drop-off)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right Column: RentNDrive Guarantees -->
+        <div>
+          <div class="rental-perks-card">
+            <h3 style="font-size:18px; font-weight:800; color:var(--text); margin-bottom:4px;">
+              <i class="fa-solid fa-shield-halved" style="color:var(--primary); margin-right:8px;"></i>
+              RentNDrive Guarantee
+            </h3>
+            <p style="font-size:13px; color:var(--muted); line-height:1.5; margin-bottom:12px;">
+              Every vehicle in our collection is precision detailed, sanitized, and certified before delivery.
+            </p>
+
+            <div class="rental-perk">
+              <div class="rental-perk-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <div>
+                <h4>Free Cancellation</h4>
+                <p>Full 100% refund up to 24 hours prior to your scheduled pickup time.</p>
+              </div>
+            </div>
+
+            <div class="rental-perk">
+              <div class="rental-perk-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <h4>Collision &amp; Theft Protection</h4>
+                <p>Comprehensive third-party liability and certified roadside assistance included.</p>
+              </div>
+            </div>
+
+            <div class="rental-perk">
+              <div class="rental-perk-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+              <div>
+                <h4>Digital Key Mobile Unlock</h4>
+                <p>Bypass the rental counter. Unlock and start your vehicle directly from your phone.</p>
+              </div>
+            </div>
+
+            <div class="rental-perk">
+              <div class="rental-perk-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+              <div>
+                <h4>Showroom Cleanliness</h4>
+                <p>Deep-cleaned, odorless interior, and full tank/full charge guaranteed at departure.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- VIP Concierge & Assistance Widget -->
+          <div class="details-concierge-card">
+            <div class="concierge-badge">
+              <i class="fa-solid fa-headset"></i> 24/7 VIP Concierge
+            </div>
+            <h4>Need Custom Delivery or Have Questions?</h4>
+            <p>Our dedicated luxury coordinators are on standby to arrange hotel delivery, chauffeur service, or private hangar handovers.</p>
+            <div class="concierge-actions">
+              <a href="tel:+910000000000" class="btn-concierge-call">
+                <i class="fa-solid fa-phone"></i> Call VIP Concierge
+              </a>
+              <a href="contact.html" class="btn-concierge-chat">
+                <i class="fa-regular fa-comments"></i> Send Instant Inquiry
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. HOW IT WORKS / RENTAL PROCESS ===================== -->
+  <section class="details-steps-section">
+    <div class="container">
+      <div class="details-sec-head">
+        <span class="eyebrow">Seamless Journey</span>
+        <h2>How Your Rental Works in 4 Steps</h2>
+        <p>From online reservation to keyless handover, enjoy the smoothest luxury car hire experience.</p>
+      </div>
+
+      <div class="details-steps-grid">
+        <div class="details-step-card">
+          <div class="step-num-badge">1</div>
+          <div class="step-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h4>Reserve in 60 Seconds</h4>
+          <p>Choose your handover dates, insurance tier, and desired pickup location online.</p>
+        </div>
+
+        <div class="details-step-card">
+          <div class="step-num-badge">2</div>
+          <div class="step-icon"><i class="fa-solid fa-id-card"></i></div>
+          <h4>Fast Digital Verification</h4>
+          <p>Upload your driving license and ID securely before arrival for instant zero-wait pickup.</p>
+        </div>
+
+        <div class="details-step-card">
+          <div class="step-num-badge">3</div>
+          <div class="step-icon"><i class="fa-solid fa-key"></i></div>
+          <h4>Keyless Mobile Unlock</h4>
+          <p>Approach your vehicle, tap unlock on your smartphone, and start the engine with your digital key.</p>
+        </div>
+
+        <div class="details-step-card">
+          <div class="step-num-badge">4</div>
+          <div class="step-icon"><i class="fa-solid fa-route"></i></div>
+          <h4>Drop-off Anywhere</h4>
+          <p>Return to any designated VIP hub, airport terminal, or arrange private valet collection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. PROTECTION TIERS & ADD-ONS ===================== -->
+  <section class="details-addons-section">
+    <div class="container">
+      <div class="details-sec-head">
+        <span class="eyebrow">Tailored Packages</span>
+        <h2>Protection &amp; Executive Add-ons</h2>
+        <p>Customize your journey with peace of mind protection and concierge equipment.</p>
+      </div>
+
+      <div class="addons-grid">
+        <div class="addon-card">
+          <div>
+            <div class="addon-header">
+              <div class="addon-icon"><i class="fa-solid fa-shield"></i></div>
+              <div>
+                <h4>Basic Protection</h4>
+                <span class="addon-price">Included Free</span>
+              </div>
+            </div>
+            <p>Essential coverage for peace of mind on open highways.</p>
+            <ul class="addon-list">
+              <li><i class="fa-solid fa-check"></i> Third-party liability insurance</li>
+              <li><i class="fa-solid fa-check"></i> 24/7 emergency roadside hotline</li>
+              <li><i class="fa-solid fa-check"></i> Standard $1,500 damage excess</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="addon-card featured">
+          <span class="addon-badge-top">Most Popular</span>
+          <div>
+            <div class="addon-header">
+              <div class="addon-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <h4>Zero Excess Shield</h4>
+                <span class="addon-price">$29 / day</span>
+              </div>
+            </div>
+            <p>Complete zero-deductible protection covering glass, wheels, and bodywork.</p>
+            <ul class="addon-list">
+              <li><i class="fa-solid fa-check"></i> <strong>$0 deductible / damage excess</strong></li>
+              <li><i class="fa-solid fa-check"></i> Tire, rim, and windshield coverage</li>
+              <li><i class="fa-solid fa-check"></i> Express priority vehicle replacement</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="addon-card">
+          <div>
+            <div class="addon-header">
+              <div class="addon-icon"><i class="fa-solid fa-plane-departure"></i></div>
+              <div>
+                <h4>VIP Chauffeur &amp; Airport Valet</h4>
+                <span class="addon-price">$45 one-time</span>
+              </div>
+            </div>
+            <p>Direct terminal curb delivery or doorstep vehicle drop-off at your hotel suite.</p>
+            <ul class="addon-list">
+              <li><i class="fa-solid fa-check"></i> Curbside delivery to arrivals gate</li>
+              <li><i class="fa-solid fa-check"></i> Pre-set cabin climate &amp; GPS routes</li>
+              <li><i class="fa-solid fa-check"></i> Child seat &amp; Wi-Fi hotspot upon request</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. FREQUENTLY ASKED QUESTIONS ===================== -->
+  <section class="details-faq-section">
+    <div class="container">
+      <div class="details-sec-head">
+        <span class="eyebrow">Got Questions?</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about renting with RentNDrive.</p>
+      </div>
+
+      <div class="details-faq-wrap">
+        <div class="details-faq-item active">
+          <div class="details-faq-q">
+            <span>What documents do I need to rent this vehicle?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="details-faq-a">
+            You will need a valid driver's license held for at least 1 year (or international driving permit if visiting from abroad), an official passport or photo ID, and a credit or debit card in the primary renter's name.
+          </div>
+        </div>
+
+        <div class="details-faq-item">
+          <div class="details-faq-q">
+            <span>How does the digital key mobile unlock work?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="details-faq-a">
+            Once your reservation is confirmed and verified, your digital key is activated in your customer dashboard. Simply walk up to the car, press "Unlock" in your phone browser, and the doors will unlock immediately. The push-to-start button is ready.
+          </div>
+        </div>
+
+        <div class="details-faq-item">
+          <div class="details-faq-q">
+            <span>Is there a mileage limit on this car?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="details-faq-a">
+            All standard rentals include 200 complimentary miles per day (cumulative for multi-day rentals). For extended cross-country trips, unlimited mileage packages are available at checkout.
+          </div>
+        </div>
+
+        <div class="details-faq-item">
+          <div class="details-faq-q">
+            <span>When is the security deposit refunded?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="details-faq-a">
+            The security deposit is simply a pre-authorization hold on your card. It is released automatically within 24 to 48 hours following vehicle return and inspection.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand">
+            <img src="titlelogo.png" alt="RentNDrive logo" class="theme-logo logo-light">
+            <img src="darkmodetitlelogo.png" alt="RentNDrive logo" class="theme-logo logo-dark">
+            <span class="brand-text"><strong style="color:var(--footer-brand)">RentNDrive</strong><span>Luxury Car Rentals</span></span>
+          </a>
+          <p>Premium self-drive cars for every journey. Comfort, freedom and a better way to travel.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="about.html">About Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html">Our Fleet</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="how-it-works.html">Why Us</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="pricing.html">Rental Plans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="contact.html">Contact</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html?cat=luxury">Luxury Sedans</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html?cat=suv">Premium SUVs</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html?cat=convertible">Sport's Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html?cat=electric">Electric Cars</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html?cat=convertible">Convertibles</a></li>
+            <li><i class="fa-solid fa-chevron-right"></i><a href="fleet.html">Supercar's</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>Your business address</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li><i class="fa-regular fa-envelope"></i><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+            <li><i class="fa-regular fa-clock"></i><span>Daily support</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> <strong>RentNDrive</strong>. All rights reserved.</p>
+        <nav>
+          <a href="#top">Privacy Policy</a>
+          <a href="pricing.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Cookies &amp; Privacy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="site.js"></script>
+  <script src="car-details.js"></script>
+</body>
+</html>
+

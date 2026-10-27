@@ -488,6 +488,8 @@
     if (brandEl) brandEl.textContent = car.brand;
     const titleEl = $("#carTitle");
     if (titleEl) titleEl.textContent = car.name;
+    const galleryNameEl = $("#galleryCarName");
+    if (galleryNameEl) galleryNameEl.textContent = car.name;
     const descEl = $("#carDesc");
     if (descEl) descEl.textContent = car.description;
     const ratingEl = $("#carRating");
