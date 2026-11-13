@@ -266,7 +266,8 @@
       visibility: visible;
       transform: translateY(4px);
     }
-    .nav-dropdown:hover .nav-dropdown-toggle i.fa-chevron-down {
+    .nav-dropdown:hover .nav-dropdown-toggle i.fa-chevron-down,
+    .nav-dropdown.active .nav-dropdown-toggle i.fa-chevron-down {
       transform: rotate(180deg);
       color: var(--primary);
     }
@@ -313,9 +314,9 @@
       margin-left: 0;
     }
     .icon-btn {
-      height: 40px; min-width: 40px; padding-inline: 10px; border-radius: 12px;
+      height: 40px; width: 40px; min-width: 40px; padding: 0; border-radius: 12px;
       border: 1px solid var(--border); background: var(--surface); color: var(--primary);
-      display: inline-grid; place-items: center; cursor: pointer; font-weight: 700; font-size: 12px;
+      display: inline-grid; place-items: center; cursor: pointer; font-weight: 700; font-size: 14px;
       transition: transform .2s, border-color .2s, background .2s, color .2s;
     }
     .icon-btn:hover { transform: translateY(-2px); border-color: var(--primary); }
@@ -614,7 +615,7 @@ section:not(.hero) {
       line-height: 1.1;
       letter-spacing: -.02em;
       color: #ffffff;
-      font-weight: 900;
+      font-weight: 600;
       text-shadow: 0 4px 22px rgba(0, 0, 0, 0.72), 0 1px 4px rgba(0, 0, 0, 0.5);
     }
     html[data-theme="dark"] .hero h1 {
@@ -691,7 +692,22 @@ section:not(.hero) {
     html[data-theme="dark"] .field select, html[data-theme="dark"] .field input {
       color: var(--text);
     }
-    .field option { background: var(--surface); color: var(--text); }
+        .field option { background: var(--surface); color: var(--text); }
+    .search-grid .btn,
+    .search-btn {
+      align-self: center;
+      height: 44px;
+      padding: 0 20px;
+      font-size: 13px;
+      font-weight: 700;
+      gap: 7px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px -4px rgba(29, 78, 216, 0.45);
+    }
+    .search-grid .btn i,
+    .search-btn i {
+      font-size: 12px;
+    }
     .search-foot { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--muted); }
     .search-foot span { display: inline-flex; align-items: center; gap: 8px; }
     .search-foot i { color: var(--primary); }
@@ -738,7 +754,7 @@ section:not(.hero) {
     .cat:hover .cat-media img {
       transform: scale(1.08);
     }
-    .cat h3 { font-size: 15px; font-weight: 700; color: inherit; font-family: "Inter", sans-serif; }
+    .cat h3 { font-size: 15px; font-weight: 600; color: inherit; font-family: "Inter", sans-serif; }
     .cat small { display: block; margin-top: 4px; font-size: 12px; opacity: .7; }
 
     
@@ -910,7 +926,7 @@ section:not(.hero) {
       background: linear-gradient(135deg, #2563eb, #3b82f6); color: #fff;
     }
     .feature:nth-child(2) .feature-icon { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #111827; }
-    .feature h3 { color: #fff; font-family: "Inter", sans-serif; font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+    .feature h3 { color: #fff; font-family: "Inter", sans-serif; font-size: 19px; font-weight: 600; margin-bottom: 10px; }
     .feature p { color: #a9bcd9; font-size: 15px; }
 
     
@@ -1096,7 +1112,7 @@ section:not(.hero) {
       color: #ffffff;
       margin-bottom: 18px;
       max-width: 840px;
-      font-weight: 900;
+      font-weight: 600;
       letter-spacing: -0.01em;
       text-shadow: 0 4px 22px rgba(5, 12, 28, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6);
       transition: all 0.3s ease;
@@ -1243,7 +1259,7 @@ section:not(.hero) {
       gap: 40px;
     }
     .footer-brand p { color: var(--footer-muted) !important; margin-top: 16px; max-width: 320px; font-size: 14px; }
-    footer h4 { font-family: "Playfair Display", serif; color: var(--footer-brand) !important; font-size: 17px; margin-bottom: 20px; font-weight: 700; }
+    footer h4 { font-family: "Playfair Display", serif; color: var(--footer-brand) !important; font-size: 17px; margin-bottom: 20px; font-weight: 600; }
     footer ul { list-style: none; display: grid; gap: 12px; }
     footer ul a {
       color: var(--footer-text) !important;
@@ -1296,10 +1312,13 @@ section:not(.hero) {
       .nav a { padding: 10px 8px; font-size: 13px; }
       .brand-text strong { font-size: 18px; }
     }
-    @media (max-width: 1024px) {
-      .nav a { padding: 10px 6px; font-size: 12.5px; }
+        @media (max-width: 1024px) {
+      .header-inner { gap: 12px; }
+      .nav { gap: 4px; }
+      .nav a, .nav-dropdown-toggle { padding: 10px 8px; font-size: 13px; }
       .cat-grid { grid-template-columns: repeat(3, 1fr); }
       .search-grid { grid-template-columns: repeat(2, 1fr); }
+      .search-grid .btn, .search-btn { grid-column: 1 / -1; height: 44px; width: 100%; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 900px) {
@@ -1386,6 +1405,7 @@ section:not(.hero) {
       .actions { gap: 6px; }
       .icon-btn { height: 38px; min-width: 38px; padding-inline: 8px; }
       .search-grid { grid-template-columns: 1fr; }
+      .search-grid .btn, .search-btn { height: 44px; width: 100%; }
       .cat-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; text-align: center; gap: 14px; }
@@ -1409,14 +1429,14 @@ section:not(.hero) {
   width: auto;
   object-fit: contain;
   flex-shrink: 0;
-  transition: transform .35s ease, opacity .3s ease;
+  transition: transform .35s ease, opacity .3s ease, filter .3s ease;
 }
 .brand:hover .theme-logo { transform: translateY(-3px) rotate(-4deg) scale(1.06); }
 
 
-.logo-dark { display: none; }
-html[data-theme="dark"] .logo-light { display: none; }
-html[data-theme="dark"] .logo-dark { display: block; }
+.logo-dark { display: none !important; }
+html[data-theme="dark"] .logo-light { display: none !important; }
+html[data-theme="dark"] .logo-dark { display: block !important; }
 
 
 footer .theme-logo { height: 56px; }
@@ -1761,7 +1781,7 @@ html[data-theme="dark"] .hero-badge i {
   line-height: 1.18;
   color: #ffffff;
   margin-bottom: 14px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.015em;
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.6);
 }

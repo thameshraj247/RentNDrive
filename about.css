@@ -1,4 +1,4 @@
-﻿
+
     
     .about-hero {
       position: relative;
@@ -50,7 +50,7 @@
       letter-spacing: -.02em;
       margin: 14px 0 16px;
       color: #ffffff;
-      font-weight: 900;
+      font-weight: 600;
       text-shadow: 0 4px 22px rgba(0, 0, 0, 0.72), 0 1px 4px rgba(0, 0, 0, 0.5);
     }
     html[data-theme="dark"] .about-hero h1 {
@@ -68,7 +68,7 @@
     .about-hero p {
       color: #f1f5f9;
       font-size: clamp(16px, 2vw, 19px);
-      font-weight: 700;
+      font-weight: 500;
       line-height: 1.7;
       text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
     }
@@ -539,7 +539,7 @@
   line-height: 1.18;
   color: #ffffff;
   margin-bottom: 16px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.015em;
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.6);
 }

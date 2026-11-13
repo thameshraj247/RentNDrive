@@ -618,35 +618,52 @@
      THEME AND DIRECTION (shared keys with the website)
      ===================================================== */
   function setDir(d) {
-    html.setAttribute("dir", d);
-    $("#dirToggle").textContent = d === "rtl" ? "LTR" : "RTL";
-    try {
-      localStorage.setItem("rnd-dir", d);
-    } catch (e) {}
+    if (window.rndApplyDirection) {
+      window.rndApplyDirection(d);
+    } else {
+      html.setAttribute("dir", d);
+      const btn = $("#dirToggle");
+      if (btn) {
+        const span = btn.querySelector("span, .dir-text");
+        const icon = btn.querySelector("i");
+        if (span) span.textContent = d === "rtl" ? "LTR" : "RTL";
+        else if (!icon) btn.textContent = d === "rtl" ? "LTR" : "RTL";
+      }
+      try {
+        localStorage.setItem("rnd-dir", d);
+      } catch (e) {}
+    }
   }
 
-  let savedTheme = null;
-  let savedDir = null;
-  try {
-    savedTheme = localStorage.getItem("rnd-theme");
-    savedDir = localStorage.getItem("rnd-dir");
-  } catch (e) {}
-  if (!savedTheme && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) {
-    savedTheme = "dark";
+  function setTheme(t) {
+    if (window.rndApplyTheme) {
+      window.rndApplyTheme(t);
+    } else {
+      html.setAttribute("data-theme", t);
+      try {
+        localStorage.setItem("rnd-theme", t);
+      } catch (e) {}
+    }
   }
-  html.setAttribute("data-theme", savedTheme === "dark" ? "dark" : "light");
-  setDir(savedDir === "rtl" ? "rtl" : "ltr");
 
-  $("#themeToggle").addEventListener("click", () => {
-    const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    html.setAttribute("data-theme", next);
-    try {
-      localStorage.setItem("rnd-theme", next);
-    } catch (e) {}
+  // If site.js is not present, attach standalone fallback click listeners
+  if (!window.rndApplyTheme) {
+    $("#themeToggle")?.addEventListener("click", () => {
+      setTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+    });
+    $("#dirToggle")?.addEventListener("click", () => {
+      setDir(html.getAttribute("dir") === "rtl" ? "ltr" : "rtl");
+    });
+  }
+
+  // Keep settings modal dropdowns in sync when toggled via top bar
+  window.addEventListener("rnd:themechange", (e) => {
+    const select = $("#setTheme");
+    if (select && e.detail && e.detail.theme) select.value = e.detail.theme;
   });
-
-  $("#dirToggle").addEventListener("click", () => {
-    setDir(html.getAttribute("dir") === "rtl" ? "ltr" : "rtl");
+  window.addEventListener("rnd:dirchange", (e) => {
+    const select = $("#setDir");
+    if (select && e.detail && e.detail.dir) select.value = e.detail.dir;
   });
 
   /* =====================================================
@@ -758,16 +775,9 @@
 
   /* ---------- Settings (same keys as the top-bar buttons) ---------- */
   $("#setTheme").addEventListener("change", (e) => {
-    html.setAttribute("data-theme", e.target.value);
-    try {
-      localStorage.setItem("rnd-theme", e.target.value);
-    } catch (err) {}
+    setTheme(e.target.value);
   });
   $("#setDir").addEventListener("change", (e) => {
-    html.setAttribute("dir", e.target.value);
-    $("#dirToggle").textContent = e.target.value === "rtl" ? "LTR" : "RTL";
-    try {
-      localStorage.setItem("rnd-dir", e.target.value);
-    } catch (err) {}
+    setDir(e.target.value);
   });
 })();

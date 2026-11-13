@@ -1,4 +1,4 @@
-﻿
+
 
 
 :root {
@@ -141,15 +141,17 @@ table {
   width: 44px;
   height: 40px;
   object-fit: contain;
+  transition: transform .35s ease, opacity .3s ease, filter .3s ease;
 }
 .adm-brand .logo-dark {
-  display: none;
+  display: none !important;
 }
 :root[data-theme="dark"] .adm-brand .logo-light {
-  display: none;
+  display: none !important;
 }
 :root[data-theme="dark"] .adm-brand .logo-dark {
-  display: block;
+  display: block !important;
+  filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.3));
 }
 .adm-brand strong {
   display: block;
@@ -256,7 +258,7 @@ html[data-theme="dark"] .adm-brand small,
 .adm-title h1 {
   font-family: var(--head);
   font-size: clamp(26px, 3vw, 34px);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary);
   line-height: 1.1;
 }
@@ -295,26 +297,40 @@ html[data-theme="dark"] .adm-brand small,
   color: var(--muted);
 }
 .adm-icon {
-  display: grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
   min-width: 42px;
   height: 42px;
-  padding: 0 10px;
+  padding: 0;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--card);
   color: var(--primary);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  transition: border-color 0.2s, transform 0.2s;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s, color 0.2s;
 }
 .adm-icon:hover {
   border-color: var(--primary2);
   transform: translateY(-2px);
 }
+.adm-icon i {
+  font-size: 14px;
+}
 html:not([data-theme="dark"]) .icon-sun,
+html[data-theme="dark"] .icon-moon,
 :root[data-theme="dark"] .icon-moon {
-  display: none;
+  display: none !important;
+}
+html[data-theme="dark"] .icon-sun {
+  display: inline-block !important;
+  color: var(--secondary);
+}
+html:not([data-theme="dark"]) .icon-moon {
+  display: inline-block !important;
 }
 
 
@@ -357,7 +373,7 @@ html:not([data-theme="dark"]) .icon-sun,
 }
 .adm-card-head h2 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .adm-card-head small {
   font-size: 12px;
@@ -955,7 +971,7 @@ html[data-theme="dark"] .donut-floating-tip {
 .adm-plan h2 {
   font-family: var(--head);
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .adm-plan .price {
   font-size: 20px;
@@ -1226,7 +1242,7 @@ button.adm-avatar:hover {
 .adm-modal-box h2 {
   font-family: var(--head);
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary);
   margin-bottom: 18px;
 }

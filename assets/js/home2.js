@@ -46,6 +46,14 @@
       });
     }
 
+    // Complimentary VIP perk chips interactive toggle
+    $$(".p-chip").forEach(chip => {
+      chip.addEventListener("click", () => {
+        const isActive = chip.classList.toggle("active");
+        chip.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    });
+
     
     const metrics = $$(".p-metric strong[data-count]");
     if ("IntersectionObserver" in window) {

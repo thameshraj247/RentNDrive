@@ -25,6 +25,9 @@
       btn.title = label;
     }
     store.set("rnd-theme", t);
+    try {
+      window.dispatchEvent(new CustomEvent("rnd:themechange", { detail: { theme: t } }));
+    } catch (e) {}
   }
 
   function applyDirection(dir) {
@@ -32,11 +35,20 @@
     root.setAttribute("dir", d);
     const btn = document.getElementById("dirToggle");
     if (btn) {
-      btn.textContent = d === "rtl" ? "LTR" : "RTL";
+      const span = btn.querySelector("span, .dir-text");
+      const icon = btn.querySelector("i");
+      if (span) {
+        span.textContent = d === "rtl" ? "LTR" : "RTL";
+      } else if (!icon) {
+        btn.textContent = d === "rtl" ? "LTR" : "RTL";
+      }
       btn.title = d === "rtl" ? "Switch to left-to-right" : "Switch to right-to-left";
       btn.setAttribute("aria-label", btn.title);
     }
     store.set("rnd-dir", d);
+    try {
+      window.dispatchEvent(new CustomEvent("rnd:dirchange", { detail: { dir: d } }));
+    } catch (e) {}
   }
 
   
@@ -205,6 +217,8 @@
   window.rndSyncHeaderAuth = syncHeaderAuth;
   window.rndGetAuthState = getAuthState;
   window.rndLogout = handleLogout;
+  window.rndApplyTheme = applyTheme;
+  window.rndApplyDirection = applyDirection;
 
   function initSiteControls() {
     syncHeaderAuth();
@@ -249,18 +263,40 @@
       }, { passive: false });
 
       
-      nav.querySelectorAll(".nav-dropdown-toggle").forEach(toggle => {
+            nav.querySelectorAll(".nav-dropdown-toggle").forEach(toggle => {
+        toggle.setAttribute("role", "button");
+        toggle.setAttribute("aria-expanded", "false");
+
         toggle.addEventListener("click", (e) => {
-          if (window.innerWidth <= 900) {
-            e.preventDefault();
-            const parent = toggle.closest(".nav-dropdown");
-            if (parent) parent.classList.toggle("active");
+          e.preventDefault();
+          e.stopPropagation();
+          const parent = toggle.closest(".nav-dropdown");
+          if (parent) {
+            const isOpen = parent.classList.toggle("active");
+            toggle.setAttribute("aria-expanded", String(isOpen));
           }
         });
       });
 
-      
+      nav.querySelectorAll(".nav-dropdown-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+          const dd = link.closest(".nav-dropdown");
+          if (dd) {
+            dd.classList.remove("active");
+            const toggle = dd.querySelector(".nav-dropdown-toggle");
+            if (toggle) toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
       document.addEventListener("click", (e) => {
+        if (!e.target.closest(".nav-dropdown")) {
+          nav.querySelectorAll(".nav-dropdown.active").forEach(dd => {
+            dd.classList.remove("active");
+            const toggle = dd.querySelector(".nav-dropdown-toggle");
+            if (toggle) toggle.setAttribute("aria-expanded", "false");
+          });
+        }
         if (!e.target.closest("#mainNav") && !e.target.closest("#menuToggle")) {
           if (nav.classList.contains("open")) {
             nav.classList.remove("open");
@@ -268,6 +304,16 @@
             const icon = menuBtn.querySelector("i");
             if (icon) icon.className = "fa-solid fa-bars";
           }
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          nav.querySelectorAll(".nav-dropdown.active").forEach(dd => {
+            dd.classList.remove("active");
+            const toggle = dd.querySelector(".nav-dropdown-toggle");
+            if (toggle) toggle.setAttribute("aria-expanded", "false");
+          });
         }
       });
 

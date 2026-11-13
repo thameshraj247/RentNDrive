@@ -70,7 +70,7 @@
       </nav>
 
       <div class="actions">
-        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">RTL</button>
+        <button class="icon-btn" id="dirToggle" type="button" aria-label="Toggle text direction" title="Toggle text direction"><i class="fa-solid fa-right-left" aria-hidden="true"></i></button>
         <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme">
           <i class="fa-solid fa-moon icon-moon"></i>
           <i class="fa-solid fa-sun icon-sun"></i>
@@ -88,67 +88,105 @@
   <main id="top">
 
     
-    <section class="p-hero" id="hero">
+        <section class="p-hero" id="hero">
       <div class="p-hero-bg" aria-hidden="true">
         <video class="p-hero-video" autoplay muted loop playsinline preload="auto">
           <source src="luxury-hero.mp4" type="video/mp4">
         </video>
       </div>
 
-      <div class="container p-hero-inner">
-        <div class="p-crown-badge">
-          <i class="fa-solid fa-crown"></i> The Pinnacle of High-Performance Travel
-        </div>
-
-        <h1>Curated Perfection for the <em>Discerning Traveler.</em></h1>
-        <p class="p-hero-sub">Where extraordinary engineering meets bespoke white-glove concierge. Instant keyless delivery to private hangars, luxury estates, and premier airport hubs.</p>
-
-        <div class="p-hero-actions">
-          
-          <a href="pricing.html" class="btn btn-primary"><i class="fa-solid fa-gem"></i> VIP Memberships <i class="fa-solid fa-arrow-right flip"></i></a>
-          <a href="#flagship" class="btn-gold"><i class="fa-solid fa-award"></i> Explore Flagships</a>
-        </div>
-
-        
-        <div class="p-booking-bar">
-          <form class="p-booking-grid" id="vipBookingForm">
-            <div class="p-book-field">
-              <label for="pCity"><i class="fa-solid fa-location-dot"></i> Chauffeur / Hub City</label>
-              <select id="pCity">
-                <option value="Los Angeles">Los Angeles (LAX VIP Terminal)</option>
-                <option value="Miami">Miami (South Beach Marine)</option>
-                <option value="New York">New York (JFK Private Hangars)</option>
-                <option value="Monaco">Monaco &amp; French Riviera</option>
-                <option value="Dubai">Dubai (Downtown Emirates Hub)</option>
-                <option value="London">London (Mayfair Suite Delivery)</option>
-              </select>
+      <div class="container p-hero-container">
+        <div class="p-hero-split">
+          <!-- Left Column: Editorial Showcase -->
+          <div class="p-hero-content">
+            <div class="p-crown-badge">
+              <i class="fa-solid fa-crown"></i> The Pinnacle of High-Performance Travel
             </div>
 
-            <div class="p-book-field">
-              <label for="pVehicle"><i class="fa-solid fa-car"></i> Select Class</label>
-              <select id="pVehicle">
-                <option value="all">All Exclusive Collections</option>
-                <option value="supercars">Supercars &amp; Exotics</option>
-                <option value="executive">First-Class Executive Sedans</option>
-                <option value="suv">Grand Adventure SUVs</option>
-                <option value="electric">Hyper Electric &amp; EV</option>
-              </select>
+            <h1>Curated Perfection for the <em>Discerning Traveler.</em></h1>
+            <p class="p-hero-sub">Where extraordinary engineering meets bespoke white-glove concierge. Instant keyless delivery to private hangars, luxury estates, and premier airport hubs.</p>
+
+            <div class="p-hero-actions">
+              <a href="pricing.html" class="btn btn-primary"><i class="fa-solid fa-gem"></i> VIP Memberships <i class="fa-solid fa-arrow-right flip"></i></a>
+              <a href="#flagship" class="btn-gold"><i class="fa-solid fa-award"></i> Explore Flagships</a>
             </div>
 
-            <div class="p-book-field">
-              <label for="pPickup"><i class="fa-regular fa-calendar-check"></i> Handover Date</label>
-              <input type="date" id="pPickup" value="2026-10-25">
+            <div class="p-hero-trust-row">
+              <span class="p-trust-item"><i class="fa-solid fa-plane-circle-check"></i> Private Apron Handover</span>
+              <span class="p-trust-item"><i class="fa-solid fa-shield-halved"></i> Zero Security Deposit</span>
+              <span class="p-trust-item"><i class="fa-solid fa-headset"></i> 24/7 Dedicated Concierge</span>
             </div>
+          </div>
 
-            <div class="p-book-field">
-              <label for="pReturn"><i class="fa-regular fa-calendar-xmark"></i> Return Date</label>
-              <input type="date" id="pReturn" value="2026-10-30">
+          <!-- Right Column: Glassmorphic Bespoke Reservation Console -->
+          <div class="p-hero-console-wrap">
+            <div class="p-console-card">
+              <div class="p-console-header">
+                <div class="p-console-status">
+                  <span class="p-live-pulse" aria-hidden="true"></span>
+                  <span>Concierge Active</span>
+                </div>
+                <span class="p-console-tag"><i class="fa-solid fa-shield-cat"></i> VIP Direct</span>
+              </div>
+
+              <div class="p-console-heading">
+                <h3>Bespoke Reservation</h3>
+                <p>Direct handover to private terminals &amp; estates</p>
+              </div>
+
+              <form class="p-booking-form-vertical" id="vipBookingForm">
+                <div class="p-book-field">
+                  <label for="pCity"><i class="fa-solid fa-location-dot"></i> Handover Hub / Chauffeur City</label>
+                  <select id="pCity">
+                    <option value="Los Angeles">Los Angeles (LAX VIP Terminal)</option>
+                    <option value="Miami">Miami (South Beach Marine)</option>
+                    <option value="New York">New York (JFK Private Hangars)</option>
+                    <option value="Monaco">Monaco &amp; French Riviera</option>
+                    <option value="Dubai">Dubai (Downtown Emirates Hub)</option>
+                    <option value="London">London (Mayfair Suite Delivery)</option>
+                  </select>
+                </div>
+
+                <div class="p-book-field">
+                  <label for="pVehicle"><i class="fa-solid fa-car"></i> Vehicle Tier</label>
+                  <select id="pVehicle">
+                    <option value="all">All Exclusive Collections</option>
+                    <option value="supercars">Supercars &amp; Exotics</option>
+                    <option value="executive">First-Class Executive Sedans</option>
+                    <option value="suv">Grand Adventure SUVs</option>
+                    <option value="electric">Hyper Electric &amp; EV</option>
+                  </select>
+                </div>
+
+                <div class="p-booking-dates-row">
+                  <div class="p-book-field">
+                    <label for="pPickup"><i class="fa-regular fa-calendar-check"></i> Handover</label>
+                    <input type="date" id="pPickup" value="2026-10-25">
+                  </div>
+
+                  <div class="p-book-field">
+                    <label for="pReturn"><i class="fa-regular fa-calendar-xmark"></i> Return</label>
+                    <input type="date" id="pReturn" value="2026-10-30">
+                  </div>
+                </div>
+
+                <div class="p-console-chips" role="group" aria-label="Complimentary VIP Services">
+                  <button type="button" class="p-chip active" aria-pressed="true"><i class="fa-solid fa-key"></i> Keyless Mobile</button>
+                  <button type="button" class="p-chip active" aria-pressed="true"><i class="fa-solid fa-gem"></i> White Glove</button>
+                  <button type="button" class="p-chip" aria-pressed="false"><i class="fa-solid fa-champagne-glasses"></i> Chilled Bar</button>
+                </div>
+
+                <button type="submit" class="p-book-btn-full">
+                  <i class="fa-solid fa-magnifying-glass"></i> Check Fleet Availability
+                </button>
+              </form>
+
+              <div class="p-console-footer">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Guaranteed model reservation &bull; Instant confirmation</span>
+              </div>
             </div>
-
-            <button type="submit" class="p-book-btn">
-              <i class="fa-solid fa-magnifying-glass"></i> Check Availability
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -178,57 +216,60 @@
     </section>
 
     
-    <section class="p-fleet-section" id="flagship">
+        <section class="p-fleet-section" id="flagship">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">The Royal Collection</span>
-          <h2>Flagship Luxury Fleet</h2>
-          <p>Every vehicle in our prestige line is hand-selected, fully optioned, and kept in pristine condition.</p>
+          <span class="eyebrow"><i class="fa-solid fa-crown"></i> The Royal Atelier</span>
+          <h2>Flagship Luxury Fleet <em>Showcase</em></h2>
+          <p>Every vehicle in our prestige collection is hand-selected, fully optioned, and kept in pristine condition with white-glove apron delivery.</p>
         </div>
 
-        
-        <div class="p-fleet-tabs reveal">
-          <button class="p-tab-btn active" data-cat="all" type="button"><i class="fa-solid fa-star"></i> All Flagships</button>
-          <button class="p-tab-btn" data-cat="luxury" type="button"><i class="fa-solid fa-crown"></i> Executive Sedans</button>
-          <button class="p-tab-btn" data-cat="suv" type="button"><i class="fa-solid fa-mountain-sun"></i> Adventure SUVs</button>
-          <button class="p-tab-btn" data-cat="convertible" type="button"><i class="fa-solid fa-wind"></i> Exotics &amp; Convertibles</button>
-          <button class="p-tab-btn" data-cat="electric" type="button"><i class="fa-solid fa-bolt"></i> High-Performance EV</button>
+        <!-- Category Tabs -->
+        <div class="p-fleet-tabs reveal" role="tablist" aria-label="Fleet Category Filters">
+          <button class="p-tab-btn active" data-cat="all" type="button"><i class="fa-solid fa-star"></i> All Flagships <span class="p-tab-count">7</span></button>
+          <button class="p-tab-btn" data-cat="luxury" type="button"><i class="fa-solid fa-crown"></i> Executive Sedans <span class="p-tab-count">1</span></button>
+          <button class="p-tab-btn" data-cat="suv" type="button"><i class="fa-solid fa-mountain-sun"></i> Adventure SUVs <span class="p-tab-count">3</span></button>
+          <button class="p-tab-btn" data-cat="convertible" type="button"><i class="fa-solid fa-wind"></i> Exotics &amp; Convertibles <span class="p-tab-count">2</span></button>
+          <button class="p-tab-btn" data-cat="electric" type="button"><i class="fa-solid fa-bolt"></i> High-Performance EV <span class="p-tab-count">1</span></button>
         </div>
 
         <div class="p-fleet-grid">
-          
-          <article class="p-fleet-card reveal" data-category="luxury">
+          <!-- Card 1: Featured Crown Flagship (Spans 2 columns on desktop) -->
+          <article class="p-fleet-card p-card-featured reveal" data-category="luxury">
             <div class="p-card-media">
-              <img src="fleet-mercedes-s580.jpg" alt="Mercedes-Benz S-Class 580">
-              <span class="p-badge-tier">Executive Flagship</span>
+              <img src="fleet-mercedes-s580.jpg" alt="Mercedes-Benz S-Class 580" loading="lazy">
+              <span class="p-badge-tier"><i class="fa-solid fa-crown"></i> Executive Flagship</span>
+              <span class="p-badge-delivery"><i class="fa-solid fa-plane-circle-check"></i> Runway Handover Ready</span>
             </div>
             <div class="p-card-body">
               <div class="p-card-header">
                 <span class="p-card-brand">Mercedes-Maybach / Benz</span>
-                <span class="p-card-rating"><i class="fa-solid fa-star"></i> 4.98</span>
+                <span class="p-card-rating"><i class="fa-solid fa-star"></i> 4.98 <small>(124 VIP Reviews)</small></span>
               </div>
-              <h3>Mercedes-Benz S-Class 580 </h3>
+              <h3>Mercedes-Benz S-Class 580 Maybach Suite</h3>
+              <p class="p-card-excerpt">The definitive chauffeur experience. Whispering acoustic glass, 24-way active multicontour massage seating, and refrigerated rear bar compartment.</p>
               <div class="p-card-specs">
-                <span><i class="fa-solid fa-gauge-high"></i> 496 HP Biturbo</span>
-                <span><i class="fa-solid fa-chair"></i> Executive Rear Lounge</span>
+                <span><i class="fa-solid fa-gauge-high"></i> 496 HP Biturbo V8</span>
+                <span><i class="fa-solid fa-chair"></i> Rear Executive Lounge</span>
                 <span><i class="fa-solid fa-music"></i> Burmester 4D Audio</span>
-                <span><i class="fa-solid fa-shield-halved"></i> 100% Comprehensive</span>
+                <span><i class="fa-solid fa-shield-halved"></i> Zero Deductible Cover</span>
               </div>
               <div class="p-card-footer">
                 <div class="p-price-block">
-                  <small>Daily Experience</small>
+                  <small>Daily Experience Rate</small>
                   <strong>$185<span> /day</span></strong>
                 </div>
-                <a href="login.html?car=1" class="btn btn-primary"><i class="fa-solid fa-key"></i> Reserve</a>
+                <a href="login.html?car=1" class="btn-gold"><i class="fa-solid fa-key"></i> Reserve Flagship</a>
               </div>
             </div>
           </article>
 
-          
+          <!-- Card 2: Porsche Cayenne GTS Coupe -->
           <article class="p-fleet-card reveal" data-category="suv">
             <div class="p-card-media">
-              <img src="fleet-porsche-cayenne.jpg" alt="Porsche Cayenne GTS Coupe">
+              <img src="fleet-porsche-cayenne.jpg" alt="Porsche Cayenne GTS Coupe" loading="lazy">
               <span class="p-badge-tier">Sport Prestige</span>
+              <span class="p-badge-delivery"><i class="fa-solid fa-shield-halved"></i> Full Coverage</span>
             </div>
             <div class="p-card-body">
               <div class="p-card-header">
@@ -236,27 +277,29 @@
                 <span class="p-card-rating"><i class="fa-solid fa-star"></i> 4.99</span>
               </div>
               <h3>Porsche Cayenne GTS Coupe</h3>
+              <p class="p-card-excerpt">Commanding performance with aggressive coupe styling and adaptive air suspension.</p>
               <div class="p-card-specs">
                 <span><i class="fa-solid fa-gauge-high"></i> 493 HP Twin-Turbo</span>
-                <span><i class="fa-solid fa-road"></i> Sport Chrono Package</span>
+                <span><i class="fa-solid fa-road"></i> Sport Chrono</span>
                 <span><i class="fa-solid fa-wind"></i> Sport Exhaust</span>
-                <span><i class="fa-solid fa-snowflake"></i> Climate Detailing</span>
+                <span><i class="fa-solid fa-snowflake"></i> 4-Zone Climate</span>
               </div>
               <div class="p-card-footer">
                 <div class="p-price-block">
                   <small>Daily Experience</small>
                   <strong>$195<span> /day</span></strong>
                 </div>
-                <a href="login.html?car=2" class="btn btn-primary"><i class="fa-solid fa-key"></i> Reserve</a>
+                <a href="login.html?car=2" class="btn-gold"><i class="fa-solid fa-key"></i> Reserve</a>
               </div>
             </div>
           </article>
 
-          
+          <!-- Card 3: Porsche 911 Carrera Cabriolet -->
           <article class="p-fleet-card reveal" data-category="convertible">
             <div class="p-card-media">
-              <img src="fleet-porsche-911cab.jpg" alt="Porsche 911 Carrera Cabriolet">
+              <img src="fleet-porsche-911cab.jpg" alt="Porsche 911 Carrera Cabriolet" loading="lazy">
               <span class="p-badge-tier">Iconic Roadster</span>
+              <span class="p-badge-delivery"><i class="fa-solid fa-sun"></i> Open Top</span>
             </div>
             <div class="p-card-body">
               <div class="p-card-header">
@@ -264,9 +307,10 @@
                 <span class="p-card-rating"><i class="fa-solid fa-star"></i> 5.00</span>
               </div>
               <h3>Porsche 911 Carrera Cabriolet</h3>
+              <p class="p-card-excerpt">Pure open-air exhilaration engineered for coastal highways and weekend escapes.</p>
               <div class="p-card-specs">
                 <span><i class="fa-solid fa-stopwatch"></i> 0-60 in 3.8s</span>
-                <span><i class="fa-solid fa-sun"></i> 12s Power Acoustic Roof</span>
+                <span><i class="fa-solid fa-sun"></i> 12s Acoustic Roof</span>
                 <span><i class="fa-solid fa-compass"></i> GPS Track Ready</span>
                 <span><i class="fa-solid fa-gem"></i> Nappa Leather</span>
               </div>
@@ -275,16 +319,17 @@
                   <small>Daily Experience</small>
                   <strong>$280<span> /day</span></strong>
                 </div>
-                <a href="login.html?car=4" class="btn btn-primary"><i class="fa-solid fa-key"></i> Reserve</a>
+                <a href="login.html?car=4" class="btn-gold"><i class="fa-solid fa-key"></i> Reserve</a>
               </div>
             </div>
           </article>
 
-          
+          <!-- Card 4: Range Rover Autobiography LWB -->
           <article class="p-fleet-card reveal" data-category="suv">
             <div class="p-card-media">
-              <img src="fleet-rangerover.jpg" alt="Range Rover Autobiography">
+              <img src="fleet-rangerover.jpg" alt="Range Rover Autobiography" loading="lazy">
               <span class="p-badge-tier">Royal Estate</span>
+              <span class="p-badge-delivery"><i class="fa-solid fa-crown"></i> VIP Chauffeur</span>
             </div>
             <div class="p-card-body">
               <div class="p-card-header">
@@ -292,27 +337,29 @@
                 <span class="p-card-rating"><i class="fa-solid fa-star"></i> 4.97</span>
               </div>
               <h3>Range Rover Autobiography LWB</h3>
+              <p class="p-card-excerpt">Palatial luxury with extended wheelbase and rear executive executive seating.</p>
               <div class="p-card-specs">
-                <span><i class="fa-solid fa-crown"></i> 24-Way Massage Seats</span>
+                <span><i class="fa-solid fa-crown"></i> 24-Way Massage</span>
                 <span><i class="fa-solid fa-champagne-glasses"></i> Executive Fridge</span>
                 <span><i class="fa-solid fa-mountain"></i> All-Terrain Progress</span>
-                <span><i class="fa-solid fa-volume-xmark"></i> Active Noise Cancelling</span>
+                <span><i class="fa-solid fa-volume-xmark"></i> Active Noise Cancel</span>
               </div>
               <div class="p-card-footer">
                 <div class="p-price-block">
                   <small>Daily Experience</small>
                   <strong>$240<span> /day</span></strong>
                 </div>
-                <a href="login.html?car=6" class="btn btn-primary"><i class="fa-solid fa-key"></i> Reserve</a>
+                <a href="login.html?car=6" class="btn-gold"><i class="fa-solid fa-key"></i> Reserve</a>
               </div>
             </div>
           </article>
 
-          
+          <!-- Card 5: Porsche Taycan 4S Cross Turismo -->
           <article class="p-fleet-card reveal" data-category="electric">
             <div class="p-card-media">
-              <img src="fleet-taycan.jpg" alt="Porsche Taycan 4S Cross Turismo">
+              <img src="fleet-taycan.jpg" alt="Porsche Taycan 4S Cross Turismo" loading="lazy">
               <span class="p-badge-tier">Electric Marvel</span>
+              <span class="p-badge-delivery"><i class="fa-solid fa-bolt"></i> Free Supercharging</span>
             </div>
             <div class="p-card-body">
               <div class="p-card-header">
@@ -320,27 +367,29 @@
                 <span class="p-card-rating"><i class="fa-solid fa-star"></i> 4.96</span>
               </div>
               <h3>Porsche Taycan 4S Cross Turismo</h3>
+              <p class="p-card-excerpt">All-electric grand tourer versatility combining sports car dynamics with off-piste capability.</p>
               <div class="p-card-specs">
                 <span><i class="fa-solid fa-bolt"></i> 522 HP Overboost</span>
                 <span><i class="fa-solid fa-battery-full"></i> 285 Mi Range</span>
-                <span><i class="fa-solid fa-charging-station"></i> Free Supercharging</span>
-                <span><i class="fa-solid fa-car-on"></i> Gravel Mode Suspension</span>
+                <span><i class="fa-solid fa-charging-station"></i> Fast DC Charging</span>
+                <span><i class="fa-solid fa-car-on"></i> Gravel Suspension</span>
               </div>
               <div class="p-card-footer">
                 <div class="p-price-block">
                   <small>Daily Experience</small>
                   <strong>$205<span> /day</span></strong>
                 </div>
-                <a href="login.html?car=7" class="btn btn-primary"><i class="fa-solid fa-key"></i> Reserve</a>
+                <a href="login.html?car=7" class="btn-gold"><i class="fa-solid fa-key"></i> Reserve</a>
               </div>
             </div>
           </article>
 
-          
+          <!-- Card 6: BMW M4 Competition Convertible -->
           <article class="p-fleet-card reveal" data-category="convertible">
             <div class="p-card-media">
-              <img src="fleet-bmw-m4.jpg" alt="BMW M4 Competition Convertible">
+              <img src="fleet-bmw-m4.jpg" alt="BMW M4 Competition Convertible" loading="lazy">
               <span class="p-badge-tier">Motorsport Edition</span>
+              <span class="p-badge-delivery"><i class="fa-solid fa-fire"></i> Track Certified</span>
             </div>
             <div class="p-card-body">
               <div class="p-card-header">
@@ -348,27 +397,55 @@
                 <span class="p-card-rating"><i class="fa-solid fa-star"></i> 4.95</span>
               </div>
               <h3>BMW M4 Competition Convertible</h3>
+              <p class="p-card-excerpt">Precision motorsport engineering with 503 HP twin-turbocharged thrust and open-sky freedom.</p>
               <div class="p-card-specs">
                 <span><i class="fa-solid fa-fire"></i> 503 HP Twin-Turbo</span>
                 <span><i class="fa-solid fa-wind"></i> M xDrive AWD</span>
-                <span><i class="fa-solid fa-music"></i> Harman Kardon Surround</span>
-                <span><i class="fa-solid fa-compass"></i> Head-Up HUD Display</span>
+                <span><i class="fa-solid fa-music"></i> Harman Kardon</span>
+                <span><i class="fa-solid fa-compass"></i> Head-Up HUD</span>
               </div>
               <div class="p-card-footer">
                 <div class="p-price-block">
                   <small>Daily Experience</small>
                   <strong>$235<span> /day</span></strong>
                 </div>
-                <a href="login.html?car=9" class="btn btn-primary"><i class="fa-solid fa-key"></i> Reserve</a>
+                <a href="login.html?car=9" class="btn-gold"><i class="fa-solid fa-key"></i> Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 7: Cadillac Escalade V-Series Platinum -->
+          <article class="p-fleet-card reveal" data-category="suv">
+            <div class="p-card-media">
+              <img src="fleet-escalade.jpg" alt="Cadillac Escalade V-Series Platinum" loading="lazy">
+              <span class="p-badge-tier">Presidential Suite</span>
+              <span class="p-badge-delivery"><i class="fa-solid fa-shield-halved"></i> Diplomatic Security</span>
+            </div>
+            <div class="p-card-body">
+              <div class="p-card-header">
+                <span class="p-card-brand">Cadillac V-Performance</span>
+                <span class="p-card-rating"><i class="fa-solid fa-star"></i> 4.99</span>
+              </div>
+              <h3>Cadillac Escalade V-Series Platinum</h3>
+              <p class="p-card-excerpt">Commanding VIP authority with 682 HP supercharged V8 power, curved 38-inch OLED cockpit, and studio audio.</p>
+              <div class="p-card-specs">
+                <span><i class="fa-solid fa-gauge-high"></i> 682 HP Supercharged</span>
+                <span><i class="fa-solid fa-tv"></i> 38-Inch Curved OLED</span>
+                <span><i class="fa-solid fa-music"></i> 36-Speaker AKG Studio</span>
+                <span><i class="fa-solid fa-shield-cat"></i> Magnetic Ride 4.0</span>
+              </div>
+              <div class="p-card-footer">
+                <div class="p-price-block">
+                  <small>Daily Experience</small>
+                  <strong>$260<span> /day</span></strong>
+                </div>
+                <a href="login.html?car=7" class="btn-gold"><i class="fa-solid fa-key"></i> Reserve</a>
               </div>
             </div>
           </article>
         </div>
       </div>
-    </section>
-
-    
-    <section class="p-experience-section" id="experience">
+    </section><section class="p-experience-section" id="experience">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">The Gold Standard</span>
@@ -566,7 +643,7 @@
           <p>Read what our private club members and corporate partners say about their RentNDrive journey.</p>
         </div>
 
-        <div class="hiw-review-grid">
+        <div class="p-reviews-grid hiw-review-grid">
           <article class="p-review-card reveal">
             <div class="stars">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>

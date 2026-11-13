@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--text-main);
   line-height: var(--lh-tight);
-  font-weight: var(--fw-extrabold);
+  font-weight: 600;
   letter-spacing: -0.015em;
 }
 
@@ -129,6 +129,7 @@ h1 em, h2 em, h3 em, h4 em {
 }
 
 p {
+  font-weight: 400;
   line-height: var(--lh-relaxed);
   color: var(--text-muted);
   margin-bottom: 1.25rem;
@@ -552,3 +553,65 @@ body > section:nth-of-type(1),
     filter: none !important;
   }
 }
+
+/* ==========================================================================
+   Brand Logo & Theme Visibility
+   ========================================================================== */
+.theme-logo {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform .35s ease, opacity .3s ease, filter .3s ease;
+}
+
+.brand:hover .theme-logo {
+  transform: translateY(-3px) rotate(-4deg) scale(1.06);
+}
+
+.logo-dark {
+  display: none !important;
+}
+
+html[data-theme="dark"] .logo-light,
+:root[data-theme="dark"] .logo-light {
+  display: none !important;
+}
+
+html[data-theme="dark"] .logo-dark,
+:root[data-theme="dark"] .logo-dark {
+  display: block !important;
+}
+
+html[data-theme="dark"] .theme-logo,
+:root[data-theme="dark"] .theme-logo {
+  filter: drop-shadow(0 2px 10px rgba(59, 130, 246, 0.25));
+}
+
+/* ==========================================================================
+   Typography Consistency (600 Headings & 400–550 Paragraph Text)
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 600;
+}
+
+p,
+.lead,
+.subhead {
+  font-weight: 400;
+}
+
+.hero-sub,
+.page-hero-text p,
+.about-hero p,
+.contact-hero p,
+.pricing-hero p,
+.hiw-hero p {
+  font-weight: 500;
+}
+
+
+/* Universal Icon Button */
+.icon-btn { height: 40px; width: 40px; min-width: 40px; padding: 0; border-radius: 12px; border: 1px solid var(--border); background: var(--surface, #fff); color: var(--primary); display: inline-grid; place-items: center; cursor: pointer; font-size: 14px; transition: transform .2s, border-color .2s; }
+.icon-btn:hover { transform: translateY(-2px); border-color: var(--primary); }
